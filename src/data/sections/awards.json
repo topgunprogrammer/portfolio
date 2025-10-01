@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Best Employee for Q1 FY2020",
+    "organization": "Infosys",
+    "date": "May 2020",
+    "description": "Received the Best Overall Performance Award for outstanding work."
+  },
+  {
+    "id": 2,
+    "title": "Walmart Hackathon 3.0 Winner",
+    "organization": "Walmart (Infosys)",
+    "date": "Aug 2020",
+    "description": "Augmented Reality (AR) based app with interactive shopping experience for customers to be used within Walmart stores."
+  },
+  {
+    "id": 3,
+    "title": "Agni's Pride Award",
+    "organization": "Agni College of Technology",
+    "date": "May 2018",
+    "description": "Best outgoing student for the Batch of 2018"
+  },
+  {
+    "id": 4,
+    "title": "Student President of ECE Department",
+    "organization": "Agni College of Technology",
+    "date": "2017-2018",
+    "description": "Student President of the Department of ECE for the Academic year 2017-18"
+  },
+  {
+    "id": 5,
+    "title": "Winner of Inter-college Hackathon",
+    "organization": "Neyes Technologies",
+    "date": "Jul 2017",
+    "description": "Built a website to ingest GPS data and show it on a map for live tracking"
+  },
+  {
+    "id": 6,
+    "title": "Winner of Project Display Competition (IETE)",
+    "organization": "Agni College of Technology",
+    "date": "Aug 2016",
+    "description": "Developed a wireless home automation system using IOT, enabling control of fans and lights through a mobile app."
+  },
+  {
+    "id": 7,
+    "title": "Winner of Clash of Kaizeners",
+    "organization": "Lema Labs (IITM Research Park)",
+    "date": "Mar 2016",
+    "description": "Developed and programmed a Robot that follows a black line on a white surface and came up with innovative solutions on the spot to the challenges presented during the event."
+  }
+]

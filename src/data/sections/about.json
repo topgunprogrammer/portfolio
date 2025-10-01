@@ -1,0 +1,105 @@
+{
+  "title": "About Me",
+  "description": "With over 5+ years of professional experience in software development, I am a dedicated problem solver passionate about creating innovative solutions. My career in the software product industry has equipped me with comprehensive expertise in both frontend and backend development, cloud services, and DevOps. I thrive in dynamic team environments and have a proven track record of delivering high-quality results under tight deadlines. My enthusiasm for technology drives me to continuously explore and adopt new tools and methodologies to enhance my skills and contribute effectively to any team.",
+  "coreCompetencies": {
+    "Frontend Development": [
+      "ReactJS",
+      "Redux",
+      "HTML5",
+      "CSS",
+      "SASS",
+      "Bootstrap",
+      "JavaScript"
+    ],
+    "Backend Development": ["NodeJS", "ExpressJS", "Python"],
+    "Database Management": ["MySQL", "MongoDB"],
+    "Cloud Services": ["AWS", "Azure"],
+    "DevOps & Tools": ["Git/GitHub", "GitLab", "Docker", "Redis"]
+  },
+  "skills": [
+    "ReactJS",
+    "Redux",
+    "NodeJS",
+    "ExpressJS",
+    "HTML5",
+    "CSS",
+    "SASS",
+    "Bootstrap",
+    "JavaScript",
+    "Python",
+    "MySQL",
+    "MongoDB",
+    "AWS",
+    "Azure",
+    "Docker",
+    "Redis",
+    "Git/GitHub",
+    "GitLab",
+    "WebSockets",
+    "Distributed Systems",
+    "CI/CD"
+  ],
+  "certifications": [
+    {
+      "name": "System Expert (HLD and LLD)",
+      "issuer": "Algoexpert",
+      "date": "Feb 2023"
+    },
+    {
+      "name": "AWS Certified Solutions Architect Professional",
+      "issuer": "AWS",
+      "date": "May 2022"
+    },
+    {
+      "name": "AWS Certified Developer Associate",
+      "issuer": "AWS",
+      "date": "Feb 2021"
+    },
+    {
+      "name": "Microsoft Certified Azure Fundamentals",
+      "issuer": "Microsoft",
+      "date": "Jan 2020"
+    },
+    {
+      "name": "Python Bootcamp From Zero to Hero in Python",
+      "issuer": "Udemy",
+      "date": "May 2020"
+    },
+    {
+      "name": "Infosys certified Global Agile Developer",
+      "issuer": "Infosys",
+      "date": "May 2020"
+    },
+    {
+      "name": "Kaizen Robotics program (Beginner and Advanced)",
+      "issuer": "Lema Labs (IITM Research park)",
+      "date": "Sep 2015"
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.Sc. in Machine Learning & AI",
+      "institution": "International Institute of Information Technology Bangalore (IIIT Bangalore) & Liverpool John Moores University (LJMU)",
+      "duration": "Jun 2024 - Dec 2025",
+      "status": "In Progress"
+    },
+    {
+      "degree": "B.E in Electronics and Communication Engineering (ECE)",
+      "institution": "Agni College of Technology, Anna University",
+      "duration": "2014 - 2018",
+      "gpa": "7.6/10"
+    },
+    {
+      "degree": "Higher Secondary (12th)",
+      "institution": "Sri Sankara Vidhyashramam Matriculation Higher Secondary School",
+      "duration": "2014",
+      "gpa": "83.7%"
+    },
+    {
+      "degree": "High School (10th)",
+      "institution": "Suddhananda Vidhyalaya",
+      "duration": "2012",
+      "gpa": "10/10"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--primary-white);
+}
+
+.App-main {
+  flex: 1;
+  padding: 80px 2rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-container {
+  min-height: calc(100vh - 400px);
+}
+
+.page-container.home-page {
+  padding: 0;
+  margin: 0;
+}
+
+.page-container.home-page .App-main {
+  padding-top: 4rem;
+}
+
+/* Apple-inspired animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .App-main {
+    padding: 60px 1rem 2rem;
+  }
+}

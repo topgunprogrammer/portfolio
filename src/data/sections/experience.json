@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "company": "Influx Integrated Solutions Pvt Ltd",
+    "position": "Associate Developer",
+    "location": "Chennai, India",
+    "duration": "May 2021 - Present",
+    "description": "Leading full-stack development initiatives with focus on React and Node.js applications.",
+    "achievements": [
+      "Built interactive, user-friendly web applications using ReactJS including global store management using Redux",
+      "Worked on WebSockets and Distributed systems to enhance real-time communication and system reliability",
+      "Integrated data tracking for suggestive selling and upselling using MoEngage, Rokt, and Google Tag Manager which increased customer spending by more than 20%",
+      "Handled payment gateway integration including Freedom Pay and Card Connect to streamline transactions",
+      "Resolved cross-browser compatibility issues with different versions of browsers like Internet Explorer, Mozilla Firefox, Safari and Google Chrome",
+      "Implemented backend services using NodeJS designing clear and understandable APIs, integrating MySQL databases for robust data management, and using Redis for efficient caching",
+      "Developed complete end to end web applications and deployed using AWS, CI/CD pipelines and version control tools like GIT"
+    ],
+    "projects": [
+      "evo.co - Ticket Booking site",
+      "Injinmanager - Conceptualized and built a CMX Management website from the ground up, overseeing data management for websites, mobile apps, and kiosks",
+      "order.showplaceicon.com - A Food and Beverages booking site"
+    ]
+  },
+  {
+    "id": 2,
+    "company": "Infosys",
+    "position": "Systems Engineer",
+    "location": "Chennai, India",
+    "duration": "Apr 2019 - Feb 2021",
+    "description": "Contributed to Walmart agile team for product development using React and NodeJS.",
+    "achievements": [
+      "Engaged in all phases of the product life cycle, including roadmap planning, design, coding, testing, deployment, and operational ownership",
+      "Actively contributed to the Walmart agile team for product development",
+      "Primary development in technologies including React and NodeJS",
+      "Participated in the design and architecture of new services and deployed using Azure Cloud",
+      "Impacted the customer experience by implementing and ensuring the robustness of cutting-edge products used daily by people",
+      "Won Best Employee Award for overall performance in Q1 FY2020",
+      "Demonstrated excellent interpersonal abilities, time management, and team skills, working effectively under stressful environments to meet project deadlines",
+      "Shadowed my manager to understand leadership and project management better, and mentored junior developers to foster their growth and development"
+    ]
+  },
+  {
+    "id": 3,
+    "company": "Infosys",
+    "position": "Systems Engineer Trainee",
+    "location": "Mysore, India",
+    "duration": "Dec 2018 - Apr 2019",
+    "description": "Completed comprehensive training program in MERN Stack and Agile methodologies.",
+    "achievements": [
+      "Served as Scrum Master during project phase of training, planned and coordinated a team of 5 in building an intuitive, error-free website (front and backend) using MERN Stack",
+      "Completed training as a Top Performer",
+      "Learned Python, MySQL, MERN Stack, and Agile methodologies"
+    ]
+  },
+  {
+    "id": 4,
+    "company": "DRDO (Defence Research and Development Organization)",
+    "position": "Intern Trainee",
+    "location": "Chennai, India",
+    "duration": "Nov 2016 - Jan 2017",
+    "description": "Research and development internship focused on Matlab and electronics.",
+    "achievements": [
+      "Gained foundational knowledge in GUI creation using Matlab",
+      "Developed a simple chat box application between two nodes using Xbee",
+      "Created a Matlab GUI for studying Ion interactions with electronics"
+    ]
+  }
+]

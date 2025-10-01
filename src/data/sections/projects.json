@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1,
+    "title": "evo.co",
+    "description": "Interactive ticket booking platform with real-time seat selection and payment integration",
+    "technologies": ["React", "Redux", "Node.js", "MySQL", "AWS"],
+    "link": "https://evo.co",
+    "demo": "https://evo.co",
+    "category": "Production"
+  },
+  {
+    "id": 2,
+    "title": "Injinmanager",
+    "description": "CMX Management website built from ground up, managing data for websites, mobile apps, and kiosks with comprehensive admin controls",
+    "technologies": ["React", "Node.js", "Express", "MongoDB", "Redis", "AWS"],
+    "link": "",
+    "demo": "",
+    "category": "Production"
+  },
+  {
+    "id": 3,
+    "title": "order.showplaceicon.com",
+    "description": "Food and Beverages booking platform with payment gateway integration and order management system",
+    "technologies": [
+      "React",
+      "Node.js",
+      "MySQL",
+      "Freedom Pay",
+      "Card Connect"
+    ],
+    "link": "https://order.showplaceicon.com",
+    "demo": "https://order.showplaceicon.com",
+    "category": "Production"
+  },
+  {
+    "id": 4,
+    "title": "Walmart AR Shopping Experience",
+    "description": "Award-winning Augmented Reality based app with interactive shopping experience for Walmart stores",
+    "technologies": ["React Native", "AR Kit", "Node.js", "Azure"],
+    "link": "",
+    "demo": "",
+    "category": "Hackathon Winner"
+  },
+  {
+    "id": 5,
+    "title": "GPS Live Tracking System",
+    "description": "Real-time GPS tracking web application that ingests GPS data and displays live locations on interactive maps",
+    "technologies": ["JavaScript", "Google Maps API", "Node.js", "WebSockets"],
+    "link": "",
+    "demo": "",
+    "category": "Hackathon Winner"
+  },
+  {
+    "id": 6,
+    "title": "IoT Home Automation System",
+    "description": "Wireless home automation system enabling control of fans and lights through a mobile app using IoT technology",
+    "technologies": ["IoT", "Arduino", "Mobile App", "Wi-Fi Module"],
+    "link": "",
+    "demo": "",
+    "category": "Award Winner"
+  },
+  {
+    "id": 7,
+    "title": "Line Following Robot",
+    "description": "Autonomous robot programmed to follow a black line on white surface with adaptive problem-solving capabilities",
+    "technologies": ["Robotics", "C++", "Sensors", "Arduino"],
+    "link": "",
+    "demo": "",
+    "category": "Award Winner"
+  }
+]
