@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "./App.css";
 import Header from "./components/Header/Header";

@@ -1,6 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { getTechIcon, getTechColor } from "../../utils/iconMapping";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 import "./About.css";
 
 function About({ about }) {
@@ -144,35 +149,53 @@ function About({ about }) {
       {about.education && about.education.length > 0 && (
         <motion.div className="education" variants={itemVariants}>
           <h3>Education</h3>
-          <div className="education-list">
+          <VerticalTimeline lineColor="#ffffff">
             {about.education.map((edu, index) => (
-              <motion.div
+              <VerticalTimelineElement
                 key={index}
-                className="education-item"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: index * 0.15,
-                  type: "spring",
-                  stiffness: 100,
+                className="vertical-timeline-element--education"
+                contentArrowStyle={{
+                  borderRight: "12px solid rgba(26, 26, 26, 0.95)",
                 }}
-                whileHover={{
-                  x: 10,
-                  boxShadow: "0 8px 20px rgba(102, 126, 234, 0.3)",
-                  transition: { duration: 0.3 },
-                }}
+                date={edu.duration}
+                dateClassName="timeline-date"
+                icon={
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "100%",
+                      height: "100%",
+                      fontSize: "1.4rem",
+                      fontWeight: "bold",
+                      color: "#1a1a1a",
+                      textShadow: "0 1px 2px rgba(0,0,0,0.2)",
+                    }}
+                  >
+                    {index === 0
+                      ? "🎓"
+                      : index === 1
+                      ? "🏛️"
+                      : index === 2
+                      ? "📚"
+                      : "�"}
+                  </div>
+                }
               >
-                <h4>{edu.degree}</h4>
-                <p className="institution">{edu.institution}</p>
-                <div className="education-details">
-                  <span className="duration">{edu.duration}</span>
+                <h3 className="vertical-timeline-element-title">
+                  {edu.degree}
+                </h3>
+                <h4 className="vertical-timeline-element-subtitle">
+                  {edu.institution}
+                </h4>
+                <div className="education-timeline-details">
                   {edu.gpa && <span className="gpa">GPA: {edu.gpa}</span>}
                   {edu.status && <span className="status">{edu.status}</span>}
                 </div>
-              </motion.div>
+              </VerticalTimelineElement>
             ))}
-          </div>
+          </VerticalTimeline>
         </motion.div>
       )}
     </motion.section>

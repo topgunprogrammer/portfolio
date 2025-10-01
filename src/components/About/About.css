@@ -95,7 +95,7 @@
 .certifications {
   padding: 4rem 0;
   margin: 4rem 0;
-  background: rgba(255, 255, 255, 0.02);
+  background: #0a0a0a;
   margin-left: -2rem;
   margin-right: -2rem;
   padding-left: 2rem;
@@ -196,57 +196,349 @@
   letter-spacing: 0.05em;
 }
 
-/* Education */
-.education-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+/* Education - Now using Vertical Timeline Component */
+
+/* 🎨 STUNNING VERTICAL TIMELINE - BLACK THEME OPTIMIZED */
+
+/* Animated timeline line with glowing effect */
+.vertical-timeline::before {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.8) 30%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.8) 70%,
+    rgba(255, 255, 255, 0.1) 100%
+  ) !important;
+  width: 3px !important;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  animation: timelinePulse 3s ease-in-out infinite alternate;
 }
 
-.education-item {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  border-left: 4px solid #667eea;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+@keyframes timelinePulse {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6),
+      0 0 40px rgba(255, 255, 255, 0.2);
+  }
 }
 
-.education-item:hover {
+/* Eye-popping timeline dates with glass morphism */
+.vertical-timeline-element-date {
+  color: var(--primary-white) !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 25px !important;
+  padding: 0.5rem 1rem !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.vertical-timeline-element-date:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* Stunning content cards with hover animations */
+.vertical-timeline-element--education .vertical-timeline-element-content {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 26, 0.95) 0%,
+    rgba(40, 40, 40, 0.9) 50%,
+    rgba(26, 26, 26, 0.95) 100%
+  ) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 20px !important;
+  padding: 2rem !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Magical hover effect with animated background */
+.vertical-timeline-element--education
+  .vertical-timeline-element-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.8s ease-in-out;
+  z-index: 1;
+}
+
+.vertical-timeline-element--education
+  .vertical-timeline-element-content:hover::before {
+  left: 100%;
+}
+
+.vertical-timeline-element--education .vertical-timeline-element-content:hover {
+  transform: translateY(-10px) scale(1.02) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Content styling with beautiful typography */
+.vertical-timeline-element-title {
+  color: var(--primary-white) !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.8rem !important;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  position: relative !important;
+  z-index: 2 !important;
+  transition: all 0.3s ease !important;
+}
+
+.vertical-timeline-element--education
+  .vertical-timeline-element-content:hover
+  .vertical-timeline-element-title {
   transform: translateX(5px);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
-.education-item h4 {
-  color: #667eea;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+.vertical-timeline-element-subtitle {
+  color: var(--accent-gray) !important;
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+  margin-bottom: 1rem !important;
+  position: relative !important;
+  z-index: 2 !important;
+  transition: all 0.3s ease !important;
+  line-height: 1.4 !important;
 }
 
-.institution {
-  color: #555;
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
-  font-weight: 500;
+.vertical-timeline-element--education
+  .vertical-timeline-element-content:hover
+  .vertical-timeline-element-subtitle {
+  color: rgba(255, 255, 255, 0.9) !important;
+  transform: translateX(3px);
 }
 
-.education-details {
+/* Stunning timeline details with animated badges */
+.education-timeline-details {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  font-size: 0.9rem;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
-.education-details .duration {
-  color: #764ba2;
+.education-timeline-details .gpa,
+.education-timeline-details .status {
+  color: var(--primary-white);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
   font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.education-details .gpa,
-.education-details .status {
-  color: #888;
-  background: #f5f5f5;
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
+.education-timeline-details .gpa::before,
+.education-timeline-details .status::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.education-timeline-details .gpa:hover::before,
+.education-timeline-details .status:hover::before {
+  left: 100%;
+}
+
+.education-timeline-details .gpa:hover,
+.education-timeline-details .status:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Stunning timeline icons with multiple animations */
+.vertical-timeline-element-icon {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(240, 240, 240, 1) 100%
+  ) !important;
+  border: 4px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.1),
+    0 0 30px rgba(255, 255, 255, 0.4), inset 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  animation: iconFloat 3s ease-in-out infinite alternate;
+}
+
+@keyframes iconFloat {
+  0% {
+    transform: translateY(0px) scale(1);
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.1),
+      0 0 30px rgba(255, 255, 255, 0.4), inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.15),
+      0 0 40px rgba(255, 255, 255, 0.6), inset 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.vertical-timeline-element-icon:hover {
+  transform: translateY(-8px) scale(1.1) rotate(5deg) !important;
+  box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.2),
+    0 0 50px rgba(255, 255, 255, 0.8), inset 0 2px 10px rgba(0, 0, 0, 0.2) !important;
+  animation-play-state: paused;
+}
+
+/* Advanced content arrow styling */
+.vertical-timeline-element--education .vertical-timeline-element-content-arrow {
+  border-right: 12px solid rgba(26, 26, 26, 0.95) !important;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+}
+
+/* Stunning entrance animations */
+.vertical-timeline-element--education {
+  animation: slideInFromLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.vertical-timeline-element--education:nth-child(even) {
+  animation: slideInFromRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform: translateX(50px);
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Add staggered animation delays */
+.vertical-timeline-element--education:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.vertical-timeline-element--education:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.vertical-timeline-element--education:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.vertical-timeline-element--education:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+/* Beautiful section title enhancement */
+.education h3 {
+  position: relative;
+  overflow: hidden;
+}
+
+.education h3::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  border-radius: 2px;
+  animation: underlineGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes underlineGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    width: 60px;
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    width: 80px;
+  }
+}
+
+/* Responsive adjustments for timeline */
+@media (max-width: 1170px) {
+  .vertical-timeline-element-date {
+    display: block !important;
+    float: none !important;
+    color: var(--primary-white) !important;
+    margin-top: 1rem !important;
+    position: relative !important;
+    font-size: 0.85rem !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(5px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 15px !important;
+    padding: 0.3rem 0.8rem !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -257,5 +549,14 @@
   .education-details {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .education-timeline-details {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .vertical-timeline-element--education .vertical-timeline-element-content {
+    padding: 1rem !important;
   }
 }

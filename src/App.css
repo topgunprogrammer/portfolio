@@ -8,7 +8,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--primary-white);
+  background: transparent;
 }
 
 .App-main {
@@ -21,6 +21,7 @@
 
 .page-container {
   min-height: calc(100vh - 400px);
+  background: #0a0a0a;
 }
 
 .page-container.home-page {

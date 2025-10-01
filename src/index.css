@@ -25,7 +25,7 @@ body {
     "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #fafafa;
+  background: #1a1a1a;
   color: var(--text-primary);
   line-height: 1.6;
 }
