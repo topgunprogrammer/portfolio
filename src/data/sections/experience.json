@@ -92,11 +92,12 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "company": "DRDO (Defence Research and Development Organization)",
     "position": "Intern Trainee",
     "location": "Chennai, India",
     "duration": "Nov 2016 - Jan 2017",
+    "type": "Internship ",
     "description": "Research and development internship focused on Matlab and electronics.",
     "achievements": [
       "Gained foundational knowledge in GUI creation using Matlab",
