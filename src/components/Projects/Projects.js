@@ -13,45 +13,37 @@ function Projects({ projects }) {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.2,
       },
     },
   };
 
   const titleVariants = {
-    hidden: { opacity: 0, y: -30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.5 },
     },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-      },
+      transition: { duration: 0.5 },
     },
   };
 
   const techVariants = {
-    hidden: { scale: 0, opacity: 0 },
+    hidden: { opacity: 0, y: 20 },
     visible: (i) => ({
-      scale: 1,
       opacity: 1,
+      y: 0,
       transition: {
         delay: i * 0.05,
-        type: "spring",
-        stiffness: 400,
-        damping: 15,
+        duration: 0.5,
       },
     }),
   };

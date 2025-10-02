@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "./App.css";
 import Header from "./components/Header/Header";
@@ -9,7 +9,7 @@ import personalInfoData from "./data/sections/personalInfo.json";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <motion.div
         className="App"
         initial={{ opacity: 0 }}

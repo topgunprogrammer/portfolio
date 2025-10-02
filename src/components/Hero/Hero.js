@@ -31,7 +31,6 @@ function Hero({ personalInfo }) {
       colors: ["FFE400", "FFBD00", "E89400", "FFCA6C", "FDFFB8"],
       origin: { x, y },
     };
-
     function shoot() {
       confetti({
         ...defaults,
@@ -65,32 +64,25 @@ function Hero({ personalInfo }) {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.6, 0.05, 0.01, 0.9],
-      },
+      transition: { duration: 0.5 },
     },
   };
 
   const imageVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 1,
-        ease: [0.6, 0.05, 0.01, 0.9],
-      },
+      y: 0,
+      transition: { duration: 0.5 },
     },
   };
 

@@ -7,6 +7,14 @@ import "./Header.css";
 function Header({ personalInfo }) {
   const location = useLocation();
 
+  // 🔝 Scroll to top function
+  const handleHomeClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   const headerVariants = {
     hidden: { opacity: 0, y: -50 },
     visible: {
@@ -67,7 +75,7 @@ function Header({ personalInfo }) {
       variants={headerVariants}
     >
       <div className="header-container">
-        <Link to={routes.home} className="header-link">
+        <Link to={routes.home} className="header-link" onClick={handleHomeClick}>
           <div className="profile-section">
             <motion.div
               className="profile-image-container"

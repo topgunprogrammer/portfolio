@@ -147,20 +147,20 @@ function Contact({ personalInfo }) {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.5 },
     },
   };
 
   const formVariants = {
-    hidden: { opacity: 0, x: 50 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      y: 0,
+      transition: { duration: 0.5 },
     },
   };
 
@@ -274,6 +274,7 @@ function Contact({ personalInfo }) {
                 <div className="contact-info-group">
                   <motion.div
                     className="relocate-info"
+                    variants={itemVariants}
                     whileHover={{ scale: 1.02 }}
                   >
                     <img

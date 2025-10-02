@@ -6,15 +6,15 @@ import experienceData from "../data/sections/experience.json";
 
 function ExperiencePage() {
   const pageVariants = {
-    initial: { opacity: 0, rotateY: -90 },
+    initial: { opacity: 0, scale: 0.95 },
     animate: {
       opacity: 1,
-      rotateY: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
     },
     exit: {
       opacity: 0,
-      rotateY: 90,
+      scale: 1.05,
       transition: { duration: 0.3 },
     },
   };

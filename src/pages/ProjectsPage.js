@@ -6,15 +6,15 @@ import projectsData from "../data/sections/projects.json";
 
 function ProjectsPage() {
   const pageVariants = {
-    initial: { opacity: 0, x: -100 },
+    initial: { opacity: 0, scale: 0.95 },
     animate: {
       opacity: 1,
-      x: 0,
+      scale: 1,
       transition: { duration: 0.5, ease: "easeOut" },
     },
     exit: {
       opacity: 0,
-      x: 100,
+      scale: 1.05,
       transition: { duration: 0.3 },
     },
   };
