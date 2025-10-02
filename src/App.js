@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import { AppRoutes } from "./router";
 import personalInfoData from "./data/sections/personalInfo.json";
 
@@ -37,6 +38,7 @@ function App() {
   }, []);
   return (
     <Router basename="/portfolio">
+      <ScrollToTop />
       <motion.div
         className="App"
         initial={{ opacity: 0 }}

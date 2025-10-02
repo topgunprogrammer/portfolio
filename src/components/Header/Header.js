@@ -7,8 +7,8 @@ import "./Header.css";
 function Header({ personalInfo }) {
   const location = useLocation();
 
-  // 🔝 Scroll to top function
-  const handleHomeClick = () => {
+  // 🔝 Scroll to top function for all navigation
+  const handleNavigationClick = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -78,7 +78,7 @@ function Header({ personalInfo }) {
         <Link
           to={routes.home}
           className="header-link"
-          onClick={handleHomeClick}
+          onClick={handleNavigationClick}
         >
           <div className="profile-section">
             <motion.div
@@ -113,6 +113,7 @@ function Header({ personalInfo }) {
                 className={`nav-link ${
                   location.pathname === item.path ? "active" : ""
                 }`}
+                onClick={handleNavigationClick}
               >
                 {item.label}
               </Link>
