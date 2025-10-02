@@ -107,8 +107,26 @@ function Experience({ experience }) {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <h3 className="experience-title">{exp.position}</h3>
-                    <h4 className="experience-company">{exp.company}</h4>
+                    <div className="experience-header-content">
+                      {/* Company Logo */}
+                      {exp.logo && (
+                        <div className="company-logo-container">
+                          <img
+                            src={exp.logo}
+                            alt={`${exp.company} logo`}
+                            className="company-logo"
+                            onError={(e) => {
+                              e.target.style.display = "none";
+                            }}
+                          />
+                        </div>
+                      )}
+
+                      <div className="experience-text-content">
+                        <h3 className="experience-title">{exp.position}</h3>
+                        <h4 className="experience-company">{exp.company}</h4>
+                      </div>
+                    </div>
                     <div className="experience-meta">
                       <span className="experience-duration">
                         {exp.duration}
