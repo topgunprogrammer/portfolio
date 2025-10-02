@@ -1,18 +1,10 @@
-.about-section {
-  padding: 6rem 2rem;
-  background: #0a0a0a;
-  border-radius: 0;
-  box-shadow: none;
-  margin-bottom: 0;
-}
+/* About section now uses unified portfolio-section styling from App.css */
 
-.about-section h2 {
-  color: var(--primary-white);
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-align: center;
-  letter-spacing: -0.05em;
+/* Preserve existing about-description styling for backward compatibility */
+.about-section .section-subtitle {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about-description {
@@ -33,19 +25,7 @@
   margin-top: 2.5rem;
 }
 
-.core-competencies h3,
-.skills h3,
-.certifications h3,
-.education h3 {
-  color: var(--primary-white);
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  border-bottom: none;
-  padding-bottom: 0;
-  letter-spacing: -0.04em;
-  text-align: center;
-}
+/* Subsection headers now use unified section-title styling from App.css */
 
 .competency-category {
   margin-bottom: 1.5rem;
@@ -91,11 +71,247 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
+/* 🚀 ENHANCED SKILLS SHOWCASE - AKSH-AI.COM INSPIRED */
+.skills-showcase {
+  margin: 5rem 0;
+  padding: 0;
+}
+
+.skills-showcase h3 {
+  color: var(--primary-white);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+  letter-spacing: -0.04em;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-category-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-category-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    rgba(102, 126, 234, 0.8),
+    rgba(118, 75, 162, 0.8),
+    rgba(255, 107, 107, 0.8)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-category-card:hover::before {
+  opacity: 1;
+}
+
+.skill-category-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.category-title {
+  color: var(--primary-white);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.experience-badge {
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.4rem 1rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skills-progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.skill-progress-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.skill-icon {
+  font-size: 1.3rem;
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+.skill-name {
+  color: var(--primary-white);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.skill-percentage {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-progress-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skill-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.skill-progress-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* 📱 RESPONSIVE DESIGN FOR SKILLS SHOWCASE */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .skill-category-card {
+    padding: 2rem;
+  }
+
+  .category-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .category-title {
+    font-size: 1.2rem;
+  }
+
+  .experience-badge {
+    align-self: flex-start;
+  }
+
+  .skills-showcase h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    gap: 1.5rem;
+  }
+
+  .skill-category-card {
+    padding: 1.5rem;
+  }
+
+  .skills-progress-list {
+    gap: 1.5rem;
+  }
+
+  .skill-name-wrapper {
+    gap: 0.6rem;
+  }
+
+  .skill-icon {
+    font-size: 1.1rem;
+  }
+
+  .skill-name {
+    font-size: 0.9rem;
+  }
+}
+
 /* Certifications - Apple-style Horizontal Scroll */
 .certifications {
   padding: 4rem 0;
   margin: 4rem 0;
-  background: #0a0a0a;
+  background: transparent;
   margin-left: -2rem;
   margin-right: -2rem;
   padding-left: 2rem;

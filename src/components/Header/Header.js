@@ -72,7 +72,6 @@ function Header({ personalInfo }) {
             <motion.div
               className="profile-image-container"
               variants={imageVariants}
-              whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
             >
               <img

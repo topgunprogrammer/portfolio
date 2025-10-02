@@ -68,7 +68,6 @@ function ProjectCard({ project, index }) {
               className="tech-tag"
               custom={i}
               variants={techVariants}
-              whileHover={{ scale: 1.2, rotate: 5 }}
             >
               <IconComponent
                 className="tech-icon"
@@ -91,7 +90,6 @@ function ProjectCard({ project, index }) {
             target="_blank"
             rel="noopener noreferrer"
             className="project-link"
-            whileHover={{ scale: 1.1, x: 5 }}
             whileTap={{ scale: 0.95 }}
           >
             GitHub
@@ -103,7 +101,6 @@ function ProjectCard({ project, index }) {
             target="_blank"
             rel="noopener noreferrer"
             className="project-link"
-            whileHover={{ scale: 1.1, x: 5 }}
             whileTap={{ scale: 0.95 }}
           >
             Live Demo

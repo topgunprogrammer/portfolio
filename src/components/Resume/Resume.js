@@ -3,18 +3,49 @@ import { Document, Page, pdfjs } from "react-pdf";
 import { motion } from "framer-motion";
 import "./Resume.css";
 
-// Configure PDF.js worker - using jsdelivr CDN which is more reliable
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+// Configure PDF.js worker with multiple fallback options
+const setupPdfWorker = () => {
+  try {
+    // Primary: Use exact version match with unpkg CDN (more reliable)
+    pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+  } catch (error) {
+    console.warn("Primary PDF worker failed, trying fallback...", error);
+    try {
+      // Fallback 1: Use cdnjs
+      pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+    } catch (fallbackError) {
+      console.warn(
+        "Fallback PDF worker failed, using jsdelivr...",
+        fallbackError
+      );
+      // Fallback 2: Use jsdelivr with fixed version
+      pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.149/build/pdf.worker.min.js`;
+    }
+  }
+};
+
+// Initialize PDF worker
+setupPdfWorker();
 
 function Resume() {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [scale, setScale] = useState(1.0);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const resumePath = `${process.env.PUBLIC_URL}/resume/Resume.pdf`;
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
+    setLoading(false);
+    setError(null);
+  }
+
+  function onDocumentLoadError(error) {
+    console.error("PDF loading error:", error);
+    setError("Failed to load PDF. Please try downloading it directly.");
+    setLoading(false);
   }
 
   const containerVariants = {
@@ -40,11 +71,6 @@ function Resume() {
   };
 
   const buttonVariants = {
-    hover: {
-      scale: 1.05,
-      boxShadow: "0 5px 20px rgba(0, 123, 255, 0.4)",
-      transition: { duration: 0.2 },
-    },
     tap: { scale: 0.95 },
   };
 
@@ -75,7 +101,6 @@ function Resume() {
             disabled={scale <= 0.6}
             className="zoom-btn"
             variants={buttonVariants}
-            whileHover="hover"
             whileTap="tap"
           >
             🔍− Zoom Out
@@ -86,7 +111,6 @@ function Resume() {
             disabled={scale >= 2.0}
             className="zoom-btn"
             variants={buttonVariants}
-            whileHover="hover"
             whileTap="tap"
           >
             🔍+ Zoom In
@@ -98,6 +122,7 @@ function Resume() {
         <Document
           file={resumePath}
           onLoadSuccess={onDocumentLoadSuccess}
+          onLoadError={onDocumentLoadError}
           loading={
             <div className="pdf-loading">
               <div className="spinner"></div>
@@ -106,7 +131,19 @@ function Resume() {
           }
           error={
             <div className="pdf-error">
-              <p>⚠️ Failed to load PDF. Please try downloading instead.</p>
+              <p>
+                ⚠️{" "}
+                {error || "Failed to load PDF. Please try downloading instead."}
+              </p>
+              <motion.a
+                href={resumePath}
+                download="Resume.pdf"
+                className="download-fallback-btn"
+                variants={buttonVariants}
+                whileTap="tap"
+              >
+                📥 Download Resume
+              </motion.a>
             </div>
           }
         >
@@ -130,7 +167,6 @@ function Resume() {
               disabled={pageNumber <= 1}
               className="page-btn"
               variants={buttonVariants}
-              whileHover="hover"
               whileTap="tap"
             >
               ← Previous
@@ -145,7 +181,6 @@ function Resume() {
               disabled={pageNumber >= numPages}
               className="page-btn"
               variants={buttonVariants}
-              whileHover="hover"
               whileTap="tap"
             >
               Next →

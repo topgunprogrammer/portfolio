@@ -4,24 +4,87 @@
   box-sizing: border-box;
 }
 
+body {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS Variables for consistent theming */
+:root {
+  --primary-white: #ffffff;
+  --accent-gray: #b0b0b0;
+  --dark-bg: #0a0a0a;
+  --dark-bg-secondary: #1a1a1a;
+  --gradient-primary: linear-gradient(135deg, #667eea, #764ba2);
+  --gradient-accent: linear-gradient(
+    135deg,
+    #0a0a0a 0%,
+    #1a1a1a 50%,
+    #0a0a0a 100%
+  );
+}
+
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: transparent;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  position: relative;
+}
+
+.App::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(120, 119, 198, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(255, 107, 107, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 60%,
+      rgba(78, 205, 196, 0.05) 0%,
+      transparent 50%
+    );
+  animation: siteGradientShift 30s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes siteGradientShift {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+  33% {
+    transform: translateX(10px) translateY(-10px);
+  }
+  66% {
+    transform: translateX(-10px) translateY(10px);
+  }
 }
 
 .App-main {
   flex: 1;
-  padding: 80px 2rem 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0;
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .page-container {
   min-height: calc(100vh - 400px);
-  background: #0a0a0a;
+  background: transparent;
 }
 
 .page-container.home-page {
@@ -56,8 +119,166 @@
   }
 }
 
+/* ============================================
+   UNIFIED DESIGN SYSTEM - BASE STYLES
+   ============================================ */
+
+/* Universal Section Styling - Transparent background to show global gradient */
+.portfolio-section {
+  padding: 6rem 0;
+  background: transparent;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Universal Section Container */
+.section-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Universal Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* Universal Section Title - Based on About section */
+.section-title {
+  color: var(--primary-white, #ffffff);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.05em;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+/* Universal Section Subtitle */
+.section-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #b0b0b0;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* Universal Card Styling */
+.portfolio-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.portfolio-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.portfolio-card:hover::before {
+  opacity: 1;
+}
+
+.portfolio-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Universal Grid System */
+.portfolio-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.portfolio-grid.grid-1 {
+  grid-template-columns: 1fr;
+}
+.portfolio-grid.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+.portfolio-grid.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+.portfolio-grid.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Responsive Grid */
+@media (max-width: 1200px) {
+  .portfolio-grid.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .portfolio-grid.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-section {
+    padding: 4rem 0;
+  }
+
+  .section-container {
+    padding: 0 1rem;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+
+  .portfolio-card {
+    padding: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .App-main {
-    padding: 60px 1rem 2rem;
+    padding: 0;
   }
 }

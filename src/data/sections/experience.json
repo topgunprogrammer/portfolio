@@ -1,11 +1,46 @@
 [
   {
     "id": 1,
+    "company": "Tata Consultancy Services",
+    "position": "IT Analyst / C2",
+    "location": "Chennai, Tamil Nadu, India",
+    "duration": "Aug 2024 - Present",
+    "type": "Full-time",
+    "logo": "https://cdn.siasat.com/wp-content/uploads/2024/06/tcs-logo.jpg",
+    "description": "As a Senior Developer, I specialize in delivering comprehensive solutions using the MERN (MongoDB, Express.js, React, Node.js) stack. My role involves developing and deploying dynamic web applications that leverage modern technologies for scalable and efficient user experiences.",
+    "achievements": [
+      "Utilize TypeScript to enhance code quality and maintainability, ensuring robust and error-free development",
+      "Incorporate GraphQL to create flexible and efficient APIs that facilitate seamless communication between frontend and backend systems",
+      "Build applications capable of addressing complex requirements with precision through full-stack development expertise",
+      "Integrate cutting-edge technologies, including AI and ML, to enhance application functionalities and provide intelligent features",
+      "Leverage Generative AI to create advanced solutions that drive innovation",
+      "Focus on analytics and data-driven approach to design solutions that are optimized based on real-time insights and performance metrics",
+      "Harness modern technologies and data-driven insights to drive business success and enhance overall application performance"
+    ],
+    "skills": [
+      "Machine Learning",
+      "MERN Stack",
+      "TypeScript",
+      "GraphQL",
+      "AI/ML",
+      "Generative AI",
+      "Data Analytics",
+      "Full-Stack Development",
+      "MongoDB",
+      "Express.js",
+      "React",
+      "Node.js"
+    ]
+  },
+  {
+    "id": 2,
     "company": "Influx Integrated Solutions Pvt Ltd",
     "position": "Associate Developer",
     "location": "Chennai, India",
-    "duration": "May 2021 - Present",
-    "description": "Leading full-stack development initiatives with focus on React and Node.js applications.",
+    "duration": "May 2021 - Aug 2024",
+    "type": "Full-time",
+    "logo": "https://media.instahyre.com/images/profile/base/employer/48802/4f2ed899c6/influxww_logo.webp",
+    "description": "Led full-stack development initiatives with focus on React and Node.js applications, driving innovation in web application development.",
     "achievements": [
       "Built interactive, user-friendly web applications using ReactJS including global store management using Redux",
       "Worked on WebSockets and Distributed systems to enhance real-time communication and system reliability",
@@ -22,12 +57,14 @@
     ]
   },
   {
-    "id": 2,
+    "id": 3,
     "company": "Infosys",
     "position": "Systems Engineer",
     "location": "Chennai, India",
     "duration": "Apr 2019 - Feb 2021",
-    "description": "Contributed to Walmart agile team for product development using React and NodeJS.",
+    "type": "Full-time",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/1280px-Infosys_logo.svg.png",
+    "description": "Contributed to Walmart agile team for product development using React and NodeJS, impacting customer experience through cutting-edge products.",
     "achievements": [
       "Engaged in all phases of the product life cycle, including roadmap planning, design, coding, testing, deployment, and operational ownership",
       "Actively contributed to the Walmart agile team for product development",
@@ -40,12 +77,14 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "company": "Infosys",
     "position": "Systems Engineer Trainee",
     "location": "Mysore, India",
     "duration": "Dec 2018 - Apr 2019",
-    "description": "Completed comprehensive training program in MERN Stack and Agile methodologies.",
+    "type": "Training Program",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/1280px-Infosys_logo.svg.png",
+    "description": "Completed comprehensive training program in MERN Stack and Agile methodologies, serving as Scrum Master during project phase.",
     "achievements": [
       "Served as Scrum Master during project phase of training, planned and coordinated a team of 5 in building an intuitive, error-free website (front and backend) using MERN Stack",
       "Completed training as a Top Performer",

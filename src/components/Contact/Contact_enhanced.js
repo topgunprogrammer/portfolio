@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Tilt } from "react-tilt";
 import confetti from "canvas-confetti";
 import {
   FaGithub,
@@ -167,39 +168,47 @@ function Contact({ personalInfo }) {
   return (
     <motion.section
       id="contact"
-      className="portfolio-section contact-section"
+      className="contact-section"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <div className="section-container">
-        {/* Section Header */}
-        <motion.div className="section-header" variants={itemVariants}>
-          <motion.h2
-            className="section-title"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            Let's Connect
-          </motion.h2>
-          <motion.p className="section-subtitle">
-            I'm always open to discussing new opportunities, collaborations, or
-            just having a conversation about technology and innovation.
-          </motion.p>
-        </motion.div>
+      {/* Section Header */}
+      <motion.div className="contact-header" variants={itemVariants}>
+        <motion.h2
+          className="contact-title"
+          whileHover={{ scale: 1.05 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          Let's Connect
+        </motion.h2>
+        <motion.p className="contact-subtitle">
+          I'm always open to discussing new opportunities, collaborations, or
+          just having a conversation about technology and innovation.
+        </motion.p>
+      </motion.div>
 
-        <div className="contact-content">
-          {/* Contact Info & Social Links */}
-          <motion.div className="contact-info-section" variants={itemVariants}>
-            <div className="contact-info-grid">
-              {/* Get in Touch */}
-              <div className="contact-info-group">
-                <h3 className="info-group-title">Get in Touch</h3>
-                <div className="contact-info-items">
+      <div className="contact-content">
+        {/* Contact Info & Social Links */}
+        <motion.div className="contact-info-section" variants={itemVariants}>
+          <div className="contact-info-grid">
+            {/* Get in Touch */}
+            <div className="contact-info-group">
+              <h3 className="info-group-title">Get in Touch</h3>
+              <div className="contact-info-items">
+                <Tilt
+                  options={{
+                    max: 15,
+                    scale: 1.05,
+                    glare: true,
+                    "max-glare": 0.3,
+                  }}
+                >
                   <motion.div
                     className="contact-info-item"
                     onClick={handleEmailClick}
+                    whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     <FaEnvelope className="contact-icon email-icon" />
@@ -210,10 +219,20 @@ function Contact({ personalInfo }) {
                       </span>
                     </div>
                   </motion.div>
+                </Tilt>
 
+                <Tilt
+                  options={{
+                    max: 15,
+                    scale: 1.05,
+                    glare: true,
+                    "max-glare": 0.3,
+                  }}
+                >
                   <motion.div
                     className="contact-info-item"
                     onClick={handlePhoneClick}
+                    whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     <FaPhone className="contact-icon phone-icon" />
@@ -224,10 +243,20 @@ function Contact({ personalInfo }) {
                       </span>
                     </div>
                   </motion.div>
+                </Tilt>
 
+                <Tilt
+                  options={{
+                    max: 15,
+                    scale: 1.05,
+                    glare: true,
+                    "max-glare": 0.3,
+                  }}
+                >
                   <motion.div
                     className="contact-info-item"
                     onClick={handleLocationClick}
+                    whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     <FaMapMarkerAlt className="contact-icon location-icon" />
@@ -238,142 +267,163 @@ function Contact({ personalInfo }) {
                       </span>
                     </div>
                   </motion.div>
-                </div>
+                </Tilt>
               </div>
+            </div>
 
-              {/* Follow Me */}
-              <div className="contact-info-group">
-                <h3 className="info-group-title">Follow Me</h3>
-                <div className="social-links">
+            {/* Follow Me */}
+            <div className="contact-info-group">
+              <h3 className="info-group-title">Follow Me</h3>
+              <div className="social-links">
+                <Tilt
+                  options={{
+                    max: 20,
+                    scale: 1.1,
+                    glare: true,
+                    "max-glare": 0.5,
+                  }}
+                >
                   <motion.a
                     href={personalInfo.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-link linkedin"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                   >
                     <FaLinkedin className="social-icon" />
                     <span>LinkedIn</span>
                   </motion.a>
+                </Tilt>
 
+                <Tilt
+                  options={{
+                    max: 20,
+                    scale: 1.1,
+                    glare: true,
+                    "max-glare": 0.5,
+                  }}
+                >
                   <motion.a
                     href={personalInfo.social.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-link github"
+                    whileHover={{ scale: 1.1, rotate: -5 }}
                     whileTap={{ scale: 0.9 }}
                   >
                     <FaGithub className="social-icon" />
                     <span>GitHub</span>
                   </motion.a>
+                </Tilt>
+              </div>
+            </div>
+
+            {/* Relocate Info */}
+            {personalInfo.openToRelocate && (
+              <div className="contact-info-group">
+                <motion.div
+                  className="relocate-info"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Rotating_earth_animated.gif"
+                    alt="Rotating Earth"
+                    className="earth-gif"
+                  />
+                  <span className="relocate-text">Open to Relocate</span>
+                </motion.div>
+              </div>
+            )}
+          </div>
+        </motion.div>
+
+        {/* Contact Form */}
+        <motion.div className="contact-form-section" variants={formVariants}>
+          <div className="form-container">
+            <h3 className="form-title">Send a Message</h3>
+
+            <form onSubmit={handleSubmit} className="contact-form">
+              <div className="form-group">
+                <div className="input-wrapper">
+                  <FaUser className="input-icon" />
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="form-input"
+                  />
                 </div>
               </div>
 
-              {/* Relocate Info */}
-              {personalInfo.openToRelocate && (
-                <div className="contact-info-group">
-                  <motion.div
-                    className="relocate-info"
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Rotating_earth_animated.gif"
-                      alt="Rotating Earth"
-                      className="earth-gif"
-                    />
-                    <span className="relocate-text">Open to Relocate</span>
-                  </motion.div>
+              <div className="form-group">
+                <div className="input-wrapper">
+                  <FaEnvelope className="input-icon" />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="form-input"
+                  />
                 </div>
-              )}
-            </div>
-          </motion.div>
+              </div>
 
-          {/* Contact Form */}
-          <motion.div className="contact-form-section" variants={formVariants}>
-            <div className="form-container">
-              <h3 className="form-title">Send a Message</h3>
-
-              <form onSubmit={handleSubmit} className="contact-form">
-                <div className="form-group">
-                  <div className="input-wrapper">
-                    <FaUser className="input-icon" />
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="form-input"
-                    />
-                  </div>
+              <div className="form-group">
+                <div className="input-wrapper textarea-wrapper">
+                  <FaCommentDots className="input-icon" />
+                  <textarea
+                    name="message"
+                    placeholder="Your Message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows="6"
+                    className="form-textarea"
+                  />
                 </div>
+              </div>
 
-                <div className="form-group">
-                  <div className="input-wrapper">
-                    <FaEnvelope className="input-icon" />
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Your Email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="form-input"
-                    />
-                  </div>
-                </div>
+              <motion.button
+                type="submit"
+                disabled={isSubmitting}
+                className={`form-submit ${isSubmitting ? "submitting" : ""}`}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400 }}
+              >
+                <FaPaperPlane className="submit-icon" />
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </motion.button>
 
-                <div className="form-group">
-                  <div className="input-wrapper textarea-wrapper">
-                    <FaCommentDots className="input-icon" />
-                    <textarea
-                      name="message"
-                      placeholder="Your Message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      rows="6"
-                      className="form-textarea"
-                    />
-                  </div>
-                </div>
-
-                <motion.button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`form-submit ${isSubmitting ? "submitting" : ""}`}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 400 }}
+              {/* Status Messages */}
+              {submitStatus === "success" && (
+                <motion.div
+                  className="form-status success"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
                 >
-                  <FaPaperPlane className="submit-icon" />
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </motion.button>
+                  ✅ Message sent successfully! I'll get back to you soon.
+                </motion.div>
+              )}
 
-                {/* Status Messages */}
-                {submitStatus === "success" && (
-                  <motion.div
-                    className="form-status success"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                  >
-                    ✅ Message sent successfully! I'll get back to you soon.
-                  </motion.div>
-                )}
-
-                {submitStatus === "error" && (
-                  <motion.div
-                    className="form-status error"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                  >
-                    ❌ Something went wrong. Please try again.
-                  </motion.div>
-                )}
-              </form>
-            </div>
-          </motion.div>
-        </div>
+              {submitStatus === "error" && (
+                <motion.div
+                  className="form-status error"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                >
+                  ❌ Something went wrong. Please try again.
+                </motion.div>
+              )}
+            </form>
+          </div>
+        </motion.div>
       </div>
     </motion.section>
   );

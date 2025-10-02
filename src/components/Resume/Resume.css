@@ -120,6 +120,34 @@
   color: #666;
 }
 
+.pdf-error {
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.2);
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.download-fallback-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 15px;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  transition: all 0.3s ease;
+}
+
+.download-fallback-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
 .spinner {
   border: 4px solid #f3f3f3;
   border-top: 4px solid #007bff;
