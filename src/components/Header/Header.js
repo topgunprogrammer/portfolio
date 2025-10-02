@@ -11,7 +11,7 @@ function Header({ personalInfo }) {
   const handleHomeClick = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
@@ -75,7 +75,11 @@ function Header({ personalInfo }) {
       variants={headerVariants}
     >
       <div className="header-container">
-        <Link to={routes.home} className="header-link" onClick={handleHomeClick}>
+        <Link
+          to={routes.home}
+          className="header-link"
+          onClick={handleHomeClick}
+        >
           <div className="profile-section">
             <motion.div
               className="profile-image-container"
