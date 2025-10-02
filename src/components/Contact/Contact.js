@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
+import { formspreeConfig } from "../../config/emailConfig";
 import {
   FaGithub,
   FaLinkedin,
@@ -117,17 +118,28 @@ function Contact({ personalInfo }) {
     setSubmitStatus("");
 
     try {
-      // Simulate form submission (replace with actual endpoint)
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch(formspreeConfig.actionUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
 
-      // Success
-      setSubmitStatus("success");
-      triggerSuccessConfetti();
-      setFormData({ name: "", email: "", message: "" });
-
-      // Auto-clear success message
-      setTimeout(() => setSubmitStatus(""), 5000);
+      if (response.ok) {
+        setSubmitStatus("success");
+        triggerSuccessConfetti();
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setSubmitStatus(""), 5000);
+      } else {
+        throw new Error("Failed to send message");
+      }
     } catch (error) {
+      console.error("Email sending error:", error);
       setSubmitStatus("error");
       setTimeout(() => setSubmitStatus(""), 5000);
     } finally {
@@ -369,6 +381,17 @@ function Contact({ personalInfo }) {
                     animate={{ opacity: 1, y: 0 }}
                   >
                     ❌ Something went wrong. Please try again.
+                  </motion.div>
+                )}
+
+                {submitStatus === "setup_needed" && (
+                  <motion.div
+                    className="form-status warning"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                  >
+                    ⚠️ Email service not configured yet. Please reach out via
+                    email directly: {personalInfo.email}
                   </motion.div>
                 )}
               </form>
