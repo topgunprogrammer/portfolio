@@ -117,6 +117,13 @@ function Contact({ personalInfo }) {
     setIsSubmitting(true);
     setSubmitStatus("");
 
+    if (!formspreeConfig.actionUrl) {
+      console.error("Formspree URL is not defined!");
+      setSubmitStatus("error");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const response = await fetch(formspreeConfig.actionUrl, {
         method: "POST",
