@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
+import Timeline from "@mui/lab/Timeline";
+import TimelineItem, { timelineItemClasses } from "@mui/lab/TimelineItem";
+import TimelineSeparator from "@mui/lab/TimelineSeparator";
+import TimelineConnector from "@mui/lab/TimelineConnector";
+import TimelineContent from "@mui/lab/TimelineContent";
+import TimelineDot from "@mui/lab/TimelineDot";
 import "./Experience.css";
 
 function Experience({ experience }) {
@@ -47,123 +48,138 @@ function Experience({ experience }) {
         </motion.div>
 
         {/* Experience Timeline */}
-        <VerticalTimeline lineColor="rgba(102, 126, 234, 0.3)">
+        <Timeline
+          sx={{
+            [`& .${timelineItemClasses.root}:before`]: {
+              flex: 0,
+              padding: 0,
+            },
+            "& .MuiTimelineItem-root": {
+              "&:before": {
+                display: "none", // Remove left spacing
+              },
+            },
+            "& .MuiTimelineDot-root": {
+              background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+              boxShadow: "0 0 20px rgba(102, 126, 234, 0.4)",
+              border: "none",
+              width: "16px",
+              height: "16px",
+            },
+            "& .MuiTimelineConnector-root": {
+              background: "rgba(102, 126, 234, 0.3)",
+              width: "2px",
+            },
+          }}
+        >
           {experience.map((exp, index) => (
-            <VerticalTimelineElement
-              key={exp.id}
-              className="vertical-timeline-element--work"
-              contentStyle={{
-                background: "rgba(255, 255, 255, 0.05)",
-                backdropFilter: "blur(20px)",
-                WebkitBackdropFilter: "blur(20px)",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
-                borderRadius: "16px",
-                color: "#fff",
-                boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
-              }}
-              contentArrowStyle={{
-                borderRight: "7px solid rgba(255, 255, 255, 0.1)",
-              }}
-              date={exp.duration}
-              dateClassName="timeline-date"
-              iconStyle={{
-                background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                color: "#fff",
-                boxShadow: "0 0 20px rgba(102, 126, 234, 0.4)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-              icon={
-                <div
+            <TimelineItem key={exp.id}>
+              <TimelineSeparator>
+                <TimelineDot />
+                {index < experience.length - 1 && <TimelineConnector />}
+              </TimelineSeparator>
+
+              <TimelineContent>
+                <motion.div
+                  className="experience-card"
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
                   style={{
-                    fontSize: "1.2rem",
-                    fontWeight: "bold",
+                    background: "rgba(255, 255, 255, 0.05)",
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                    borderRadius: "16px",
+                    color: "#fff",
+                    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
+                    padding: "24px",
+                    marginBottom: "16px",
+                    marginLeft: "16px",
                   }}
                 >
-                  💼
-                </div>
-              }
-              position="right"
-            >
-              {/* Experience Header */}
-              <motion.div
-                className="experience-header"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <h3 className="vertical-timeline-element-title experience-title">
-                  {exp.position}
-                </h3>
-                <h4 className="vertical-timeline-element-subtitle experience-company">
-                  {exp.company}
-                </h4>
-                <div className="experience-meta">
-                  <span className="experience-type">{exp.type}</span>
-                  <span className="experience-location">{exp.location}</span>
-                </div>
-              </motion.div>
-
-              {/* Experience Description */}
-              <motion.div
-                className="experience-description"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 + 0.2 }}
-              >
-                <p>{exp.description}</p>
-              </motion.div>
-
-              {/* Key Achievements */}
-              {exp.achievements && exp.achievements.length > 0 && (
-                <motion.div
-                  className="experience-achievements"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 + 0.3 }}
-                >
-                  <ul className="achievements-list">
-                    {exp.achievements
-                      .slice(0, 3)
-                      .map((achievement, achIndex) => (
-                        <li key={achIndex} className="achievement-item">
-                          {achievement}
-                        </li>
-                      ))}
-                  </ul>
-                </motion.div>
-              )}
-
-              {/* Skills Tags */}
-              {exp.skills && exp.skills.length > 0 && (
-                <motion.div
-                  className="experience-skills"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 + 0.4 }}
-                >
-                  <div className="skills-tags">
-                    {exp.skills.slice(0, 8).map((skill, skillIndex) => (
-                      <span key={skill} className="skill-tag">
-                        {skill}
+                  {/* Experience Header */}
+                  <motion.div
+                    className="experience-header"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <h3 className="experience-title">{exp.position}</h3>
+                    <h4 className="experience-company">{exp.company}</h4>
+                    <div className="experience-meta">
+                      <span className="experience-duration">
+                        {exp.duration}
                       </span>
-                    ))}
-                    {exp.skills.length > 8 && (
-                      <span className="skill-tag more-skills">
-                        +{exp.skills.length - 8} more
+                      <span className="experience-type">{exp.type}</span>
+                      <span className="experience-location">
+                        {exp.location}
                       </span>
-                    )}
-                  </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Experience Description */}
+                  <motion.div
+                    className="experience-description"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 + 0.2 }}
+                  >
+                    <p>{exp.description}</p>
+                  </motion.div>
+
+                  {/* Key Achievements */}
+                  {exp.achievements && exp.achievements.length > 0 && (
+                    <motion.div
+                      className="experience-achievements"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 + 0.3 }}
+                    >
+                      <ul className="achievements-list">
+                        {exp.achievements
+                          .slice(0, 3)
+                          .map((achievement, achIndex) => (
+                            <li key={achIndex} className="achievement-item">
+                              {achievement}
+                            </li>
+                          ))}
+                      </ul>
+                    </motion.div>
+                  )}
+
+                  {/* Skills Tags */}
+                  {exp.skills && exp.skills.length > 0 && (
+                    <motion.div
+                      className="experience-skills"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 + 0.4 }}
+                    >
+                      <div className="skills-tags">
+                        {exp.skills.slice(0, 8).map((skill, skillIndex) => (
+                          <span key={skill} className="skill-tag">
+                            {skill}
+                          </span>
+                        ))}
+                        {exp.skills.length > 8 && (
+                          <span className="skill-tag more-skills">
+                            +{exp.skills.length - 8} more
+                          </span>
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
                 </motion.div>
-              )}
-            </VerticalTimelineElement>
+              </TimelineContent>
+            </TimelineItem>
           ))}
-        </VerticalTimeline>
+        </Timeline>
       </div>
     </motion.section>
   );
