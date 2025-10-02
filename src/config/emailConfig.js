@@ -1,4 +1,4 @@
 // Formspree Configuration
 export const formspreeConfig = {
-  actionUrl: "https://formspree.io/f/xyznjpgj",
+  actionUrl: process.env.REACT_APP_FORMSPREE_URL,
 };
