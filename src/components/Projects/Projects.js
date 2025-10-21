@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaTrophy, FaRocket, FaCode } from "react-icons/fa";
-import { getTechIcon, getTechColor } from "../../utils/iconMapping";
+import { getTechIcon, getTechColor } from "../../data/iconMapping";
 import "./Projects.css";
 
 function Projects({ projects }) {

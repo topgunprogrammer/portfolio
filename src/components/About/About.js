@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { getTechIcon, getTechColor } from "../../utils/iconMapping";
+import { getTechIcon, getTechColor } from "../../data/iconMapping";
 import {
   VerticalTimeline,
   VerticalTimelineElement,

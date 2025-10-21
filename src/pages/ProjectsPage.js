@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../App.css";
 import Projects from "../components/Projects/Projects";
-import projectsData from "../data/sections/projects.json";
+import projectsData from "../data/projects.json";
 
 function ProjectsPage() {
   const pageVariants = {

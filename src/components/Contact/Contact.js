@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
-import { formspreeConfig } from "../../config/emailConfig";
 import {
   FaGithub,
   FaLinkedin,
@@ -117,7 +116,7 @@ function Contact({ personalInfo }) {
     setIsSubmitting(true);
     setSubmitStatus("");
 
-    if (!formspreeConfig.actionUrl) {
+    if (!process.env.REACT_APP_FORMSPREE_URL) {
       console.error("Formspree URL is not defined!");
       setSubmitStatus("error");
       setIsSubmitting(false);
@@ -125,7 +124,7 @@ function Contact({ personalInfo }) {
     }
 
     try {
-      const response = await fetch(formspreeConfig.actionUrl, {
+      const response = await fetch(process.env.REACT_APP_FORMSPREE_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

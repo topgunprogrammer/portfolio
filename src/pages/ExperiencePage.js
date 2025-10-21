@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../App.css";
 import Experience from "../components/Experience/Experience";
-import experienceData from "../data/sections/experience.json";
+import experienceData from "../data/experience.json";
 
 function ExperiencePage() {
   const pageVariants = {

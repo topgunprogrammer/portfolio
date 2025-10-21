@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import "./NotFoundPage.css";
+import "./NotFound.css";
 
-const NotFoundPage = () => {
+const NotFound = () => {
   const canvasRef = useRef(null);
   const gameRef = useRef(null);
   const [score, setScore] = useState(0);
@@ -448,4 +448,4 @@ const NotFoundPage = () => {
   );
 };
 
-export default NotFoundPage;
+export default NotFound;

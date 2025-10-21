@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import dsaData from "../../data/sections/dsa.json";
+import dsaData from "../../data/dsa.json";
 import "./DSAQuestionView.css";
 
 function DSAQuestionView() {

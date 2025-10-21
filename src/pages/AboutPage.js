@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../App.css";
 import About from "../components/About/About";
-import aboutData from "../data/sections/about.json";
+import aboutData from "../data/about.json";
 
 function AboutPage() {
   const pageVariants = {

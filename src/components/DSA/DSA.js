@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./DSA.css";
 
 // Import the DSA data
-import dsaData from "../../data/sections/dsa.json";
+import dsaData from "../../data/dsa.json";
 
 function DSA() {
   const navigate = useNavigate();

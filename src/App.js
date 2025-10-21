@@ -5,8 +5,8 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-import { AppRoutes } from "./router";
-import personalInfoData from "./data/sections/personalInfo.json";
+import AppRoutes from "./router/AppRoutes";
+import personalInfoData from "./data/personalInfo.json";
 
 function App() {
   // 🔧 Fix auto-scroll on page refresh

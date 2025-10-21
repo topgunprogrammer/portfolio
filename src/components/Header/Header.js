@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { routes, navigationItems } from "../../router";
+import { routes, navigationItems } from "../../router/AppRoutes";
 import "./Header.css";
 
 function Header({ personalInfo }) {

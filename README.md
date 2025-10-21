@@ -469,7 +469,7 @@ portfolio-website/
 │
 ├── 📁 src/                      # Source code
 │   ├── 📄 index.js             # Application entry point
-│   ├── 📄 index.css            # Global styles
+│   ├── 📄 App.css              # Global styles and design system
 │   ├── 📄 App.js               # Root component
 │   ├── 📄 App.css              # App-level styles
 │   │
@@ -512,10 +512,11 @@ portfolio-website/
 │   │       ├── about.json           # About content
 │   │       ├── experience.json      # Work history
 │   │       ├── projects.json        # Project data
-│   │       └── awards.json          # Certifications
+│   │       ├── awards.json          # Certifications
+│   │       ├── dsa.json             # DSA problems data
+│   │       └── iconMapping.js       # Icon configuration
 │   │
-│   └── 📁 utils/               # Utility functions
-│       └── iconMapping.js      # Icon configuration
+│       └── iconMapping.js        # Icon configuration
 │
 └── 📁 build/                    # Production build (generated)
     └── (optimized static files)
@@ -536,7 +537,7 @@ portfolio-website/
 
 ### **Updating Personal Information**
 
-Edit JSON files in `/src/data/sections/`:
+Edit JSON files in `/src/data/`:
 
 #### **personalInfo.json**
 
@@ -573,13 +574,13 @@ Edit JSON files in `/src/data/sections/`:
 
 ### **Updating Styles**
 
-- **Global styles**: Edit `/src/index.css`
+- **Global styles**: Edit `/src/App.css`
 - **App-level styles**: Edit `/src/App.css`
 - **Component styles**: Edit individual `.css` files in component folders
 
 ### **Changing Colors**
 
-Update CSS variables in `/src/index.css`:
+Update CSS variables in `/src/App.css`:
 
 ```css
 :root {
@@ -593,7 +594,7 @@ Update CSS variables in `/src/index.css`:
 ### **Adding New Pages**
 
 1. Create page component in `/src/pages/`
-2. Add route in `/src/router/routes.js`
+2. Add route in `/src/router/AppRoutes.js`
 3. Update navigation in `/src/components/Header/Header.js`
 
 ### **Updating Resume**

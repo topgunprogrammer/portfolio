@@ -7,10 +7,10 @@ import About from "../components/About/About";
 import Projects from "../components/Projects/Projects";
 import Experience from "../components/Experience/Experience";
 import Contact from "../components/Contact/Contact";
-import personalInfoData from "../data/sections/personalInfo.json";
-import aboutData from "../data/sections/about.json";
-import projectsData from "../data/sections/projects.json";
-import experienceData from "../data/sections/experience.json";
+import personalInfoData from "../data/personalInfo.json";
+import aboutData from "../data/about.json";
+import projectsData from "../data/projects.json";
+import experienceData from "../data/experience.json";
 
 function HomePage() {
   // Auto-trigger confetti on page load for 5 seconds

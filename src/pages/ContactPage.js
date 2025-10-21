@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../App.css";
 import Contact from "../components/Contact/Contact";
-import personalInfoData from "../data/sections/personalInfo.json";
+import personalInfoData from "../data/personalInfo.json";
 
 function ContactPage() {
   const pageVariants = {
