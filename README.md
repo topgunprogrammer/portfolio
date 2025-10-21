@@ -1,10 +1,6 @@
 # Portfolio Website# 🚀 Portfolio Website
 
-
-
 > Modern, responsive portfolio website built with React showcasing professional experience, projects, and skills.> A modern, interactive portfolio website built with React, showcasing professional experience, projects, skills, and achievements.
-
-
 
 ![React](https://img.shields.io/badge/React-18.2.0-blue?style=flat-square&logo=react)![React](https://img.shields.io/badge/React-18.2.0-blue?style=flat-square&logo=react)
 
@@ -14,11 +10,7 @@
 
 ---![License](https://img.shields.io/badge/License-Private-lightgrey?style=flat-square)
 
-
-
 ## ✨ Features---
-
-
 
 - **Responsive Design** - Optimized for all devices## 📋 Table of Contents
 
@@ -62,7 +54,7 @@
 
 This portfolio website serves as a comprehensive showcase of **Mohan Ram Shanmugam's** professional journey as a **Full Stack Developer** and **ML & AI Specialist**. With over 5 years of experience in software development, this platform highlights:
 
-```bash
+````bash
 
 # Clone the repository- **Professional Experience**: Detailed work history and accomplishments
 
@@ -114,7 +106,7 @@ npm run build- Quick navigation to all major sections
 
 npm run deploy### 👤 **About Section**
 
-```
+````
 
 - Professional bio and background
 
@@ -126,7 +118,7 @@ npm run deploy### 👤 **About Section**
 
 ### 💼 **Experience Page**
 
-```
+````
 
 src/- Chronological work history
 
@@ -218,13 +210,13 @@ Edit JSON files in `/src/data/`:
 
 }- **Canvas Confetti 1.9.3**: Celebration effects
 
-```
+````
 
 ### **Document Handling**
 
 **projects.json**
 
-```json- **React PDF 10.1.0**: PDF rendering and viewing
+````json- **React PDF 10.1.0**: PDF rendering and viewing
 
 {- **PDF.js 5.4.149**: PDF parsing engine
 
@@ -338,7 +330,7 @@ git clone https://github.com/topgunprogrammer/portfolio.git
 
 # Navigate into the project directory
 cd portfolio
-```
+````
 
 ### **Step 2: Install Dependencies**
 
