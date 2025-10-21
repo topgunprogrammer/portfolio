@@ -4,6 +4,7 @@ export const routes = {
   about: "/about",
   projects: "/projects",
   experience: "/experience",
+  dsa: "/dsa",
   contact: "/contact",
 };
 
@@ -13,5 +14,6 @@ export const navigationItems = [
   { path: routes.about, label: "About" },
   { path: routes.projects, label: "Projects" },
   { path: routes.experience, label: "Experience" },
+  { path: routes.dsa, label: "DSA" },
   { path: routes.contact, label: "Contact" },
 ];

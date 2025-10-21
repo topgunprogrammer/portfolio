@@ -1,0 +1,592 @@
+{
+  "dsaTopics": [
+    {
+      "id": "strings",
+      "title": "Strings",
+      "description": "String manipulation, pattern matching, and text processing problems",
+      "questions": [
+        {
+          "id": "str_1",
+          "title": "Reverse a String",
+          "difficulty": "Easy",
+          "companies": ["Google", "Microsoft", "Amazon"],
+          "tags": ["String", "Two Pointers"],
+          "description": "Write a function that reverses a string.",
+          "link": ""
+        },
+        {
+          "id": "str_2",
+          "title": "Valid Anagram",
+          "difficulty": "Easy",
+          "companies": ["Facebook", "Amazon", "Netflix"],
+          "tags": ["String", "Hash Table", "Sorting"],
+          "description": "Given two strings s and t, return true if t is an anagram of s.",
+          "link": ""
+        },
+        {
+          "id": "str_3",
+          "title": "Longest Substring Without Repeating Characters",
+          "difficulty": "Medium",
+          "companies": ["Amazon", "Bloomberg", "Yelp"],
+          "tags": ["String", "Sliding Window", "Hash Table"],
+          "description": "Find the length of the longest substring without repeating characters.",
+          "link": ""
+        },
+        {
+          "id": "str_4",
+          "title": "Valid Palindrome",
+          "difficulty": "Easy",
+          "companies": ["Facebook", "Microsoft", "Apple"],
+          "tags": ["String", "Two Pointers"],
+          "description": "Given a string, determine if it is a palindrome.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "arrays",
+      "title": "Arrays",
+      "description": "Array manipulation, searching, and algorithmic problems",
+      "questions": [
+        {
+          "id": "arr_1",
+          "title": "Two Sum",
+          "difficulty": "Easy",
+          "companies": ["Google", "Amazon", "Apple", "Facebook"],
+          "tags": ["Array", "Hash Table"],
+          "description": "Find two numbers in an array that add up to a target sum.",
+          "link": ""
+        },
+        {
+          "id": "arr_2",
+          "title": "Best Time to Buy and Sell Stock",
+          "difficulty": "Easy",
+          "companies": ["Amazon", "Bloomberg", "Facebook"],
+          "tags": ["Array", "Dynamic Programming"],
+          "description": "Find the maximum profit from buying and selling stock.",
+          "link": ""
+        },
+        {
+          "id": "arr_3",
+          "title": "Contains Duplicate",
+          "difficulty": "Easy",
+          "companies": ["Google", "Yahoo", "Airbnb"],
+          "tags": ["Array", "Hash Table"],
+          "description": "Determine if array contains any duplicates.",
+          "link": ""
+        },
+        {
+          "id": "arr_4",
+          "title": "Maximum Subarray",
+          "difficulty": "Easy",
+          "companies": ["Microsoft", "LinkedIn", "Amazon"],
+          "tags": ["Array", "Dynamic Programming", "Divide and Conquer"],
+          "description": "Find the contiguous subarray with the largest sum.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "searching",
+      "title": "Searching",
+      "description": "Binary search, linear search, and search optimization techniques",
+      "questions": [
+        {
+          "id": "search_1",
+          "title": "Binary Search",
+          "difficulty": "Easy",
+          "companies": ["Google", "Facebook", "Microsoft"],
+          "tags": ["Array", "Binary Search"],
+          "description": "Implement binary search algorithm.",
+          "link": ""
+        },
+        {
+          "id": "search_2",
+          "title": "Search in Rotated Sorted Array",
+          "difficulty": "Medium",
+          "companies": ["Facebook", "Microsoft", "Amazon"],
+          "tags": ["Array", "Binary Search"],
+          "description": "Search for a target value in a rotated sorted array.",
+          "link": ""
+        },
+        {
+          "id": "search_3",
+          "title": "Find First and Last Position",
+          "difficulty": "Medium",
+          "companies": ["Google", "Amazon", "Bloomberg"],
+          "tags": ["Array", "Binary Search"],
+          "description": "Find first and last position of element in sorted array.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "sorting",
+      "title": "Sorting",
+      "description": "Sorting algorithms and related problems",
+      "questions": [
+        {
+          "id": "sort_1",
+          "title": "Merge Sort",
+          "difficulty": "Medium",
+          "companies": ["Microsoft", "Amazon", "Apple"],
+          "tags": ["Array", "Divide and Conquer", "Sorting"],
+          "description": "Implement merge sort algorithm.",
+          "link": ""
+        },
+        {
+          "id": "sort_2",
+          "title": "Quick Sort",
+          "difficulty": "Medium",
+          "companies": ["Google", "Facebook", "Netflix"],
+          "tags": ["Array", "Divide and Conquer", "Sorting"],
+          "description": "Implement quick sort algorithm.",
+          "link": ""
+        },
+        {
+          "id": "sort_3",
+          "title": "Sort Colors",
+          "difficulty": "Medium",
+          "companies": ["Microsoft", "Facebook", "Amazon"],
+          "tags": ["Array", "Two Pointers", "Sorting"],
+          "description": "Sort an array with 0s, 1s, and 2s.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "loops",
+      "title": "Loops",
+      "description": "Loop optimization and iteration problems",
+      "questions": [
+        {
+          "id": "loop_1",
+          "title": "FizzBuzz",
+          "difficulty": "Easy",
+          "companies": ["Amazon", "Microsoft", "Apple"],
+          "tags": ["Math", "String"],
+          "description": "Print numbers 1 to n, but for multiples of 3 print Fizz, for multiples of 5 print Buzz.",
+          "link": ""
+        },
+        {
+          "id": "loop_2",
+          "title": "Power of Two",
+          "difficulty": "Easy",
+          "companies": ["Google", "Amazon", "Adobe"],
+          "tags": ["Math", "Bit Manipulation"],
+          "description": "Determine if a number is a power of two.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "2d-array",
+      "title": "2D Arrays",
+      "description": "Matrix operations and 2D array problems",
+      "questions": [
+        {
+          "id": "2d_1",
+          "title": "Rotate Image",
+          "difficulty": "Medium",
+          "companies": ["Amazon", "Apple", "Microsoft"],
+          "tags": ["Array", "Math", "Matrix"],
+          "description": "Rotate an n x n 2D matrix by 90 degrees clockwise.",
+          "link": ""
+        },
+        {
+          "id": "2d_2",
+          "title": "Spiral Matrix",
+          "difficulty": "Medium",
+          "companies": ["Microsoft", "Amazon", "Facebook"],
+          "tags": ["Array", "Matrix", "Simulation"],
+          "description": "Return all elements of matrix in spiral order.",
+          "link": ""
+        },
+        {
+          "id": "2d_3",
+          "title": "Set Matrix Zeroes",
+          "difficulty": "Medium",
+          "companies": ["Microsoft", "Amazon", "Apple"],
+          "tags": ["Array", "Hash Table", "Matrix"],
+          "description": "Set entire row and column to 0 if an element is 0.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "patterns",
+      "title": "Patterns",
+      "description": "Common algorithmic patterns and techniques",
+      "questions": [
+        {
+          "id": "pattern_1",
+          "title": "Sliding Window Maximum",
+          "difficulty": "Hard",
+          "companies": ["Amazon", "Google", "Facebook"],
+          "tags": ["Array", "Queue", "Sliding Window", "Heap"],
+          "description": "Find the maximum element in each sliding window of size k.",
+          "link": ""
+        },
+        {
+          "id": "pattern_2",
+          "title": "Two Pointers Pattern",
+          "difficulty": "Medium",
+          "companies": ["Facebook", "Microsoft", "LinkedIn"],
+          "tags": ["Array", "Two Pointers"],
+          "description": "Master the two pointers technique.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "recursion",
+      "title": "Recursion",
+      "description": "Recursive algorithms and backtracking problems",
+      "questions": [
+        {
+          "id": "rec_1",
+          "title": "Fibonacci Number",
+          "difficulty": "Easy",
+          "companies": ["Amazon", "Microsoft", "Adobe"],
+          "tags": ["Math", "Dynamic Programming", "Recursion"],
+          "description": "Calculate the nth Fibonacci number.",
+          "link": ""
+        },
+        {
+          "id": "rec_2",
+          "title": "Generate Parentheses",
+          "difficulty": "Medium",
+          "companies": ["Google", "Amazon", "Facebook"],
+          "tags": ["String", "Dynamic Programming", "Backtracking"],
+          "description": "Generate all combinations of well-formed parentheses.",
+          "link": ""
+        },
+        {
+          "id": "rec_3",
+          "title": "Permutations",
+          "difficulty": "Medium",
+          "companies": ["Microsoft", "Amazon", "LinkedIn"],
+          "tags": ["Array", "Backtracking"],
+          "description": "Generate all possible permutations of an array.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "linked-list",
+      "title": "Linked Lists",
+      "description": "Linked list manipulation and algorithms",
+      "questions": [
+        {
+          "id": "ll_1",
+          "title": "Reverse Linked List",
+          "difficulty": "Easy",
+          "companies": ["Amazon", "Microsoft", "Apple", "Facebook"],
+          "tags": ["Linked List", "Recursion"],
+          "description": "Reverse a singly linked list.",
+          "link": ""
+        },
+        {
+          "id": "ll_2",
+          "title": "Merge Two Sorted Lists",
+          "difficulty": "Easy",
+          "companies": ["Amazon", "Google", "Apple"],
+          "tags": ["Linked List", "Recursion"],
+          "description": "Merge two sorted linked lists into one.",
+          "link": ""
+        },
+        {
+          "id": "ll_3",
+          "title": "Linked List Cycle",
+          "difficulty": "Easy",
+          "companies": ["Amazon", "Microsoft", "Yahoo"],
+          "tags": ["Hash Table", "Linked List", "Two Pointers"],
+          "description": "Determine if a linked list has a cycle.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "stacks",
+      "title": "Stacks",
+      "description": "Stack data structure and related algorithms",
+      "questions": [
+        {
+          "id": "stack_1",
+          "title": "Valid Parentheses",
+          "difficulty": "Easy",
+          "companies": ["Amazon", "Google", "Microsoft", "Facebook"],
+          "tags": ["String", "Stack"],
+          "description": "Determine if parentheses are properly balanced.",
+          "link": ""
+        },
+        {
+          "id": "stack_2",
+          "title": "Min Stack",
+          "difficulty": "Easy",
+          "companies": ["Amazon", "Google", "Bloomberg"],
+          "tags": ["Stack", "Design"],
+          "description": "Design a stack that supports push, pop, top, and getMin in O(1).",
+          "link": ""
+        },
+        {
+          "id": "stack_3",
+          "title": "Daily Temperatures",
+          "difficulty": "Medium",
+          "companies": ["Google", "Amazon", "Facebook"],
+          "tags": ["Array", "Stack", "Monotonic Stack"],
+          "description": "Find the number of days until a warmer temperature.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "trees",
+      "title": "Trees",
+      "description": "Binary trees, tree traversals, and tree algorithms",
+      "questions": [
+        {
+          "id": "tree_1",
+          "title": "Maximum Depth of Binary Tree",
+          "difficulty": "Easy",
+          "companies": ["LinkedIn", "Amazon", "Apple"],
+          "tags": ["Tree", "Depth-First Search", "Breadth-First Search"],
+          "description": "Find the maximum depth of a binary tree.",
+          "link": ""
+        },
+        {
+          "id": "tree_2",
+          "title": "Invert Binary Tree",
+          "difficulty": "Easy",
+          "companies": ["Google", "Amazon", "Facebook"],
+          "tags": ["Tree", "Depth-First Search", "Breadth-First Search"],
+          "description": "Invert a binary tree.",
+          "link": ""
+        },
+        {
+          "id": "tree_3",
+          "title": "Binary Tree Level Order Traversal",
+          "difficulty": "Medium",
+          "companies": ["Facebook", "Amazon", "Microsoft"],
+          "tags": ["Tree", "Breadth-First Search"],
+          "description": "Return level order traversal of nodes' values.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "bst",
+      "title": "Binary Search Trees (BST)",
+      "description": "Binary search tree operations and algorithms",
+      "questions": [
+        {
+          "id": "bst_1",
+          "title": "Validate Binary Search Tree",
+          "difficulty": "Medium",
+          "companies": ["Amazon", "Microsoft", "Facebook"],
+          "tags": ["Tree", "Depth-First Search", "Binary Search Tree"],
+          "description": "Determine if a binary tree is a valid BST.",
+          "link": ""
+        },
+        {
+          "id": "bst_2",
+          "title": "Lowest Common Ancestor of BST",
+          "difficulty": "Easy",
+          "companies": ["Amazon", "Microsoft", "Facebook"],
+          "tags": ["Tree", "Depth-First Search", "Binary Search Tree"],
+          "description": "Find the lowest common ancestor in a BST.",
+          "link": ""
+        },
+        {
+          "id": "bst_3",
+          "title": "Kth Smallest Element in BST",
+          "difficulty": "Medium",
+          "companies": ["Google", "Amazon", "Uber"],
+          "tags": ["Tree", "Depth-First Search", "Binary Search Tree"],
+          "description": "Find the kth smallest element in a BST.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "heap",
+      "title": "Heap",
+      "description": "Heap data structure and priority queue problems",
+      "questions": [
+        {
+          "id": "heap_1",
+          "title": "Kth Largest Element in Array",
+          "difficulty": "Medium",
+          "companies": ["Facebook", "Amazon", "Apple"],
+          "tags": ["Array", "Divide and Conquer", "Sorting", "Heap"],
+          "description": "Find the kth largest element in an unsorted array.",
+          "link": ""
+        },
+        {
+          "id": "heap_2",
+          "title": "Top K Frequent Elements",
+          "difficulty": "Medium",
+          "companies": ["Amazon", "Yelp", "Pocket Gems"],
+          "tags": [
+            "Array",
+            "Hash Table",
+            "Divide and Conquer",
+            "Sorting",
+            "Heap"
+          ],
+          "description": "Find k most frequent elements.",
+          "link": ""
+        },
+        {
+          "id": "heap_3",
+          "title": "Merge k Sorted Lists",
+          "difficulty": "Hard",
+          "companies": ["Amazon", "Google", "Microsoft"],
+          "tags": ["Linked List", "Divide and Conquer", "Heap"],
+          "description": "Merge k sorted linked lists.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "huffman-coding",
+      "title": "Huffman Coding",
+      "description": "Huffman coding algorithm and compression techniques",
+      "questions": [
+        {
+          "id": "huff_1",
+          "title": "Huffman Encoding",
+          "difficulty": "Medium",
+          "companies": ["Google", "Amazon", "Microsoft"],
+          "tags": ["Greedy", "Heap", "Tree"],
+          "description": "Implement Huffman encoding algorithm.",
+          "link": ""
+        },
+        {
+          "id": "huff_2",
+          "title": "Huffman Decoding",
+          "difficulty": "Medium",
+          "companies": ["Facebook", "Netflix", "Adobe"],
+          "tags": ["Tree", "Hash Table"],
+          "description": "Decode a Huffman encoded string.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "dynamic-programming",
+      "title": "Dynamic Programming",
+      "description": "Dynamic programming optimization and memoization",
+      "questions": [
+        {
+          "id": "dp_1",
+          "title": "Climbing Stairs",
+          "difficulty": "Easy",
+          "companies": ["Amazon", "Apple", "Adobe"],
+          "tags": ["Math", "Dynamic Programming", "Memoization"],
+          "description": "Count ways to climb n stairs taking 1 or 2 steps.",
+          "link": ""
+        },
+        {
+          "id": "dp_2",
+          "title": "House Robber",
+          "difficulty": "Medium",
+          "companies": ["Amazon", "Microsoft", "Goldman Sachs"],
+          "tags": ["Array", "Dynamic Programming"],
+          "description": "Rob houses without robbing adjacent ones.",
+          "link": ""
+        },
+        {
+          "id": "dp_3",
+          "title": "Coin Change",
+          "difficulty": "Medium",
+          "companies": ["Amazon", "Google", "Microsoft"],
+          "tags": ["Array", "Dynamic Programming", "Breadth-First Search"],
+          "description": "Find minimum coins needed to make amount.",
+          "link": ""
+        },
+        {
+          "id": "dp_4",
+          "title": "Longest Increasing Subsequence",
+          "difficulty": "Medium",
+          "companies": ["Microsoft", "Amazon", "Google"],
+          "tags": ["Array", "Binary Search", "Dynamic Programming"],
+          "description": "Find length of longest increasing subsequence.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "graphs",
+      "title": "Graphs",
+      "description": "Graph algorithms, BFS, DFS, and shortest path problems",
+      "questions": [
+        {
+          "id": "graph_1",
+          "title": "Number of Islands",
+          "difficulty": "Medium",
+          "companies": ["Amazon", "Microsoft", "Facebook"],
+          "tags": ["Array", "Depth-First Search", "Breadth-First Search"],
+          "description": "Count the number of islands in a 2D grid.",
+          "link": ""
+        },
+        {
+          "id": "graph_2",
+          "title": "Clone Graph",
+          "difficulty": "Medium",
+          "companies": ["Amazon", "Google", "Facebook"],
+          "tags": ["Hash Table", "Depth-First Search", "Breadth-First Search"],
+          "description": "Clone an undirected graph.",
+          "link": ""
+        },
+        {
+          "id": "graph_3",
+          "title": "Course Schedule",
+          "difficulty": "Medium",
+          "companies": ["Amazon", "Microsoft", "Zenefits"],
+          "tags": [
+            "Depth-First Search",
+            "Breadth-First Search",
+            "Topological Sort"
+          ],
+          "description": "Determine if you can finish all courses.",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "oops-python",
+      "title": "OOPs in Python",
+      "description": "Object-oriented programming concepts and design patterns in Python",
+      "questions": [
+        {
+          "id": "oop_1",
+          "title": "Class Design",
+          "difficulty": "Medium",
+          "companies": ["Google", "Amazon", "Microsoft"],
+          "tags": ["Design", "Object-Oriented Programming"],
+          "description": "Design a class hierarchy for a vehicle system.",
+          "link": ""
+        },
+        {
+          "id": "oop_2",
+          "title": "Inheritance and Polymorphism",
+          "difficulty": "Medium",
+          "companies": ["Facebook", "Netflix", "Uber"],
+          "tags": ["Design", "Object-Oriented Programming"],
+          "description": "Implement inheritance and polymorphism concepts.",
+          "link": ""
+        },
+        {
+          "id": "oop_3",
+          "title": "Design Patterns",
+          "difficulty": "Hard",
+          "companies": ["Amazon", "Google", "Microsoft"],
+          "tags": ["Design", "Object-Oriented Programming", "Design Patterns"],
+          "description": "Implement common design patterns in Python.",
+          "link": ""
+        }
+      ]
+    }
+  ]
+}

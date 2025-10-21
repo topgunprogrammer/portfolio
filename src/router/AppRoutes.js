@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage";
 import AboutPage from "../pages/AboutPage";
 import ProjectsPage from "../pages/ProjectsPage";
 import ExperiencePage from "../pages/ExperiencePage";
+import DSAPage from "../pages/DSAPage";
 import ContactPage from "../pages/ContactPage";
 import NotFoundPage from "../pages/NotFoundPage";
 
@@ -14,6 +15,7 @@ function AppRoutes() {
       <Route path="/about" element={<AboutPage />} />
       <Route path="/projects" element={<ProjectsPage />} />
       <Route path="/experience" element={<ExperiencePage />} />
+      <Route path="/dsa" element={<DSAPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
