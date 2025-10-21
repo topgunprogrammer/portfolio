@@ -1,161 +1,318 @@
-# 🚀 Portfolio Website
+# Portfolio Website# 🚀 Portfolio Website
 
-> A modern, interactive portfolio website built with React, showcasing professional experience, projects, skills, and achievements.
 
-![React](https://img.shields.io/badge/React-18.2.0-blue?style=flat-square&logo=react)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.23.22-purple?style=flat-square)
+
+> Modern, responsive portfolio website built with React showcasing professional experience, projects, and skills.> A modern, interactive portfolio website built with React, showcasing professional experience, projects, skills, and achievements.
+
+
+
+![React](https://img.shields.io/badge/React-18.2.0-blue?style=flat-square&logo=react)![React](https://img.shields.io/badge/React-18.2.0-blue?style=flat-square&logo=react)
+
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.23.22-purple?style=flat-square)![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.23.22-purple?style=flat-square)
+
 ![React Router](https://img.shields.io/badge/React_Router-7.9.3-red?style=flat-square)
-![License](https://img.shields.io/badge/License-Private-lightgrey?style=flat-square)
+
+---![License](https://img.shields.io/badge/License-Private-lightgrey?style=flat-square)
+
+
+
+## ✨ Features---
+
+
+
+- **Responsive Design** - Optimized for all devices## 📋 Table of Contents
+
+- **Interactive Animations** - Smooth transitions with Framer Motion
+
+- **Project Showcase** - Portfolio with live demos and source code- [About the Project](#about-the-project)
+
+- **Contact Form** - Direct communication with visitors- [Features](#features)
+
+- **Resume Integration** - Built-in PDF viewer and download- [Technology Stack](#technology-stack)
+
+- **DSA Problem Tracker** - Interactive coding problems display- [Prerequisites](#prerequisites)
+
+- [Installation & Setup](#installation--setup)
+
+---- [Running the Application](#running-the-application)
+
+- [Building for Production](#building-for-production)
+
+## 🛠️ Tech Stack- [Deployment](#deployment)
+
+- [Project Structure](#project-structure)
+
+- **React 18.2.0** - UI framework- [Customization](#customization)
+
+- **React Router 7.9.3** - Navigation- [Troubleshooting](#troubleshooting)
+
+- **Framer Motion 12.23.22** - Animations- [Contributing](#contributing)
+
+- **React PDF 10.1.0** - PDF rendering- [Contact](#contact)
+
+- **Canvas Confetti 1.9.3** - Interactive effects
 
 ---
-
-## 📋 Table of Contents
-
-- [About the Project](#about-the-project)
-- [Features](#features)
-- [Technology Stack](#technology-stack)
-- [Prerequisites](#prerequisites)
-- [Installation & Setup](#installation--setup)
-- [Running the Application](#running-the-application)
-- [Building for Production](#building-for-production)
-- [Deployment](#deployment)
-- [Project Structure](#project-structure)
-- [Customization](#customization)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [Contact](#contact)
 
 ---
 
 ## 🎯 About the Project
 
+## 🚀 Quick Start
+
 This portfolio website serves as a comprehensive showcase of **Mohan Ram Shanmugam's** professional journey as a **Full Stack Developer** and **ML & AI Specialist**. With over 5 years of experience in software development, this platform highlights:
 
-- **Professional Experience**: Detailed work history and accomplishments
-- **Technical Projects**: Portfolio of real-world applications and solutions
-- **Skills & Expertise**: Comprehensive overview of technical capabilities
-- **Certifications & Awards**: Recognition and professional development
-- **Contact Information**: Easy ways to connect and collaborate
+```bash
 
-The website is designed with a focus on:
+# Clone the repository- **Professional Experience**: Detailed work history and accomplishments
+
+git clone https://github.com/topgunprogrammer/portfolio.git- **Technical Projects**: Portfolio of real-world applications and solutions
+
+- **Skills & Expertise**: Comprehensive overview of technical capabilities
+
+# Navigate to project- **Certifications & Awards**: Recognition and professional development
+
+cd portfolio- **Contact Information**: Easy ways to connect and collaborate
+
+
+
+# Install dependenciesThe website is designed with a focus on:
+
+npm install
 
 - 🎨 **Modern UI/UX**: Clean, professional design with smooth animations
-- 📱 **Responsive Design**: Optimized for all devices (desktop, tablet, mobile)
-- ⚡ **Performance**: Fast load times and optimized bundle size
-- 🎭 **Interactive Elements**: Engaging animations powered by Framer Motion
+
+# Start development server- 📱 **Responsive Design**: Optimized for all devices (desktop, tablet, mobile)
+
+npm start- ⚡ **Performance**: Fast load times and optimized bundle size
+
+```- 🎭 **Interactive Elements**: Engaging animations powered by Framer Motion
+
 - 🔍 **SEO Friendly**: Structured for search engine optimization
+
+Visit `http://localhost:3000` to view the site.
+
+---
 
 ---
 
 ## ✨ Features
 
+## 📦 Build & Deploy
+
 ### 🏠 **Home Page**
 
-- Eye-catching hero section with animated introduction
-- Quick navigation to all major sections
+```bash
+
+# Create production build- Eye-catching hero section with animated introduction
+
+npm run build- Quick navigation to all major sections
+
 - Dynamic greeting and call-to-action buttons
 
-### 👤 **About Section**
+# Deploy to GitHub Pages
+
+npm run deploy### 👤 **About Section**
+
+```
 
 - Professional bio and background
-- Core competencies and expertise areas
+
+---- Core competencies and expertise areas
+
 - Career highlights and achievements
+
+## 📁 Project Structure
 
 ### 💼 **Experience Page**
 
-- Chronological work history
-- Detailed job responsibilities and accomplishments
-- Technologies and tools used in each role
+```
 
-### 🚀 **Projects Showcase**
+src/- Chronological work history
 
-- Portfolio of completed projects
-- Project cards with descriptions, technologies, and links
-- Live demos and source code access
-- Filterable by technology/category
+├── components/          # Reusable UI components- Detailed job responsibilities and accomplishments
 
-### 📄 **Resume Viewer**
+│   ├── Header/         # Navigation- Technologies and tools used in each role
 
-- Integrated PDF resume viewer
-- Download option for offline viewing
-- Responsive and accessible
+│   ├── Hero/           # Landing section
 
-### 📧 **Contact Page**
+│   ├── About/          # About section### 🚀 **Projects Showcase**
 
-- Contact form for direct communication
-- Social media links (GitHub, LinkedIn, Twitter)
-- Professional contact information
+│   ├── Experience/     # Work history
 
-### 🎉 **Interactive Elements**
+│   ├── Projects/       # Project showcase- Portfolio of completed projects
 
-- Smooth page transitions
+│   ├── Contact/        # Contact form- Project cards with descriptions, technologies, and links
+
+│   ├── Resume/         # Resume viewer- Live demos and source code access
+
+│   ├── DSA/            # DSA problems- Filterable by technology/category
+
+│   ├── Footer/         # Page footer
+
+│   ├── ScrollToTop/    # Scroll utility### 📄 **Resume Viewer**
+
+│   └── NotFound/       # 404 page with dino game
+
+├── pages/              # Page components- Integrated PDF resume viewer
+
+├── router/             # Route configuration- Download option for offline viewing
+
+└── data/               # JSON data files- Responsive and accessible
+
+    ├── personalInfo.json
+
+    ├── about.json### 📧 **Contact Page**
+
+    ├── experience.json
+
+    ├── projects.json- Contact form for direct communication
+
+    ├── awards.json- Social media links (GitHub, LinkedIn, Twitter)
+
+    ├── dsa.json- Professional contact information
+
+    └── iconMapping.js
+
+```### 🎉 **Interactive Elements**
+
+
+
+---- Smooth page transitions
+
 - Confetti animations for engagement
-- Hover effects and micro-interactions
+
+## 🎨 Customization- Hover effects and micro-interactions
+
 - Loading states and animations
 
+### Update Personal Information
+
 ---
+
+Edit JSON files in `/src/data/`:
 
 ## 🛠️ Technology Stack
 
-### **Frontend Framework**
+**personalInfo.json**
 
-- **React 18.2.0**: Core UI library
-- **React Router DOM 7.9.3**: Client-side routing and navigation
-- **Framer Motion 12.23.22**: Advanced animations and transitions
+```json### **Frontend Framework**
 
-### **UI Components & Styling**
+{
 
-- **CSS3**: Custom styling with modern features
-- **React Icons 5.5.0**: Comprehensive icon library
-- **Canvas Confetti 1.9.3**: Celebration effects
+  "name": "Your Name",- **React 18.2.0**: Core UI library
+
+  "title": "Your Title",- **React Router DOM 7.9.3**: Client-side routing and navigation
+
+  "email": "your.email@example.com",- **Framer Motion 12.23.22**: Advanced animations and transitions
+
+  "location": "Your Location",
+
+  "social": {### **UI Components & Styling**
+
+    "github": "https://github.com/username",
+
+    "linkedin": "https://linkedin.com/in/username"- **CSS3**: Custom styling with modern features
+
+  }- **React Icons 5.5.0**: Comprehensive icon library
+
+}- **Canvas Confetti 1.9.3**: Celebration effects
+
+```
 
 ### **Document Handling**
 
-- **React PDF 10.1.0**: PDF rendering and viewing
-- **PDF.js 5.4.149**: PDF parsing engine
+**projects.json**
 
-### **Development Tools**
+```json- **React PDF 10.1.0**: PDF rendering and viewing
 
-- **React Scripts 5.0.1**: Build tooling and configuration
-- **Create React App**: Project bootstrapping
-- **ESLint**: Code linting and quality
+{- **PDF.js 5.4.149**: PDF parsing engine
 
-### **Deployment**
+  "projects": [
 
-- **GitHub Pages 6.3.0**: Static site hosting
-- **GitHub Actions**: CI/CD pipeline (optional)
+    {### **Development Tools**
 
----
+      "title": "Project Name",
 
-## 📦 Prerequisites
+      "description": "Project description",- **React Scripts 5.0.1**: Build tooling and configuration
 
-Before you begin, ensure you have the following installed on your system:
+      "technologies": ["React", "Node.js"],- **Create React App**: Project bootstrapping
 
-### **Required Software**
+      "liveUrl": "https://demo.com",- **ESLint**: Code linting and quality
 
-1. **Node.js** (v14.0.0 or higher recommended)
+      "githubUrl": "https://github.com/user/repo"
 
-   - Download from: [https://nodejs.org/](https://nodejs.org/)
-   - Verify installation:
+    }### **Deployment**
+
+  ]
+
+}- **GitHub Pages 6.3.0**: Static site hosting
+
+```- **GitHub Actions**: CI/CD pipeline (optional)
+
+
+
+### Update Styling---
+
+
+
+- Global styles: `/src/App.css`## 📦 Prerequisites
+
+- Component styles: Individual `.css` files
+
+- CSS variables in `:root` for colorsBefore you begin, ensure you have the following installed on your system:
+
+
+
+### Add Environment Variables### **Required Software**
+
+
+
+Create `.env` file for configuration:1. **Node.js** (v14.0.0 or higher recommended)
+
+```env
+
+REACT_APP_FORMSPREE_URL=your_formspree_endpoint   - Download from: [https://nodejs.org/](https://nodejs.org/)
+
+```   - Verify installation:
+
      ```bash
-     node --version
+
+---     node --version
+
      ```
-   - Expected output: `v14.x.x` or higher
 
-2. **npm** (v6.0.0 or higher) or **yarn** (v1.22.0 or higher)
+## 🌐 Live Demo   - Expected output: `v14.x.x` or higher
 
-   - npm comes bundled with Node.js
+
+
+**Website**: [https://topgunprogrammer.github.io/portfolio](https://topgunprogrammer.github.io/portfolio)2. **npm** (v6.0.0 or higher) or **yarn** (v1.22.0 or higher)
+
+
+
+---   - npm comes bundled with Node.js
+
    - Verify installation:
-     ```bash
+
+## 📞 Contact     ```bash
+
      npm --version
-     ```
-   - Expected output: `6.x.x` or higher
 
-3. **Git** (for version control and deployment)
+**Mohan Ram Shanmugam**     ```
+
+- Email: mohanram.management@gmail.com   - Expected output: `6.x.x` or higher
+
+- GitHub: [@topgunprogrammer](https://github.com/topgunprogrammer)
+
+- LinkedIn: [topgunprogrammer](https://linkedin.com/in/topgunprogrammer)3. **Git** (for version control and deployment)
+
    - Download from: [https://git-scm.com/](https://git-scm.com/)
-   - Verify installation:
+
+---   - Verify installation:
+
      ```bash
-     git --version
+
+**Built with ❤️ using React**     git --version
      ```
 
 ### **Optional Tools**
