@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import "./DSA.css";
 
 // Import the DSA data
 import dsaData from "../../data/sections/dsa.json";
 
 function DSA() {
+  const navigate = useNavigate();
   const [expandedTopics, setExpandedTopics] = useState(new Set());
 
   const toggleTopic = (topicId) => {
@@ -16,6 +18,11 @@ function DSA() {
       newExpanded.add(topicId);
     }
     setExpandedTopics(newExpanded);
+  };
+
+  const handleQuestionClick = (question) => {
+    // Use the routeName field from the JSON data
+    navigate(`/dsa/${question.routeName}`);
   };
 
   const getDifficultyColor = (difficulty) => {
@@ -171,6 +178,8 @@ function DSA() {
                           animate="visible"
                           custom={qIndex}
                           whileHover={{ y: -2 }}
+                          onClick={() => handleQuestionClick(question)}
+                          style={{ cursor: "pointer" }}
                         >
                           {/* Question Header */}
                           <div className="question-header">
