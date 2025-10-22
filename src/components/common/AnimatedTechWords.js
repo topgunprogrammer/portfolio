@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { getTechIcon, getTechColor } from "../../data/iconMapping";
+import { getTechIcon } from "../../data/iconMapping";
 
 const techWords = [
   "React",
