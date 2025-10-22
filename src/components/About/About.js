@@ -14,7 +14,7 @@ function About({ about }) {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.1, // Reduced from 0.2 to 0.1
       },
     },
   };
@@ -24,7 +24,7 @@ function About({ about }) {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 },
+      transition: { duration: 0.3 }, // Reduced from 0.5 to 0.3
     },
   };
 
@@ -80,7 +80,7 @@ function About({ about }) {
       className="portfolio-section about-section"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }} // Reduced from 0.2 to 0.1 for earlier trigger
       variants={containerVariants}
     >
       <div className="section-container">
@@ -108,7 +108,7 @@ function About({ about }) {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: catIndex * 0.1, duration: 0.6 }}
+                transition={{ delay: catIndex * 0.05, duration: 0.4 }} // Reduced delays
               >
                 <div className="category-header">
                   <h4 className="category-title">{category}</h4>
@@ -135,7 +135,7 @@ function About({ about }) {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{
-                          delay: catIndex * 0.1 + skillIndex * 0.05,
+                          delay: catIndex * 0.05 + skillIndex * 0.02, // Reduced delays
                         }}
                       >
                         <div className="skill-info">
@@ -163,8 +163,8 @@ function About({ about }) {
                             whileInView={{ width: `${skill.proficiency}%` }}
                             viewport={{ once: true }}
                             transition={{
-                              delay: catIndex * 0.1 + skillIndex * 0.05 + 0.3,
-                              duration: 1.2,
+                              delay: catIndex * 0.05 + skillIndex * 0.02 + 0.1, // Reduced delays
+                              duration: 0.8, // Reduced from 1.2 to 0.8
                               ease: "easeOut",
                             }}
                           />
@@ -210,7 +210,7 @@ function About({ about }) {
                       initial={{ opacity: 0, x: 50 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, margin: "-100px" }}
-                      transition={{ delay: index * 0.1, duration: 0.6 }}
+                      transition={{ delay: index * 0.05, duration: 0.4 }} // Reduced delays
                     >
                       <div className="cert-badge">📜</div>
                       <h4 className="cert-name">{cert.name}</h4>

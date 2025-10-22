@@ -143,7 +143,7 @@ a {
 }
 
 .page-container.home-page .App-main {
-  padding-top: 4rem;
+  padding-top: 0; /* Removed top padding to eliminate gap */
 }
 
 /* Apple-inspired animations */

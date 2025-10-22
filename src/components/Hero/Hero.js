@@ -1,20 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import confetti from "canvas-confetti";
 import "./Hero.css";
 
 function Hero({ personalInfo }) {
-  const handleScrollToNext = () => {
-    // Scroll to the next section (About section)
-    const heroSection = document.querySelector(".hero-section");
-    const nextSection = heroSection.nextElementSibling;
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const handleDownloadResume = (event) => {
     // Get button position for confetti origin
     const rect = event.target.getBoundingClientRect();
@@ -135,12 +125,6 @@ function Hero({ personalInfo }) {
           </motion.p>
 
           <motion.div className="hero-cta" variants={itemVariants}>
-            <Link to="/projects" className="cta-button primary">
-              View My Work
-            </Link>
-            <Link to="/contact" className="cta-button secondary">
-              Get In Touch
-            </Link>
             <motion.button
               onClick={handleDownloadResume}
               className="cta-button download"
@@ -190,19 +174,6 @@ function Hero({ personalInfo }) {
           </div>
         </motion.div>
       </div>
-
-      <motion.div
-        className="scroll-indicator"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-        onClick={handleScrollToNext}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        style={{ cursor: "pointer" }}
-      >
-        <span>Click to explore</span>
-        <div className="scroll-arrow">↓</div>
-      </motion.div>
     </motion.section>
   );
 }

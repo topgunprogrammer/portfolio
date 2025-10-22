@@ -37,13 +37,14 @@ function Projects({ projects }) {
   };
 
   const techVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, scale: 0.8 },
     visible: (i) => ({
       opacity: 1,
-      y: 0,
+      scale: 1,
       transition: {
         delay: i * 0.05,
-        duration: 0.5,
+        duration: 0.3,
+        ease: "easeOut",
       },
     }),
   };
@@ -114,10 +115,14 @@ function Projects({ projects }) {
                     project.category
                   )}40, ${getCategoryColor(project.category)}60)`,
                 }}
-                initial={{ opacity: 0, scale: 0, rotate: -45 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 + 0.2, type: "spring" }}
+                transition={{
+                  delay: index * 0.1 + 0.2,
+                  duration: 0.3,
+                  ease: "easeOut",
+                }}
               >
                 {getCategoryIcon(project.category)}
                 <span>{project.category}</span>

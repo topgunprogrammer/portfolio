@@ -1,5 +1,9 @@
 /* About section now uses unified portfolio-section styling from App.css */
 
+.about-section {
+  padding: 2rem 0 6rem 0; /* Reduced top padding to minimize gap */
+}
+
 /* Preserve existing about-description styling for backward compatibility */
 .about-section .section-subtitle {
   max-width: 800px;
@@ -75,6 +79,12 @@
 .skills-showcase {
   margin: 5rem 0;
   padding: 0;
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(
+    -50vw + 50%
+  ); /* Center content while expanding to full width */
+  padding-left: 100px; /* 100px padding from left edge */
+  padding-right: 100px; /* 100px padding from right edge */
 }
 
 .skills-showcase h3 {
@@ -90,8 +100,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: none; /* Remove max-width restriction */
+  margin: 0; /* Remove auto centering */
 }
 
 .skill-category-card {
@@ -252,7 +262,29 @@
 }
 
 /* 📱 RESPONSIVE DESIGN FOR SKILLS SHOWCASE */
+@media (max-width: 1200px) {
+  .skills-showcase {
+    padding-left: 50px; /* Reduced padding for medium screens */
+    padding-right: 50px;
+  }
+
+  .certifications {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
 @media (max-width: 768px) {
+  .skills-showcase {
+    padding-left: 2rem; /* Standard mobile padding */
+    padding-right: 2rem;
+  }
+
+  .certifications {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -312,10 +344,12 @@
   padding: 4rem 0;
   margin: 4rem 0;
   background: transparent;
-  margin-left: -2rem;
-  margin-right: -2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(
+    -50vw + 50%
+  ); /* Center content while expanding to full width */
+  padding-left: 100px; /* 100px padding from left edge */
+  padding-right: 100px; /* 100px padding from right edge */
 }
 
 .certifications-scroll-container {
