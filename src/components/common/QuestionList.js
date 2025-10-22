@@ -206,33 +206,6 @@ const QuestionList = ({
                               ? getQuestionDescription(question)
                               : question.description}
                           </p>
-
-                          {/* Companies */}
-                          <div className="question-companies">
-                            <span className="companies-label">Companies:</span>
-                            <div className="companies-list">
-                              {(getQuestionCompanies
-                                ? getQuestionCompanies(question)
-                                : question.companies || []
-                              ).map((company) => (
-                                <span key={company} className="company-tag">
-                                  {company}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-
-                          {/* Tags */}
-                          <div className="question-tags">
-                            {(getQuestionTags
-                              ? getQuestionTags(question)
-                              : question.tags || []
-                            ).map((tag) => (
-                              <span key={tag} className="question-tag">
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
                         </motion.div>
                       ))}
                     </div>
