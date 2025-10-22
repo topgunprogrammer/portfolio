@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import QuestionView from "../components/commonQuestionView/QuestionView";
 import { useParams, useNavigate } from "react-router-dom";
 
-function SystemDesignQuestionPage() {
-  const { questionName } = useParams();
+function MLTechStackQuestionPage() {
+  const { routeName } = useParams();
+  const [data, setData] = useState(null);
   const [topics, setTopics] = useState([]);
   const [expandedTopics, setExpandedTopics] = useState(new Set());
   const [sidebarVisible, setSidebarVisible] = useState(true);
@@ -11,52 +12,45 @@ function SystemDesignQuestionPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    import("../data/systemdesign.json").then((mod) => {
-      const loadedTopics = (mod.systemDesignTopics || []).map((topic) => ({
+    import("../data/mltechstack.json").then((mod) => {
+      // Add topicTitle and topicId to each question for sidebar display
+      const topicsWithMeta = (mod.mlTechStackTopics || []).map((topic) => ({
         ...topic,
-        questions: (topic.questions || []).map((question) => ({
-          ...question,
+        questions: (topic.questions || []).map((q) => ({
+          ...q,
           topicTitle: topic.title,
           topicId: topic.id,
         })),
       }));
-      setTopics(loadedTopics);
+      setTopics(topicsWithMeta);
 
-      // Find the selected question and auto-expand its topic
-      if (questionName) {
-        let foundQuestion = null;
-        let foundTopicId = null;
-        for (const topic of loadedTopics) {
-          const question = topic.questions.find(
-            (q) => q.routeName === questionName
-          );
-          if (question) {
-            foundQuestion = question;
-            foundTopicId = topic.id;
-            break;
-          }
+      // Find selected question and expand its topic
+      let found = null;
+      let foundTopicId = null;
+      for (const topic of topicsWithMeta) {
+        const question = topic.questions.find((q) => q.routeName === routeName);
+        if (question) {
+          found = question;
+          foundTopicId = topic.id;
+          break;
         }
-        setSelectedQuestion(foundQuestion);
-        if (foundTopicId) {
-          setExpandedTopics(new Set([foundTopicId]));
-        }
-      } else {
-        // Expand first topic by default when no question is selected
-        if (loadedTopics.length > 0) {
-          setExpandedTopics(new Set([loadedTopics[0].id]));
-        }
-        setSelectedQuestion(null);
+      }
+      setSelectedQuestion(found);
+      if (foundTopicId) {
+        setExpandedTopics(new Set([foundTopicId]));
+      } else if (topicsWithMeta.length > 0) {
+        setExpandedTopics(new Set([topicsWithMeta[0].id]));
       }
     });
-  }, [questionName]);
+  }, [routeName]);
 
   const handleQuestionClick = (question) => {
-    navigate(`/system-design/${question.routeName}`);
+    navigate(`/mltechstack/${question.routeName}`);
     if (window.innerWidth <= 768) setSidebarVisible(false);
   };
 
   const handleBackToMain = () => {
-    navigate("/system-design");
+    navigate("/mltechstack");
   };
 
   const toggleTopic = (topicId) => {
@@ -87,7 +81,7 @@ function SystemDesignQuestionPage() {
 
   // Mapping functions for QuestionView
   const getTopicTitle = (topic) => topic.title;
-  const getTopicDescription = (topic) => topic.summary || topic.description;
+  const getTopicDescription = (topic) => topic.description;
   const getQuestions = (topic) => topic.questions;
   const getQuestionTitle = (q) => q.title;
   const getQuestionDescription = (q) => q.detailedDescription || q.description;
@@ -143,4 +137,4 @@ function SystemDesignQuestionPage() {
   );
 }
 
-export default SystemDesignQuestionPage;
+export default MLTechStackQuestionPage;

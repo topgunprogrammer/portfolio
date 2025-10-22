@@ -40,7 +40,9 @@ function TechStackQuestionPage() {
       let foundQuestion = null;
       let foundTopicId = null;
       for (const topic of loadedTopics) {
-        const question = topic.questions.find((q) => q.routeName === questionName);
+        const question = topic.questions.find(
+          (q) => q.routeName === questionName
+        );
         if (question) {
           foundQuestion = question;
           foundTopicId = topic.id;
@@ -68,20 +70,17 @@ function TechStackQuestionPage() {
   }, [navigate]);
 
   // Topic accordion toggle
-  const toggleTopic = useCallback(
-    (topicId) => {
-      setExpandedTopics((prev) => {
-        const newSet = new Set(prev);
-        if (newSet.has(topicId)) {
-          newSet.delete(topicId);
-        } else {
-          newSet.add(topicId);
-        }
-        return newSet;
-      });
-    },
-    []
-  );
+  const toggleTopic = useCallback((topicId) => {
+    setExpandedTopics((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(topicId)) {
+        newSet.delete(topicId);
+      } else {
+        newSet.add(topicId);
+      }
+      return newSet;
+    });
+  }, []);
 
   // Question click
   const onQuestionClick = useCallback(

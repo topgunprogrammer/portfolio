@@ -2,19 +2,20 @@ import React, { useEffect, useState } from "react";
 import QuestionList from "../components/common/QuestionList";
 import { useNavigate } from "react-router-dom";
 
-function SystemDesignPage() {
+function MLTechStackPage() {
   const [data, setData] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    import("../data/systemdesign.json").then((mod) => setData(mod));
+    import("../data/mltechstack.json").then((mod) => setData(mod));
   }, []);
 
-  if (!data) return <div>Loading System Design...</div>;
+  const sectionTitle = "ML / AI Tech Stack";
+  if (!data) return <div>Loading {sectionTitle}...</div>;
 
   // Mapping functions for QuestionList
   const getTopicTitle = (topic) => topic.title;
-  const getTopicDescription = (topic) => topic.summary || topic.description;
+  const getTopicDescription = (topic) => topic.description;
   const getQuestions = (topic) => topic.questions;
   const getQuestionTitle = (q) => q.title;
   const getQuestionDescription = (q) => q.description;
@@ -22,14 +23,14 @@ function SystemDesignPage() {
   const getQuestionTags = (q) => q.tags || [];
   const getQuestionCompanies = (q) => q.companies || [];
   const onQuestionClick = (topicIdx, qIdx, question) => {
-    navigate(`/system-design/${question.routeName}`);
+    navigate(`/mltechstack/${question.routeName}`);
   };
 
   return (
     <div className="page-container">
       <main className="App-main">
         <QuestionList
-          data={data.systemDesignTopics}
+          data={data.mlTechStackTopics}
           getTopicTitle={getTopicTitle}
           getTopicDescription={getTopicDescription}
           getQuestions={getQuestions}
@@ -39,12 +40,12 @@ function SystemDesignPage() {
           getQuestionTags={getQuestionTags}
           getQuestionCompanies={getQuestionCompanies}
           onQuestionClick={onQuestionClick}
-          sectionTitle="System Design"
-          sectionSubtitle="High-level and low-level design interview questions, architectures, and scalable systems."
+          sectionTitle={sectionTitle}
+          sectionSubtitle="A curated set of questions and topics on machine learning and AI technologies, frameworks, and concepts."
         />
       </main>
     </div>
   );
 }
 
-export default SystemDesignPage;
+export default MLTechStackPage;

@@ -1,0 +1,86 @@
+{
+  "mlTechStackTopics": [
+    {
+      "id": "ml_frameworks",
+      "title": "Machine Learning Frameworks",
+      "description": "Popular frameworks and libraries for ML/AI development.",
+      "questions": [
+        {
+          "id": "mlf_1",
+          "title": "What is TensorFlow and what are its main use cases?",
+          "routeName": "tensorflow",
+          "difficulty": "Medium",
+          "companies": ["Google", "Airbnb"],
+          "tags": ["TensorFlow", "Deep Learning", "Framework"],
+          "description": "Explain the core features of TensorFlow and where it is commonly used.",
+          "detailedDescription": "TensorFlow is an open-source machine learning framework developed by Google. It is widely used for building and deploying deep learning models, including neural networks for image, speech, and text processing.\n\nExample Use Cases:\n- Image classification\n- Natural language processing\n- Time series forecasting\n- Reinforcement learning\n\nTensorFlow supports both research and production environments.",
+          "approach": "- Use TensorFlow's high-level APIs (like Keras) for rapid prototyping.\n- Leverage TensorFlow Serving for model deployment.\n- Utilize TensorFlow Lite for mobile and embedded devices.",
+          "solution": "TensorFlow provides a flexible ecosystem for model development, training, and deployment. It supports distributed training and can run on CPUs, GPUs, and TPUs.",
+          "code": "import tensorflow as tf\n\n# Simple example: Linear regression\nmodel = tf.keras.Sequential([tf.keras.layers.Dense(1, input_shape=(1,))])\nmodel.compile(optimizer='sgd', loss='mse')\nmodel.fit([[1], [2], [3]], [[2], [4], [6]], epochs=10)",
+          "timeComplexity": "Depends on the model architecture and data size.",
+          "spaceComplexity": "Depends on the model and batch size.",
+          "keyInsights": "- TensorFlow is highly scalable and production-ready.\n- Keras API makes model building intuitive.\n- Supports a wide range of ML/AI tasks.",
+          "link": "https://www.tensorflow.org/"
+        },
+        {
+          "id": "mlf_2",
+          "title": "Compare PyTorch and TensorFlow.",
+          "routeName": "pytorch-vs-tensorflow",
+          "difficulty": "Medium",
+          "companies": ["Meta", "Google"],
+          "tags": ["PyTorch", "TensorFlow", "Comparison"],
+          "description": "Highlight the differences and similarities between PyTorch and TensorFlow.",
+          "detailedDescription": "PyTorch and TensorFlow are the two most popular deep learning frameworks.\n\n- **PyTorch**: Developed by Meta (Facebook), known for its dynamic computation graph and Pythonic interface.\n- **TensorFlow**: Developed by Google, offers both static and dynamic computation graphs, and is widely used in production.\n\nBoth frameworks support GPU acceleration, distributed training, and have large communities.",
+          "approach": "- Use PyTorch for research and rapid prototyping due to its flexibility.\n- Use TensorFlow for production and deployment at scale.\n- Both support ONNX for model interoperability.",
+          "solution": "Choose the framework based on project requirements, team expertise, and deployment needs.",
+          "code": "# PyTorch example\nimport torch\nimport torch.nn as nn\n\nmodel = nn.Linear(1, 1)\ncriterion = nn.MSELoss()\noptimizer = torch.optim.SGD(model.parameters(), lr=0.01)\n\n# TensorFlow example\nimport tensorflow as tf\nmodel = tf.keras.Sequential([tf.keras.layers.Dense(1, input_shape=(1,))])",
+          "timeComplexity": "Depends on the model and framework implementation.",
+          "spaceComplexity": "Depends on the model and framework implementation.",
+          "keyInsights": "- PyTorch is preferred for research, TensorFlow for production.\n- Both frameworks are converging in features.\n- Community and ecosystem support are strong for both.",
+          "link": "https://pytorch.org/"
+        }
+      ]
+    },
+    {
+      "id": "ml_concepts",
+      "title": "ML/AI Concepts",
+      "description": "Key concepts and algorithms in machine learning and AI.",
+      "questions": [
+        {
+          "id": "mlc_1",
+          "title": "What is supervised learning?",
+          "routeName": "supervised-learning",
+          "difficulty": "Easy",
+          "companies": ["Amazon", "Microsoft"],
+          "tags": ["Supervised Learning", "Algorithms"],
+          "description": "Define supervised learning and give examples of algorithms.",
+          "detailedDescription": "Supervised learning is a type of machine learning where the model is trained on labeled data. The goal is to learn a mapping from inputs to outputs.\n\nExamples:\n- Linear regression\n- Logistic regression\n- Decision trees\n- Support vector machines\n- Neural networks",
+          "approach": "- Collect labeled data.\n- Split data into training and test sets.\n- Train the model and evaluate on test data.",
+          "solution": "Supervised learning is used for classification and regression tasks.",
+          "code": "# Example: Linear regression with scikit-learn\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)",
+          "timeComplexity": "Depends on the algorithm.",
+          "spaceComplexity": "Depends on the algorithm.",
+          "keyInsights": "- Supervised learning requires labeled data.\n- Model performance depends on data quality and quantity.",
+          "link": "https://en.wikipedia.org/wiki/Supervised_learning"
+        },
+        {
+          "id": "mlc_2",
+          "title": "Explain the bias-variance tradeoff.",
+          "routeName": "bias-variance-tradeoff",
+          "difficulty": "Medium",
+          "companies": ["Google", "Apple"],
+          "tags": ["Bias", "Variance", "Model Evaluation"],
+          "description": "Describe what the bias-variance tradeoff is and why it matters in ML.",
+          "detailedDescription": "The bias-variance tradeoff is a fundamental concept in machine learning.\n\n- **Bias**: Error due to overly simplistic assumptions in the model.\n- **Variance**: Error due to model's sensitivity to small fluctuations in the training set.\n\nA good model balances bias and variance to minimize total error.",
+          "approach": "- Use cross-validation to estimate model performance.\n- Regularize models to reduce variance.\n- Choose simpler models to reduce bias.",
+          "solution": "Find the optimal model complexity that minimizes both bias and variance.",
+          "code": "# Example: Regularization in linear regression\nfrom sklearn.linear_model import Ridge\nmodel = Ridge(alpha=1.0)\nmodel.fit(X_train, y_train)",
+          "timeComplexity": "Depends on the model and data.",
+          "spaceComplexity": "Depends on the model and data.",
+          "keyInsights": "- High bias leads to underfitting, high variance to overfitting.\n- Regularization helps control variance.",
+          "link": "https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff"
+        }
+      ]
+    }
+  ]
+}
