@@ -3,17 +3,117 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 20px;
+  padding-top: 90px; /* Optimized top padding to clear header */
   box-sizing: border-box;
 }
-
 .pdfviewer-root canvas {
   margin-bottom: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+
+  /* Enable touch interactions on mobile */
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .pdf-loading {
   padding: 40px 0;
   text-align: center;
   color: #666;
+  font-size: 16px;
+}
+
+/* Large Desktop (1280px+) */
+@media (min-width: 1280px) {
+  .pdfviewer-root {
+    max-width: 900px;
+    padding: 30px;
+  }
+}
+
+/* Small Desktop / Large Laptop (1024px - 1279px) */
+@media (max-width: 1279px) and (min-width: 1024px) {
+  .pdfviewer-root {
+    max-width: 800px;
+    padding: 25px;
+  }
+
+  .pdfviewer-root canvas {
+    margin-bottom: 18px;
+  }
+}
+
+/* Tablet Landscape (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .pdfviewer-root {
+    max-width: 750px;
+    padding: 20px;
+  }
+
+  .pdfviewer-root canvas {
+    margin-bottom: 16px;
+    border-radius: 6px;
+  }
+}
+
+/* Tablet Portrait (481px - 767px) */
+@media (max-width: 767px) and (min-width: 481px) {
+  .pdfviewer-root {
+    max-width: 100%;
+    padding: 15px;
+    padding-top: 60px; /* Further reduced for compact mobile header */
+
+    /* Smooth scrolling for tablets */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pdfviewer-root canvas {
+    margin-bottom: 14px;
+    border-radius: 4px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+    touch-action: manipulation;
+  }
+
+  .pdf-loading {
+    padding: 30px 0;
+    font-size: 15px;
+  }
+} /* Mobile Portrait (up to 480px) */
+@media (max-width: 480px) {
+  .pdfviewer-root {
+    max-width: 100%;
+    padding: 10px;
+    padding-top: 55px; /* Further reduced for compact mobile header */
+  }
+  .pdfviewer-root canvas {
+    margin-bottom: 12px;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+
+    /* Prevent zoom on double-tap */
+    touch-action: manipulation;
+  }
+
+  .pdf-loading {
+    padding: 25px 0;
+    font-size: 14px;
+  }
+}
+
+/* Extra small phones (up to 360px) */
+@media (max-width: 360px) {
+  .pdfviewer-root {
+    padding: 8px;
+    padding-top: 50px; /* Minimal top margin for very compact header */
+  }
+
+  .pdfviewer-root canvas {
+    margin-bottom: 10px;
+  }
 }

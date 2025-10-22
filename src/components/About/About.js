@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { getTechIcon, getTechColor } from "../../data/iconMapping";
 import {
   VerticalTimeline,
@@ -10,25 +9,6 @@ import "./About.css";
 
 function About({ about }) {
   const [activeCategory, setActiveCategory] = useState(0);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1, // Reduced from 0.2 to 0.1
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.3 }, // Reduced from 0.5 to 0.3
-    },
-  };
 
   // Enhanced skills data with proficiency levels and categories
   const skillsData = {
@@ -100,29 +80,15 @@ function About({ about }) {
   // Auto-cycle removed - user controls navigation manually
 
   return (
-    <motion.section
-      id="about"
-      className="portfolio-section about-section"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }} // Reduced from 0.2 to 0.1 for earlier trigger
-      variants={containerVariants}
-    >
+    <section id="about" className="portfolio-section about-section">
       <div className="section-container">
         <div className="section-header">
-          <motion.h2 className="section-title" variants={itemVariants}>
-            {about.title}
-          </motion.h2>
-          <motion.p className="section-subtitle" variants={itemVariants}>
-            {about.description}
-          </motion.p>
+          <h2 className="section-title">{about.title}</h2>
+          <p className="section-subtitle">{about.description}</p>
         </div>
 
         {/* 🚀 REVOLUTIONARY SPLIT-SCREEN SKILLS SHOWCASE */}
-        <motion.div
-          className="skills-showcase-revolutionary"
-          variants={itemVariants}
-        >
+        <div className="skills-showcase-revolutionary">
           <div className="section-header">
             <h3 className="section-title">
               My Technical & Professional Skills
@@ -134,13 +100,7 @@ function About({ about }) {
 
           <div className="skills-split-container">
             {/* Left Side - Category Navigation */}
-            <motion.div
-              className="skills-categories-panel"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="skills-categories-panel">
               <div className="categories-header">
                 <h4>Technology Domains</h4>
                 <div className="categories-divider"></div>
@@ -148,18 +108,13 @@ function About({ about }) {
 
               <div className="categories-list">
                 {skillsDataArray.map(([category, data], index) => (
-                  <motion.div
+                  <div
                     key={category}
                     className={`category-item ${
                       index === activeCategory ? "active" : ""
                     }`}
                     data-category={category}
                     onClick={() => handleCategoryClick(index)}
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1, duration: 0.4 }}
-                    whileHover={{ x: 8 }}
                   >
                     <div
                       className="category-indicator"
@@ -178,19 +133,13 @@ function About({ about }) {
                       </div>
                     </div>
                     <div className="category-arrow">→</div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
             {/* Right Side - Skills Progress Display */}
-            <motion.div
-              className="skills-display-panel"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
+            <div className="skills-display-panel">
               {skillsDataArray.map(([category, data], catIndex) => (
                 <div
                   key={category}
@@ -218,22 +167,12 @@ function About({ about }) {
                       const iconColor = getTechColor(skill.name);
 
                       return (
-                        <motion.div
+                        <div
                           key={skill.name}
                           className="skill-progress-row"
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{
+                          style={{
                             opacity: catIndex === activeCategory ? 1 : 0,
-                            y: catIndex === activeCategory ? 0 : 20,
                           }}
-                          transition={{
-                            delay:
-                              catIndex === activeCategory
-                                ? skillIndex * 0.05
-                                : 0,
-                            duration: 0.4,
-                          }}
-                          whileHover={{ scale: 1.02 }}
                         >
                           <div className="skill-identity">
                             <div className="skill-icon-wrapper">
@@ -263,49 +202,35 @@ function About({ about }) {
                               {skill.proficiency}%
                             </div>
                             <div className="skill-progress-track">
-                              <motion.div
+                              <div
                                 className="skill-progress-bar-new"
                                 style={{
                                   background: `linear-gradient(90deg, ${
                                     data.color
                                   }, ${iconColor || data.color})`,
                                   boxShadow: `0 0 20px ${data.color}40`,
-                                }}
-                                initial={{ width: "0%" }}
-                                animate={{
                                   width:
                                     catIndex === activeCategory
                                       ? `${skill.proficiency}%`
                                       : "0%",
                                 }}
-                                transition={{
-                                  delay:
-                                    catIndex === activeCategory
-                                      ? skillIndex * 0.05 + 0.2
-                                      : 0,
-                                  duration: 1.2,
-                                  ease: "easeOut",
-                                }}
                               />
                               <div className="progress-shimmer"></div>
                             </div>
                           </div>
-                        </motion.div>
+                        </div>
                       );
                     })}
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* 🎓 REVOLUTIONARY CERTIFICATIONS SHOWCASE */}
         {about.certifications && about.certifications.length > 0 && (
-          <motion.div
-            className="certifications-revolutionary"
-            variants={itemVariants}
-          >
+          <div className="certifications-revolutionary">
             <div className="section-header">
               <h3 className="section-title">Professional Certifications</h3>
               <p className="section-subtitle">
@@ -313,13 +238,7 @@ function About({ about }) {
               </p>
             </div>
 
-            <motion.div
-              className="certifications-grid-container"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="certifications-grid-container">
               <div className="certifications-grid">
                 {about.certifications.map((cert, index) => {
                   // Create PDF filename from cert name (temporarily disabled)
@@ -359,24 +278,7 @@ function About({ about }) {
                   const certType = getCertType(cert.name);
 
                   return (
-                    <motion.div
-                      key={index}
-                      className="certification-card-modern"
-                      initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{
-                        delay: index * 0.1,
-                        duration: 0.5,
-                        type: "spring",
-                        stiffness: 100,
-                      }}
-                      whileHover={{
-                        y: -8,
-                        scale: 1.02,
-                        transition: { duration: 0.2 },
-                      }}
-                    >
+                    <div key={index} className="certification-card-modern">
                       <div className="cert-card-inner">
                         <div className="cert-header">
                           <div className="cert-icon-container">
@@ -475,19 +377,13 @@ function About({ about }) {
                           <div className="decoration-line-2"></div>
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   );
                 })}
               </div>
 
               {/* Stats Summary */}
-              <motion.div
-                className="certifications-stats"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-              >
+              <div className="certifications-stats">
                 <div className="stats-card">
                   <div className="stat-item">
                     <span className="stat-number">
@@ -506,14 +402,14 @@ function About({ about }) {
                     <span className="stat-label">Providers</span>
                   </div>
                 </div>
-              </motion.div>
-            </motion.div>
-          </motion.div>
+              </div>
+            </div>
+          </div>
         )}
 
         {/* Education */}
         {about.education && about.education.length > 0 && (
-          <motion.div className="education" variants={itemVariants}>
+          <div className="education">
             <div className="section-header">
               <h3 className="section-title">Education</h3>
             </div>
@@ -564,10 +460,10 @@ function About({ about }) {
                 </VerticalTimelineElement>
               ))}
             </VerticalTimeline>
-          </motion.div>
+          </div>
         )}
       </div>
-    </motion.section>
+    </section>
   );
 }
 
