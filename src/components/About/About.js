@@ -31,7 +31,7 @@ function About({ about }) {
   // Enhanced skills data with proficiency levels and categories
   const skillsData = {
     "Frontend Development": {
-      experience: "5+ Years XP",
+      experience: "7+ Years XP",
       color: "#61dafb",
       skills: [
         { name: "ReactJS", proficiency: 95 },
@@ -44,7 +44,7 @@ function About({ about }) {
       ],
     },
     "Backend Development": {
-      experience: "4+ Years XP",
+      experience: "6+ Years XP",
       color: "#68d391",
       skills: [
         { name: "NodeJS", proficiency: 90 },
@@ -53,7 +53,7 @@ function About({ about }) {
       ],
     },
     "Database & Storage": {
-      experience: "4+ Years XP",
+      experience: "6+ Years XP",
       color: "#f093fb",
       skills: [
         { name: "MySQL", proficiency: 90 },
@@ -62,7 +62,7 @@ function About({ about }) {
       ],
     },
     "Cloud & DevOps": {
-      experience: "3+ Years XP",
+      experience: "5+ Years XP",
       color: "#feca57",
       skills: [
         { name: "AWS", proficiency: 85 },
@@ -70,6 +70,20 @@ function About({ about }) {
         { name: "Docker", proficiency: 85 },
         { name: "Git/GitHub", proficiency: 95 },
         { name: "GitLab", proficiency: 88 },
+      ],
+    },
+    "Data Science & ML Engineering": {
+      experience: "3+ Years XP",
+      color: "#ff6b6b",
+      skills: [
+        { name: "Python", proficiency: 90 },
+        { name: "TensorFlow", proficiency: 85 },
+        { name: "PyTorch", proficiency: 80 },
+        { name: "Pandas", proficiency: 90 },
+        { name: "NumPy", proficiency: 88 },
+        { name: "Tableau", proficiency: 75 },
+        { name: "ChatGPT", proficiency: 85 },
+        { name: "ML", proficiency: 82 },
       ],
     },
   };

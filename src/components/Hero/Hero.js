@@ -1,10 +1,213 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { getTechIcon, getTechColor } from "../../data/iconMapping";
 import confetti from "canvas-confetti";
 import "./Hero.css";
 
 function Hero({ personalInfo }) {
+  // All the technologies from your comprehensive learning list
+  const technologies = [
+    // AI & ML Technologies
+    "Python",
+    "TensorFlow",
+    "PyTorch",
+    "Pandas",
+    "NumPy",
+    "Tableau",
+    "D3.js",
+    "ChatGPT",
+    "AI",
+    "ML",
+    "NLP",
+    "DeepLearning",
+    "DataAnalysis",
+    "DataEngineering",
+
+    // Frontend Development
+    "ReactJS",
+    "Redux",
+    "JavaScript",
+    "TypeScript",
+    "HTML5",
+    "CSS3",
+    "SASS",
+    "Bootstrap",
+    "Webpack",
+    "Babel",
+
+    // Backend Development
+    "NodeJS",
+    "ExpressJS",
+    "Spring",
+    "SpringBoot",
+    "GraphQL",
+
+    // Databases
+    "MongoDB",
+    "MySQL",
+    "PostgreSQL",
+    "Redis",
+    "DynamoDB",
+
+    // Cloud & DevOps
+    "AWS",
+    "Azure",
+    "Docker",
+    "Kubernetes",
+    "Nginx",
+    "Kong",
+    "Splunk",
+
+    // Tools & Platforms
+    "Git",
+    "GitHub",
+    "GitLab",
+    "Swagger",
+    "Kafka",
+    "WebSockets",
+
+    // Mobile & Additional
+    "iOS",
+    "Android",
+    "Database",
+  ];
+
+  // Create a CLEAN array of floating icons (SHOOTING STAR STYLE)
+  const createFloatingIcons = () => {
+    const icons = [];
+    // Use each technology EXACTLY ONCE - no duplicates at all
+    technologies.forEach((tech, index) => {
+      // Spread out delays so only 10-15 icons are visible at any time
+      const delayGroup = Math.floor(index / 12); // Groups of 12 icons
+      const delayInGroup = index % 12;
+
+      // Create completely random trajectories in ALL directions
+      let startX, startY, endX, endY;
+
+      // Random starting point on screen edges
+      const startEdge = Math.floor(Math.random() * 4); // 4 edges: top, right, bottom, left
+
+      switch (startEdge) {
+        case 0: // Start from TOP edge
+          startX = Math.random() * 100;
+          startY = -15;
+          break;
+        case 1: // Start from RIGHT edge
+          startX = 115;
+          startY = Math.random() * 100;
+          break;
+        case 2: // Start from BOTTOM edge
+          startX = Math.random() * 100;
+          startY = 115;
+          break;
+        case 3: // Start from LEFT edge
+          startX = -15;
+          startY = Math.random() * 100;
+          break;
+        default: // Fallback to top
+          startX = Math.random() * 100;
+          startY = -15;
+          break;
+      }
+
+      // Random ending point - anywhere on opposite side or random edge
+      const endEdge = Math.floor(Math.random() * 4); // Random destination edge
+
+      switch (endEdge) {
+        case 0: // End at TOP edge
+          endX = Math.random() * 100;
+          endY = -15;
+          break;
+        case 1: // End at RIGHT edge
+          endX = 115;
+          endY = Math.random() * 100;
+          break;
+        case 2: // End at BOTTOM edge
+          endX = Math.random() * 100;
+          endY = 115;
+          break;
+        case 3: // End at LEFT edge
+          endX = -15;
+          endY = Math.random() * 100;
+          break;
+        default: // Fallback to bottom
+          endX = Math.random() * 100;
+          endY = 115;
+          break;
+      }
+
+      icons.push({
+        id: tech, // Use tech name as unique ID
+        tech: tech,
+        Icon: getTechIcon(tech),
+        color: getTechColor(tech),
+        startX: startX,
+        startY: startY,
+        endX: endX,
+        endY: endY,
+        duration: 8 + Math.random() * 6, // Slower movement: 8-14 seconds
+        delay: delayGroup * 15 + delayInGroup * 1.2, // Staggered delays
+        size: 20 + Math.random() * 16, // 20-36px
+        opacity: 0.4 + Math.random() * 0.4, // 0.4-0.8
+      });
+    });
+    return icons;
+  };
+
+  const floatingIcons = createFloatingIcons();
+
+  // Floating Icon Component
+  const FloatingIcon = ({ iconData }) => {
+    const {
+      Icon,
+      color,
+      startX,
+      startY,
+      endX,
+      endY,
+      duration,
+      delay,
+      size,
+      opacity,
+    } = iconData;
+
+    return (
+      <motion.div
+        className="floating-icon"
+        initial={{
+          x: `${startX}vw`,
+          y: `${startY}vh`,
+          opacity: 0,
+          scale: 0.5,
+          rotate: 0,
+        }}
+        animate={{
+          x: `${endX}vw`, // Straight line to end position
+          y: `${endY}vh`, // Straight line to end position
+          opacity: [0, opacity, opacity, 0], // Fade in, stay visible, fade out
+          scale: [0.3, 1, 1, 0.3], // Grow at start, shrink at end
+          rotate: 360, // Single rotation
+        }}
+        transition={{
+          duration: duration,
+          delay: delay,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        style={{
+          position: "absolute",
+          color: color,
+          fontSize: `${size}px`,
+          zIndex: 1,
+          pointerEvents: "none",
+        }}
+      >
+        <Icon />
+      </motion.div>
+    );
+  };
+
   const handleDownloadResume = (event) => {
     // Get button position for confetti origin
     const rect = event.target.getBoundingClientRect();
@@ -85,10 +288,21 @@ function Hero({ personalInfo }) {
     >
       <div className="hero-background">
         <div className="hero-gradient"></div>
+
+        {/* FLOATING ICONS LAYER */}
+        <div className="floating-icons-container">
+          {floatingIcons.map((iconData) => (
+            <FloatingIcon key={iconData.id} iconData={iconData} />
+          ))}
+        </div>
       </div>
 
       <div className="hero-content">
         <motion.div className="hero-text" variants={itemVariants}>
+          <motion.div className="hero-badge" variants={itemVariants}>
+            ✨ Available for new opportunities
+          </motion.div>
+
           <motion.h1 className="hero-title" variants={itemVariants}>
             {personalInfo.name}
           </motion.h1>

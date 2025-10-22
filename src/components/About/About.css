@@ -75,16 +75,14 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* 🚀 ENHANCED SKILLS SHOWCASE - AKSH-AI.COM INSPIRED */
+/* 🚀 ENHANCED SKILLS SHOWCASE - WIDER CONTAINER FOR LARGER CARDS */
 .skills-showcase {
-  margin: 5rem 0;
+  margin: 5rem auto; /* Center vertically and horizontally */
   padding: 0;
-  width: 100vw; /* Full viewport width */
-  margin-left: calc(
-    -50vw + 50%
-  ); /* Center content while expanding to full width */
-  padding-left: 100px; /* 100px padding from left edge */
-  padding-right: 100px; /* 100px padding from right edge */
+  width: 100%; /* Full width */
+  max-width: 1400px; /* Increase max-width for larger cards */
+  padding-left: 3rem; /* Increased padding */
+  padding-right: 3rem; /* Increased padding */
 }
 
 .skills-showcase h3 {
@@ -98,8 +96,11 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* Exactly 2 cards per row on large screens */
+  gap: 3rem; /* Increased gap for larger cards */
   max-width: none; /* Remove max-width restriction */
   margin: 0; /* Remove auto centering */
 }
@@ -116,27 +117,6 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: hidden;
-}
-
-.skill-category-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    rgba(102, 126, 234, 0.8),
-    rgba(118, 75, 162, 0.8),
-    rgba(255, 107, 107, 0.8)
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.skill-category-card:hover::before {
-  opacity: 1;
 }
 
 .skill-category-card:hover {
@@ -264,20 +244,30 @@
 /* 📱 RESPONSIVE DESIGN FOR SKILLS SHOWCASE */
 @media (max-width: 1200px) {
   .skills-showcase {
-    padding-left: 50px; /* Reduced padding for medium screens */
-    padding-right: 50px;
+    width: 100%; /* Full width on all screens */
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .certifications {
     padding-left: 50px;
     padding-right: 50px;
   }
+
+  .skills-grid {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 cards per row on medium screens */
+    gap: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
   .skills-showcase {
-    padding-left: 2rem; /* Standard mobile padding */
-    padding-right: 2rem;
+    width: 100%; /* Full width on mobile */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .certifications {
@@ -286,7 +276,7 @@
   }
 
   .skills-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1 card per row on mobile */
     gap: 2rem;
   }
 

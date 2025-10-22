@@ -82,6 +82,7 @@ a {
   flex-direction: column;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
   position: relative;
+  padding-top: 90px; /* Universal fix: Add top padding to account for fixed header */
 }
 
 .App::before {
@@ -180,6 +181,7 @@ a {
   width: 100%;
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 120px; /* Universal fix for navbar overlap */
 }
 
 /* Universal Section Container */
@@ -305,6 +307,10 @@ a {
 }
 
 @media (max-width: 768px) {
+  .App {
+    padding-top: 80px; /* Slightly less padding on mobile */
+  }
+
   .portfolio-section {
     padding: 4rem 0;
   }
