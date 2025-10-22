@@ -206,29 +206,6 @@ function DSA() {
                             <p className="question-description">
                               {question.description}
                             </p>
-
-                            {/* Companies */}
-                            <div className="question-companies">
-                              <span className="companies-label">
-                                Companies:
-                              </span>
-                              <div className="companies-list">
-                                {question.companies.map((company) => (
-                                  <span key={company} className="company-tag">
-                                    {company}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-
-                            {/* Tags */}
-                            <div className="question-tags">
-                              {question.tags.map((tag) => (
-                                <span key={tag} className="question-tag">
-                                  {tag}
-                                </span>
-                              ))}
-                            </div>
                           </motion.div>
                         ))}
                       </div>
