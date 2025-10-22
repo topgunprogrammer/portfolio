@@ -1,3 +1,4 @@
+import AnimatedTechIcons from "../common/AnimatedTechIcons";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -90,148 +91,156 @@ function DSA() {
   };
 
   return (
-    <motion.section
-      id="dsa"
-      className="portfolio-section dsa-section"
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-    >
-      <div className="section-container">
-        {/* Section Header */}
-        <motion.div className="section-header" variants={itemVariants}>
-          <h2 className="section-title">Data Structures & Algorithms</h2>
-          <p className="section-subtitle">
-            A comprehensive collection of DSA problems organized by topics, with
-            company tags and difficulty levels to help you prepare for technical
-            interviews.
-          </p>
-        </motion.div>
+    <>
+      {/* Animated tech icons background */}
+      <AnimatedTechIcons count={18} zIndex={0} />
+      <motion.section
+        id="dsa"
+        className="portfolio-section dsa-section"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
+        <div className="section-container">
+          {/* Section Header */}
+          <motion.div className="section-header" variants={itemVariants}>
+            <h2 className="section-title">Data Structures & Algorithms</h2>
+            <p className="section-subtitle">
+              A comprehensive collection of DSA problems organized by topics,
+              with company tags and difficulty levels to help you prepare for
+              technical interviews.
+            </p>
+          </motion.div>
 
-        {/* DSA Topics */}
-        <motion.div className="dsa-topics" variants={containerVariants}>
-          {dsaData.dsaTopics.map((topic, index) => (
-            <motion.div
-              key={topic.id}
-              className="dsa-topic-card"
-              variants={itemVariants}
-              whileHover={{ y: -2 }}
-            >
-              {/* Topic Header */}
+          {/* DSA Topics */}
+          <motion.div className="dsa-topics" variants={containerVariants}>
+            {dsaData.dsaTopics.map((topic, index) => (
               <motion.div
-                className="topic-header"
-                onClick={() => toggleTopic(topic.id)}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                key={topic.id}
+                className="dsa-topic-card"
+                variants={itemVariants}
+                whileHover={{ y: -2 }}
               >
-                <div className="topic-info">
-                  <h3 className="topic-title">{topic.title}</h3>
-                  <p className="topic-description">{topic.description}</p>
-                  <div className="topic-stats">
-                    <span className="question-count">
-                      {topic.questions.length} Questions
-                    </span>
-                  </div>
-                </div>
+                {/* Topic Header */}
                 <motion.div
-                  className="topic-toggle"
-                  animate={{
-                    rotate: expandedTopics.has(topic.id) ? 180 : 0,
-                  }}
-                  transition={{ duration: 0.3 }}
+                  className="topic-header"
+                  onClick={() => toggleTopic(topic.id)}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6 9L12 15L18 9"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </motion.div>
-              </motion.div>
-
-              {/* Topic Questions - Accordion Content */}
-              <AnimatePresence>
-                {expandedTopics.has(topic.id) && (
+                  <div className="topic-info">
+                    <h3 className="topic-title">{topic.title}</h3>
+                    <p className="topic-description">{topic.description}</p>
+                    <div className="topic-stats">
+                      <span className="question-count">
+                        {topic.questions.length} Questions
+                      </span>
+                    </div>
+                  </div>
                   <motion.div
-                    className="topic-questions"
-                    variants={accordionVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
+                    className="topic-toggle"
+                    animate={{
+                      rotate: expandedTopics.has(topic.id) ? 180 : 0,
+                    }}
+                    transition={{ duration: 0.3 }}
                   >
-                    <div className="questions-grid">
-                      {topic.questions.map((question, qIndex) => (
-                        <motion.div
-                          key={question.id}
-                          className="question-card"
-                          variants={questionVariants}
-                          initial="hidden"
-                          animate="visible"
-                          custom={qIndex}
-                          whileHover={{ y: -2 }}
-                          onClick={() => handleQuestionClick(question)}
-                          style={{ cursor: "pointer" }}
-                        >
-                          {/* Question Header */}
-                          <div className="question-header">
-                            <h4 className="question-title">{question.title}</h4>
-                            <div
-                              className="difficulty-badge"
-                              style={{
-                                backgroundColor: getDifficultyColor(
-                                  question.difficulty
-                                ),
-                              }}
-                            >
-                              {question.difficulty}
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6 9L12 15L18 9"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </motion.div>
+                </motion.div>
+
+                {/* Topic Questions - Accordion Content */}
+                <AnimatePresence>
+                  {expandedTopics.has(topic.id) && (
+                    <motion.div
+                      className="topic-questions"
+                      variants={accordionVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                    >
+                      <div className="questions-grid">
+                        {topic.questions.map((question, qIndex) => (
+                          <motion.div
+                            key={question.id}
+                            className="question-card"
+                            variants={questionVariants}
+                            initial="hidden"
+                            animate="visible"
+                            custom={qIndex}
+                            whileHover={{ y: -2 }}
+                            onClick={() => handleQuestionClick(question)}
+                            style={{ cursor: "pointer" }}
+                          >
+                            {/* Question Header */}
+                            <div className="question-header">
+                              <h4 className="question-title">
+                                {question.title}
+                              </h4>
+                              <div
+                                className="difficulty-badge"
+                                style={{
+                                  backgroundColor: getDifficultyColor(
+                                    question.difficulty
+                                  ),
+                                }}
+                              >
+                                {question.difficulty}
+                              </div>
                             </div>
-                          </div>
 
-                          {/* Question Description */}
-                          <p className="question-description">
-                            {question.description}
-                          </p>
+                            {/* Question Description */}
+                            <p className="question-description">
+                              {question.description}
+                            </p>
 
-                          {/* Companies */}
-                          <div className="question-companies">
-                            <span className="companies-label">Companies:</span>
-                            <div className="companies-list">
-                              {question.companies.map((company) => (
-                                <span key={company} className="company-tag">
-                                  {company}
+                            {/* Companies */}
+                            <div className="question-companies">
+                              <span className="companies-label">
+                                Companies:
+                              </span>
+                              <div className="companies-list">
+                                {question.companies.map((company) => (
+                                  <span key={company} className="company-tag">
+                                    {company}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+
+                            {/* Tags */}
+                            <div className="question-tags">
+                              {question.tags.map((tag) => (
+                                <span key={tag} className="question-tag">
+                                  {tag}
                                 </span>
                               ))}
                             </div>
-                          </div>
-
-                          {/* Tags */}
-                          <div className="question-tags">
-                            {question.tags.map((tag) => (
-                              <span key={tag} className="question-tag">
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </motion.section>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </motion.section>
+    </>
   );
 }
 

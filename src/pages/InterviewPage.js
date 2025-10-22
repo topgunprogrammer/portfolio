@@ -1,9 +1,64 @@
-import React from "react";
+import React, { useMemo } from "react";
 import "../components/Projects/Projects.css";
 import { useNavigate } from "react-router-dom";
 import routes from "../router/routes";
 import { motion } from "framer-motion";
 import { getInterviewIcon } from "../data/interviewIconMapping";
+import AnimatedTechWords from "../components/common/AnimatedTechWords";
+
+// List of technology names for animated background
+const techWords = [
+  "React",
+  "Node.js",
+  "Python",
+  "AWS",
+  "Docker",
+  "Kubernetes",
+  "MongoDB",
+  "TypeScript",
+  "Java",
+  "C++",
+  "GraphQL",
+  "Redis",
+  "Azure",
+  "GCP",
+  "PostgreSQL",
+  "HTML5",
+  "CSS3",
+  "Sass",
+  "Jest",
+  "Express",
+  "Flask",
+  "TensorFlow",
+  "PyTorch",
+  "Spring",
+  "GoLang",
+  "Rust",
+];
+
+// Generate random directions and distances for each word, all starting from center
+function getRandomizedWords(count) {
+  return Array.from({ length: count }).map((_, i) => {
+    // Center of the screen (50vw, 50vh)
+    const angle = Math.random() * 2 * Math.PI;
+    const distance = 40 + Math.random() * 60; // percent of viewport
+    const endX = 50 + Math.cos(angle) * distance;
+    const endY = 50 + Math.sin(angle) * distance;
+    const rotate = Math.random() * 60 - 30;
+    const delay = Math.random() * 3;
+    const duration = 4 + Math.random() * 3;
+    const word = techWords[Math.floor(Math.random() * techWords.length)];
+    return {
+      endX,
+      endY,
+      rotate,
+      delay,
+      duration,
+      word,
+      key: `${word}-${i}`,
+    };
+  });
+}
 
 const interviewSections = [
   {
@@ -50,11 +105,15 @@ const interviewSections = [
 
 const InterviewPage = () => {
   const navigate = useNavigate();
+  // Memoize so the random positions don't change on every render
+  const animatedWords = useMemo(() => getRandomizedWords(18), []);
   return (
     <section
       className="portfolio-section projects-section"
-      style={{ minHeight: "100vh" }}
+      style={{ minHeight: "100vh", position: "relative", overflow: "hidden" }}
     >
+      {/* Handwriting animated tech words background */}
+      <AnimatedTechWords count={18} inward={false} zIndex={0} />
       <div className="section-container">
         <div className="section-header">
           <h2 className="section-title" style={{ textAlign: "center" }}>

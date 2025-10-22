@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { motion, AnimatePresence } from "framer-motion";
+import AnimatedTechWords from "./AnimatedTechWords";
 
 const QuestionList = ({
   data = [],
@@ -85,6 +86,8 @@ const QuestionList = ({
       animate="visible"
       variants={containerVariants}
     >
+      {/* Animated tech words background (inward) */}
+      <AnimatedTechWords count={16} inward={true} zIndex={0} />
       <div className="section-container">
         {/* Section Header */}
         {sectionHeader ? (
