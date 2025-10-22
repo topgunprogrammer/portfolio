@@ -17,21 +17,8 @@ import TechStackPage from "../pages/TechStackPage";
 import TechStackQuestionPage from "../pages/TechStackQuestionPage";
 import MLTechStackPage from "../pages/MLTechStackPage";
 import MLTechStackQuestionPage from "../pages/MLTechStackQuestionPage";
-
-// Route configuration
-export const routes = {
-  home: "/",
-  about: "/about",
-  projects: "/projects",
-  experience: "/experience",
-  dsa: "/dsa",
-  systemDesign: "/system-design",
-  behavioural: "/behavioural",
-  techstack: "/techstack",
-  mltechstack: "/mltechstack",
-  contact: "/contact",
-  resume: "/resume",
-};
+import routes from "./routes";
+import InterviewPage from "../pages/InterviewPage";
 
 // Navigation items for header
 export const navigationItems = [
@@ -39,11 +26,7 @@ export const navigationItems = [
   { path: routes.about, label: "About" },
   { path: routes.projects, label: "Projects" },
   { path: routes.experience, label: "Experience" },
-  { path: routes.dsa, label: "DSA" },
-  { path: routes.systemDesign, label: "Design" },
-  { path: routes.behavioural, label: "Behavioural" },
-  { path: routes.techstack, label: "SDE" },
-  { path: routes.mltechstack, label: "ML/AI" },
+  { path: routes.interview, label: "Interview" },
   { path: routes.contact, label: "Contact" },
   { path: routes.resume, label: "Resume" },
 ];
@@ -77,6 +60,7 @@ function AppRoutes() {
         path="/mltechstack/:routeName"
         element={<MLTechStackQuestionPage />}
       />
+      <Route path="/interview" element={<InterviewPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/resume" element={<ResumeOnlyPage />} />
       <Route path="*" element={<NotFound />} />

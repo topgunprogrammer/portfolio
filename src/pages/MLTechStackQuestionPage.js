@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 function MLTechStackQuestionPage() {
   const { routeName } = useParams();
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
   const [topics, setTopics] = useState([]);
   const [expandedTopics, setExpandedTopics] = useState(new Set());
   const [sidebarVisible, setSidebarVisible] = useState(true);
@@ -86,8 +86,8 @@ function MLTechStackQuestionPage() {
   const getQuestionTitle = (q) => q.title;
   const getQuestionDescription = (q) => q.detailedDescription || q.description;
   const getQuestionDifficulty = (q) => q.difficulty;
-  const getQuestionTags = (q) => q.tags || [];
-  const getQuestionCompanies = (q) => q.companies || [];
+  // const getQuestionTags = (q) => q.tags || [];
+  // const getQuestionCompanies = (q) => q.companies || [];
   const getQuestionApproach = (q) => q.approach;
   const getQuestionSolution = (q) => q.solution;
   const getQuestionTimeComplexity = (q) => q.timeComplexity;

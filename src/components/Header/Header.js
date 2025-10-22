@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { routes, navigationItems } from "../../router/AppRoutes";
+import routes from "../../router/routes";
+import { navigationItems } from "../../router/AppRoutes";
 import "./Header.css";
 
 function Header({ personalInfo }) {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  // Removed isMobile and setIsMobile as they are unused
 
   // Check if device is mobile
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      // setIsMobile(window.innerWidth <= 768); // removed unused
     };
 
     checkMobile();
