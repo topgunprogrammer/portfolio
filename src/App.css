@@ -296,40 +296,227 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-/* Responsive Grid */
-@media (max-width: 1200px) {
+/* ============================================
+   COMPREHENSIVE RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Large Desktop (1400px+) - Default styles above */
+
+/* Small Desktop / Large Laptop (1280px - 1399px) */
+@media (max-width: 1399px) {
+  .section-container {
+    max-width: 1200px;
+    padding: 0 2rem;
+  }
+
+  .portfolio-section {
+    padding: 5rem 0;
+  }
+
+  .section-title {
+    font-size: clamp(2.2rem, 4.5vw, 3rem);
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    max-width: 550px;
+  }
+
+  .portfolio-card {
+    padding: 1.8rem;
+  }
+
+  .portfolio-grid {
+    gap: 1.8rem;
+  }
+
   .portfolio-grid.grid-2 {
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   }
+
   .portfolio-grid.grid-3 {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 }
 
-@media (max-width: 768px) {
+/* Small Laptop / Tablet Landscape (1024px - 1279px) */
+@media (max-width: 1279px) {
   .App {
-    padding-top: 80px; /* Slightly less padding on mobile */
+    padding-top: 85px;
+  }
+
+  .section-container {
+    max-width: 1000px;
+    padding: 0 1.5rem;
+  }
+
+  .portfolio-section {
+    padding: 4.5rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 0.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    max-width: 500px;
+    line-height: 1.6;
+  }
+
+  .portfolio-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .portfolio-grid {
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .portfolio-grid.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  .portfolio-grid.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .portfolio-grid.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* Tablet Portrait (768px - 1023px) */
+@media (max-width: 1023px) {
+  .section-container {
+    max-width: 800px;
+    padding: 0 1.5rem;
   }
 
   .portfolio-section {
     padding: 4rem 0;
   }
 
-  .section-container {
-    padding: 0 1rem;
-  }
-
   .section-header {
     margin-bottom: 3rem;
   }
 
-  .portfolio-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem;
+  .section-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    max-width: 450px;
+  }
+
+  .portfolio-grid.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .portfolio-grid.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+/* Mobile Landscape / Small Tablet (480px - 767px) */
+@media (max-width: 767px) {
+  .App {
+    padding-top: 80px;
+  }
+
+  .section-container {
+    padding: 0 1rem;
+  }
+
+  .portfolio-section {
+    padding: 3.5rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom: 0.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    max-width: 400px;
+    line-height: 1.5;
   }
 
   .portfolio-card {
-    padding: 1.5rem;
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem;
+    margin-top: 2rem;
+  }
+}
+
+/* Mobile Portrait (up to 479px) */
+@media (max-width: 479px) {
+  .App {
+    padding-top: 75px;
+  }
+
+  .section-container {
+    padding: 0 0.8rem;
+  }
+
+  .portfolio-section {
+    padding: 3rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.4rem, 2.8vw, 2rem);
+    letter-spacing: -0.03em;
+  }
+
+  .section-title::after {
+    width: 60px;
+    height: 2px;
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem;
+    max-width: 350px;
+  }
+
+  .portfolio-card {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .portfolio-grid {
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Legacy responsive rules cleanup */
+@media (max-width: 1200px) {
+  .portfolio-grid.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .portfolio-grid.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 }
 

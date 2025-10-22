@@ -14,6 +14,19 @@ function DSAQuestionView() {
   const [expandedTopics, setExpandedTopics] = useState(new Set());
   const [sidebarVisible, setSidebarVisible] = useState(true);
 
+  // Check if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth <= 768;
+      // On mobile, hide sidebar by default, on desktop show it
+      setSidebarVisible(!mobile);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   useEffect(() => {
     // Set DSA topics with enhanced question data
     const topics = dsaData.dsaTopics.map((topic) => ({
@@ -59,6 +72,10 @@ function DSAQuestionView() {
 
   const handleQuestionClick = (question) => {
     navigate(`/dsa/${question.routeName}`);
+    // Close sidebar on mobile after selecting a question
+    if (window.innerWidth <= 768) {
+      setSidebarVisible(false);
+    }
   };
 
   const handleBackToMain = () => {
@@ -101,126 +118,138 @@ function DSAQuestionView() {
 
   return (
     <div className="dsa-question-view">
-      {/* Toggle Button for when sidebar is hidden */}
+      {/* Mobile Hamburger Menu - Removed to keep only hamburger without text */}
+      {/* <button className="mobile-hamburger-btn" onClick={toggleSidebar}>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+        </svg>
+        <span>Questions</span>
+      </button> */}
+
+      {/* Desktop Toggle Button - for when sidebar is hidden on desktop */}
       {!sidebarVisible && (
-        <button className="sidebar-toggle-btn" onClick={toggleSidebar}>
+        <button className="desktop-sidebar-toggle-btn" onClick={toggleSidebar}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
             <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
           </svg>
         </button>
       )}
 
-      {/* Fixed Left Panel - Questions List */}
+      {/* Mobile Overlay */}
       {sidebarVisible && (
-        <div className="questions-sidebar">
-          <div className="sidebar-header">
-            <div className="sidebar-header-top">
-              <button className="back-btn" onClick={handleBackToMain}>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M19 12H5m6-7l-7 7 7 7" />
-                </svg>
-                Back to DSA
-              </button>
-              <button className="sidebar-close-btn" onClick={toggleSidebar}>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-            </div>
-            <h3>All Questions</h3>
-            <div className="questions-count">
-              {getTotalQuestions()} problems
-            </div>
-          </div>
-
-          <div className="questions-list">
-            {dsaTopics.map((topic) => (
-              <div key={topic.id} className="topic-accordion">
-                {/* Topic Header */}
-                <div
-                  className="topic-header"
-                  onClick={() => toggleTopic(topic.id)}
-                >
-                  <div className="topic-header-content">
-                    <h4 className="topic-title">{topic.title}</h4>
-                    <span className="topic-count">
-                      {topic.questions.length} problems
-                    </span>
-                  </div>
-                  <motion.div
-                    className="topic-toggle"
-                    animate={{ rotate: expandedTopics.has(topic.id) ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </motion.div>
-                </div>
-
-                {/* Topic Questions */}
-                <AnimatePresence>
-                  {expandedTopics.has(topic.id) && (
-                    <motion.div
-                      className="topic-questions"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                    >
-                      {topic.questions.map((question) => (
-                        <motion.div
-                          key={question.id}
-                          className={`question-item ${
-                            selectedQuestion?.id === question.id ? "active" : ""
-                          }`}
-                          onClick={() => handleQuestionClick(question)}
-                          whileHover={{ x: 5 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <div className="question-item-header">
-                            <h5 className="question-item-title">
-                              {question.title}
-                            </h5>
-                            <span
-                              className="question-item-difficulty"
-                              style={{
-                                color: getDifficultyColor(question.difficulty),
-                              }}
-                            >
-                              {question.difficulty}
-                            </span>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div>
-        </div>
+        <div
+          className="mobile-sidebar-overlay"
+          onClick={() => setSidebarVisible(false)}
+        />
       )}
+
+      {/* Fixed Left Panel - Questions List */}
+      <div className={`questions-sidebar ${sidebarVisible ? "visible" : ""}`}>
+        <div className="sidebar-header">
+          <div className="sidebar-header-top">
+            <button className="back-btn" onClick={handleBackToMain}>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M19 12H5m6-7l-7 7 7 7" />
+              </svg>
+              Back to DSA
+            </button>
+            <button className="sidebar-close-btn" onClick={toggleSidebar}>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+          <h3>All Questions</h3>
+          <div className="questions-count">{getTotalQuestions()} problems</div>
+        </div>
+
+        <div className="questions-list">
+          {dsaTopics.map((topic) => (
+            <div key={topic.id} className="topic-accordion">
+              {/* Topic Header */}
+              <div
+                className="topic-header"
+                onClick={() => toggleTopic(topic.id)}
+              >
+                <div className="topic-header-content">
+                  <h4 className="topic-title">{topic.title}</h4>
+                  <span className="topic-count">
+                    {topic.questions.length} problems
+                  </span>
+                </div>
+                <motion.div
+                  className="topic-toggle"
+                  animate={{ rotate: expandedTopics.has(topic.id) ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M19 9l-7 7-7-7" />
+                  </svg>
+                </motion.div>
+              </div>
+
+              {/* Topic Questions */}
+              <AnimatePresence>
+                {expandedTopics.has(topic.id) && (
+                  <motion.div
+                    className="topic-questions"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  >
+                    {topic.questions.map((question) => (
+                      <motion.div
+                        key={question.id}
+                        className={`question-item ${
+                          selectedQuestion?.id === question.id ? "active" : ""
+                        }`}
+                        onClick={() => handleQuestionClick(question)}
+                        whileHover={{ x: 5 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <div className="question-item-header">
+                          <h5 className="question-item-title">
+                            {question.title}
+                          </h5>
+                          <span
+                            className="question-item-difficulty"
+                            style={{
+                              color: getDifficultyColor(question.difficulty),
+                            }}
+                          >
+                            {question.difficulty}
+                          </span>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Right Content Area */}
       <div
