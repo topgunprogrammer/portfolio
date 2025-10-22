@@ -1,0 +1,48 @@
+{
+  "techStackTopics": [
+    {
+      "id": "frontend",
+      "title": "Frontend (React)",
+      "description": "Questions and concepts related to React and frontend engineering.",
+      "questions": [
+        {
+          "id": "fe_1",
+          "title": "What is a React component?",
+          "routeName": "what_is_a_react_component",
+          "difficulty": "Easy",
+          "companies": ["Meta", "Netflix", "Airbnb"],
+          "tags": ["React", "Component"],
+          "description": "Explain the concept of a component in React.",
+          "detailedDescription": "A React component is a reusable piece of UI that can manage its own state and logic.",
+          "approach": "Discuss functional and class components, and how they encapsulate UI and behavior.",
+          "solution": "A component is a JavaScript function or class that returns a React element.",
+          "keyInsights": "Components are the building blocks of React applications.",
+          "code": "function MyComponent() {\n  return <div>Hello World</div>;\n}",
+          "link": "https://react.dev/learn/your-first-component"
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "title": "Backend (Node.js)",
+      "description": "Questions and concepts related to Node.js and backend engineering.",
+      "questions": [
+        {
+          "id": "be_1",
+          "title": "What is Node.js?",
+          "routeName": "what_is_nodejs",
+          "difficulty": "Easy",
+          "companies": ["Netflix", "Uber", "PayPal"],
+          "tags": ["Node.js", "Backend"],
+          "description": "Describe Node.js and its main use cases.",
+          "detailedDescription": "Node.js is a JavaScript runtime built on Chrome's V8 engine, used for building scalable backend services.",
+          "approach": "Discuss event-driven, non-blocking I/O, and single-threaded architecture.",
+          "solution": "Node.js allows running JavaScript on the server side.",
+          "keyInsights": "Node.js is popular for building APIs and real-time applications.",
+          "code": "const http = require('http');\nhttp.createServer((req, res) => {\n  res.end('Hello World');\n}).listen(3000);",
+          "link": "https://nodejs.org/en/docs/guides/getting-started-guide/"
+        }
+      ]
+    }
+  ]
+}

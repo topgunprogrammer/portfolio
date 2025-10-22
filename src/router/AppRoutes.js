@@ -13,6 +13,8 @@ import BehaviouralQuestionPage from "../pages/BehaviouralQuestionPage";
 import ContactPage from "../pages/ContactPage";
 import ResumeOnlyPage from "../pages/ResumeOnlyPage";
 import NotFound from "../components/NotFound/NotFound";
+import TechStackPage from "../pages/TechStackPage";
+import TechStackQuestionPage from "../pages/TechStackQuestionPage";
 
 // Route configuration
 export const routes = {
@@ -23,6 +25,7 @@ export const routes = {
   dsa: "/dsa",
   systemDesign: "/system-design",
   behavioural: "/behavioural",
+  techstack: "/techstack",
   contact: "/contact",
   resume: "/resume",
 };
@@ -36,6 +39,7 @@ export const navigationItems = [
   { path: routes.dsa, label: "DSA" },
   { path: routes.systemDesign, label: "System Design" },
   { path: routes.behavioural, label: "Behavioural" },
+  { path: routes.techstack, label: "SDE" },
   { path: routes.contact, label: "Contact" },
   { path: routes.resume, label: "Resume" },
 ];
@@ -58,6 +62,11 @@ function AppRoutes() {
       <Route
         path="/behavioural/:questionName"
         element={<BehaviouralQuestionPage />}
+      />
+      <Route path="/techstack" element={<TechStackPage />} />
+      <Route
+        path="/techstack/:questionName"
+        element={<TechStackQuestionPage />}
       />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/resume" element={<ResumeOnlyPage />} />
