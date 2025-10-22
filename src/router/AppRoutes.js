@@ -7,6 +7,7 @@ import ExperiencePage from "../pages/ExperiencePage";
 import DSAPage from "../pages/DSAPage";
 import DSAQuestionView from "../components/DSAQuestionView/DSAQuestionView";
 import ContactPage from "../pages/ContactPage";
+import ResumeOnlyPage from "../pages/ResumeOnlyPage";
 import NotFound from "../components/NotFound/NotFound";
 
 // Route configuration
@@ -17,6 +18,7 @@ export const routes = {
   experience: "/experience",
   dsa: "/dsa",
   contact: "/contact",
+  resume: "/resume",
 };
 
 // Navigation items for header
@@ -27,6 +29,7 @@ export const navigationItems = [
   { path: routes.experience, label: "Experience" },
   { path: routes.dsa, label: "DSA" },
   { path: routes.contact, label: "Contact" },
+  { path: routes.resume, label: "Resume" },
 ];
 
 function AppRoutes() {
@@ -39,6 +42,7 @@ function AppRoutes() {
       <Route path="/dsa" element={<DSAPage />} />
       <Route path="/dsa/:questionName" element={<DSAQuestionView />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/resume" element={<ResumeOnlyPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
