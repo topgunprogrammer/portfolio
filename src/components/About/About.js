@@ -247,7 +247,6 @@ function About({ about }) {
                   //     .toLowerCase()
                   //     .replace(/[^a-z0-9]+/g, "-")
                   //     .replace(/(^-|-$)/g, "") + ".pdf";
-                  // const pdfPath = `${process.env.PUBLIC_URL}/certifications/${pdfFileName}`;
 
                   // Determine certification type for different icons/colors
                   const getCertType = (name) => {

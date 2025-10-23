@@ -34,7 +34,7 @@ function Resume() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const resumePath = `${process.env.PUBLIC_URL}/resume/Resume.pdf`;
+  const resumePath = "/resume/Resume.pdf";
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);

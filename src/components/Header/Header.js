@@ -112,7 +112,7 @@ function Header({ personalInfo }) {
               whileTap={{ scale: 0.95 }}
             >
               <img
-                src={`${process.env.PUBLIC_URL}/images/profile.png`}
+                src={"/images/profile.png"}
                 alt={personalInfo.name}
                 className="profile-image"
                 onError={(e) => {

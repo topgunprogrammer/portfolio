@@ -246,7 +246,7 @@ function Hero({ personalInfo }) {
 
     // Create download link and trigger download
     const link = document.createElement("a");
-    link.href = `${process.env.PUBLIC_URL}/resume/Resume.pdf`;
+    link.href = "/resume/Resume.pdf";
     link.download = "Mohan_Ram_Shanmugam_Resume.pdf";
     link.click();
   };
@@ -380,7 +380,7 @@ function Hero({ personalInfo }) {
               }}
             />
             <motion.img
-              src={`${process.env.PUBLIC_URL}/images/profile.png`}
+              src={"/images/profile.png"}
               alt={personalInfo.name}
               className="hero-image"
               transition={{ duration: 0.3 }}
