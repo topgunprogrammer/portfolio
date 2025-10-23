@@ -2,7 +2,7 @@
   "name": "mohan-ram-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://topgunprogrammer.github.io/portfolio",
+  "homepage": ".",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.14.0",
