@@ -3,61 +3,55 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>404 | mohanram.ai</title>
-    <meta name="description" content="Page not found on mohanram.ai" />
+    <title>mohanram.ai — Redirecting</title>
     <meta name="robots" content="noindex" />
 
-    <style>
-      :root {
-        color-scheme: dark;
-        --bg: #0b0b0b;
-        --fg: #e0e0e0;
-        --accent: #00bfff;
-      }
-      body {
-        background: var(--bg);
-        color: var(--fg);
-        font-family: "Inter", "Segoe UI", Roboto, sans-serif;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        text-align: center;
-      }
-      h1 {
-        font-size: 2.5rem;
-        color: var(--accent);
-        margin-bottom: 0.5rem;
-      }
-      p {
-        margin: 0.5rem 0 1.5rem;
-        color: #aaa;
-      }
-      a {
-        color: var(--accent);
-        text-decoration: none;
-        border: 1px solid var(--accent);
-        border-radius: 6px;
-        padding: 0.6rem 1.2rem;
-        transition: all 0.2s ease;
-      }
-      a:hover {
-        background: var(--accent);
-        color: var(--bg);
-      }
-    </style>
-
-    <script>
-      // Redirect all unknown routes to index.html so React Router can handle them
-      window.location.replace("/");
+    <script type="text/javascript">
+      // Single Page App redirect handler for GitHub Pages
+      // Corrected for custom root domain (pathSegmentsToKeep = 0)
+      var pathSegmentsToKeep = 0;
+      var l = window.location;
+      l.replace(
+        l.protocol +
+          "//" +
+          l.hostname +
+          (l.port ? ":" + l.port : "") +
+          l.pathname
+            .split("/")
+            .slice(0, 1 + pathSegmentsToKeep)
+            .join("/") +
+          "/?/" +
+          l.pathname
+            .slice(1)
+            .split("/")
+            .slice(pathSegmentsToKeep)
+            .join("/")
+            .replace(/&/g, "~and~") +
+          (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+          l.hash
+      );
     </script>
   </head>
 
   <body>
-    <h1>404 — Page Not Found</h1>
-    <p>The page you’re looking for doesn’t exist.</p>
-    <a href="/">Return Home</a>
+    <noscript>
+      <style>
+        body {
+          background: #0b0b0b;
+          color: #ddd;
+          font-family: sans-serif;
+          text-align: center;
+          margin-top: 20vh;
+        }
+        a {
+          color: #00bfff;
+        }
+      </style>
+      <h1>404 — Page Not Found</h1>
+      <p>
+        Please enable JavaScript or go back to
+        <a href="https://mohanram.ai">mohanram.ai</a>.
+      </p>
+    </noscript>
   </body>
 </html>
