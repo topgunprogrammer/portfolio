@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import AboutPage from "../pages/AboutPage";
 import ProjectsPage from "../pages/ProjectsPage";
@@ -17,8 +17,8 @@ import TechStackPage from "../pages/TechStackPage";
 import TechStackQuestionPage from "../pages/TechStackQuestionPage";
 import MLTechStackPage from "../pages/MLTechStackPage";
 import MLTechStackQuestionPage from "../pages/MLTechStackQuestionPage";
-import routes from "./routes";
 import InterviewPage from "../pages/InterviewPage";
+import routes from "./routes";
 
 // Navigation items for header
 export const navigationItems = [
@@ -31,40 +31,61 @@ export const navigationItems = [
   { path: routes.resume, label: "Resume" },
 ];
 
+/**
+ * ✅ Handles GitHub Pages '?/' redirect pattern.
+ * Example: /?/dsa/contains_duplicate → /dsa/contains_duplicate
+ */
+function GitHubPagesRedirectFix() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.search.startsWith("?/")) {
+      const newPath = location.search.slice(2).replace(/~and~/g, "&");
+      navigate("/" + newPath, { replace: true });
+    }
+  }, [location, navigate]);
+
+  return null;
+}
+
 function AppRoutes() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/projects" element={<ProjectsPage />} />
-      <Route path="/experience" element={<ExperiencePage />} />
-      <Route path="/dsa" element={<DSAPage />} />
-      <Route path="/dsa/:questionName" element={<DSAQuestionView />} />
-      <Route path="/system-design" element={<SystemDesignPage />} />
-      <Route
-        path="/system-design/:questionName"
-        element={<SystemDesignQuestionPage />}
-      />
-      <Route path="/behavioural" element={<BehaviouralPage />} />
-      <Route
-        path="/behavioural/:questionName"
-        element={<BehaviouralQuestionPage />}
-      />
-      <Route path="/techstack" element={<TechStackPage />} />
-      <Route
-        path="/techstack/:questionName"
-        element={<TechStackQuestionPage />}
-      />
-      <Route path="/mltechstack" element={<MLTechStackPage />} />
-      <Route
-        path="/mltechstack/:routeName"
-        element={<MLTechStackQuestionPage />}
-      />
-      <Route path="/interview" element={<InterviewPage />} />
-      <Route path="/contact" element={<ContactPage />} />
-      <Route path="/resume" element={<ResumeOnlyPage />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <>
+      <GitHubPagesRedirectFix />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/experience" element={<ExperiencePage />} />
+        <Route path="/dsa" element={<DSAPage />} />
+        <Route path="/dsa/:questionName" element={<DSAQuestionView />} />
+        <Route path="/system-design" element={<SystemDesignPage />} />
+        <Route
+          path="/system-design/:questionName"
+          element={<SystemDesignQuestionPage />}
+        />
+        <Route path="/behavioural" element={<BehaviouralPage />} />
+        <Route
+          path="/behavioural/:questionName"
+          element={<BehaviouralQuestionPage />}
+        />
+        <Route path="/techstack" element={<TechStackPage />} />
+        <Route
+          path="/techstack/:questionName"
+          element={<TechStackQuestionPage />}
+        />
+        <Route path="/mltechstack" element={<MLTechStackPage />} />
+        <Route
+          path="/mltechstack/:routeName"
+          element={<MLTechStackQuestionPage />}
+        />
+        <Route path="/interview" element={<InterviewPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/resume" element={<ResumeOnlyPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 
