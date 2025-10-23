@@ -1,7 +1,7 @@
 import React from "react";
 import "../components/Projects/Projects.css";
 import { useNavigate } from "react-router-dom";
-import routes from "../router/routes";
+import { routes } from "../router/AppRoutes";
 import { motion } from "framer-motion";
 import { getInterviewIcon } from "../data/interviewIconMapping";
 import AnimatedTechWords from "../components/common/AnimatedTechWords";
