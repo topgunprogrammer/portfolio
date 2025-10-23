@@ -1,6 +1,3 @@
-// --- Must be first import, before React ---
-import "./fixGithubRedirect";
-
 // --- React imports ---
 import React from "react";
 import ReactDOM from "react-dom/client";
