@@ -1,0 +1,20 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # Install all dependencies (more forgiving than npm ci)
+        - npm install
+    build:
+      commands:
+        # Build your React app
+        - npm run build
+  artifacts:
+    # Folder Amplify will upload to hosting
+    baseDirectory: build
+    files:
+      - "**/*"
+  cache:
+    # Cache dependencies for faster builds
+    paths:
+      - node_modules/**/*
