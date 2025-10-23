@@ -37,7 +37,7 @@ function App() {
     };
   }, []);
   return (
-    <Router basename="/portfolio">
+    <Router>
       <ScrollToTop />
       <motion.div
         className="App"

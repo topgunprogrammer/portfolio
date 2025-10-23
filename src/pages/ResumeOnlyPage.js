@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import PdfViewer from "../components/PdfViewer/PdfViewer";
 
 function ResumeOnlyPage() {
-  const resumePath = "/portfolio/resume/Resume.pdf";
+  const resumePath = "/resume/Resume.pdf";
 
   const pageVariants = {
     initial: { opacity: 0, y: 10 },

@@ -1,4 +1,12 @@
-# Portfolio Website# 🚀 Portfolio Website
+# Portfolio Website
+
+## 🌐 Live Site
+
+The portfolio is now deployed at: **https://mohanram.ai**
+
+All routes (e.g., /dsa, /about, etc.) are available at this custom domain.
+
+# 🚀 Portfolio Website
 
 > Modern, responsive portfolio website built with React showcasing professional experience, projects, and skills.> A modern, interactive portfolio website built with React, showcasing professional experience, projects, skills, and achievements.
 
@@ -54,31 +62,29 @@
 
 This portfolio website serves as a comprehensive showcase of **Mohan Ram Shanmugam's** professional journey as a **Full Stack Developer** and **ML & AI Specialist**. With over 5 years of experience in software development, this platform highlights:
 
-````bash
-
-# Clone the repository- **Professional Experience**: Detailed work history and accomplishments
-
-git clone https://github.com/topgunprogrammer/portfolio.git- **Technical Projects**: Portfolio of real-world applications and solutions
-
+- **Professional Experience**: Detailed work history and accomplishments
+- **Technical Projects**: Portfolio of real-world applications and solutions
 - **Skills & Expertise**: Comprehensive overview of technical capabilities
+- **Certifications & Awards**: Recognition and professional development
+- **Contact Information**: Easy ways to connect and collaborate
 
-# Navigate to project- **Certifications & Awards**: Recognition and professional development
-
-cd portfolio- **Contact Information**: Easy ways to connect and collaborate
-
-
-
-# Install dependenciesThe website is designed with a focus on:
-
-npm install
+The website is designed with a focus on:
 
 - 🎨 **Modern UI/UX**: Clean, professional design with smooth animations
+- 📱 **Responsive Design**: Optimized for all devices (desktop, tablet, mobile)
+- ⚡ **Performance**: Fast load times and optimized bundle size
+- 🎭 **Interactive Elements**: Engaging animations powered by Framer Motion
 
-# Start development server- 📱 **Responsive Design**: Optimized for all devices (desktop, tablet, mobile)
-
-npm start- ⚡ **Performance**: Fast load times and optimized bundle size
-
-```- 🎭 **Interactive Elements**: Engaging animations powered by Framer Motion
+```bash
+# Clone the repository
+git clone https://github.com/topgunprogrammer/portfolio.git
+# Navigate to project
+cd portfolio
+# Install dependencies
+npm install
+# Start development server
+npm start
+```
 
 - 🔍 **SEO Friendly**: Structured for search engine optimization
 
@@ -106,7 +112,7 @@ npm run build- Quick navigation to all major sections
 
 npm run deploy### 👤 **About Section**
 
-````
+```
 
 - Professional bio and background
 
@@ -278,7 +284,7 @@ REACT_APP_FORMSPREE_URL=your_formspree_endpoint   - Download from: [https://node
 
 
 
-**Website**: [https://topgunprogrammer.github.io/portfolio](https://topgunprogrammer.github.io/portfolio)2. **npm** (v6.0.0 or higher) or **yarn** (v1.22.0 or higher)
+**Website**: [https://mohanram.ai](https://mohanram.ai)
 
 
 
@@ -544,7 +550,7 @@ Published
 Your site will be live at:
 
 ```
-https://topgunprogrammer.github.io/portfolio
+https://mohanram.ai
 ```
 
 **Deployment time**: Usually 2-5 minutes for changes to appear
@@ -859,7 +865,7 @@ Contributions are welcome! If you'd like to improve this portfolio:
 
 **Project Repository**: [https://github.com/topgunprogrammer/portfolio](https://github.com/topgunprogrammer/portfolio)
 
-**Live Website**: [https://topgunprogrammer.github.io/portfolio](https://topgunprogrammer.github.io/portfolio)
+**Live Website**: [https://mohanram.ai](https://mohanram.ai)
 
 ---
 
