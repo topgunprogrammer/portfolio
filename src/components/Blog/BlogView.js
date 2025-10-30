@@ -21,6 +21,30 @@ function BlogView() {
   const navigate = useNavigate();
   const post = blogData.blogPosts.find((p) => p.routeName === blogRouteName);
 
+  // Limit articles based on screen width
+  const [maxArticles, setMaxArticles] = React.useState(5);
+
+  React.useEffect(() => {
+    const updateMaxArticles = () => {
+      const width = window.innerWidth;
+      if (width >= 1920) {
+        setMaxArticles(7); // Ultra-wide screens
+      } else if (width >= 1600) {
+        setMaxArticles(6); // Large screens
+      } else if (width >= 1400) {
+        setMaxArticles(5); // Medium-large screens
+      } else if (width >= 1200) {
+        setMaxArticles(4); // Medium screens
+      } else {
+        setMaxArticles(3); // Smaller screens
+      }
+    };
+
+    updateMaxArticles();
+    window.addEventListener("resize", updateMaxArticles);
+    return () => window.removeEventListener("resize", updateMaxArticles);
+  }, []);
+
   // Comment form state
   const [commentForm, setCommentForm] = useState({
     name: "",
@@ -236,29 +260,6 @@ function BlogView() {
 
   return (
     <div className="smashing-blog-page">
-      {/* Article Navigation Bar - Desktop Only */}
-      <nav className="smashing-article-nav">
-        <div className="smashing-article-nav-container">
-          {blogData.blogPosts.map((article) => (
-            <button
-              key={article.id}
-              onClick={() => navigate(`/blog/${article.routeName}`)}
-              className={`smashing-article-nav-item ${
-                article.id === post.id ? "active" : ""
-              }`}
-            >
-              {article.title}
-            </button>
-          ))}
-          <button
-            onClick={() => navigate("/blog")}
-            className="smashing-article-nav-item smashing-nav-all"
-          >
-            Jump to all articles ↬
-          </button>
-        </div>
-      </nav>
-
       <div className="smashing-container">
         {/* Main Article Area */}
         <div className="smashing-main-content">
@@ -483,6 +484,35 @@ function BlogView() {
               )}
             </form>
           </motion.div>
+
+          {/* Article Navigation Bar - After Comments */}
+          <motion.nav
+            className="smashing-article-nav smashing-article-nav-bottom"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <h3 className="smashing-section-title">More Articles</h3>
+            <div className="smashing-article-nav-container">
+              {blogData.blogPosts.map((article) => (
+                <button
+                  key={article.id}
+                  onClick={() => navigate(`/blog/${article.routeName}`)}
+                  className={`smashing-article-nav-item ${
+                    article.id === post.id ? "active" : ""
+                  }`}
+                >
+                  {article.title}
+                </button>
+              ))}
+              <button
+                onClick={() => navigate("/blog")}
+                className="smashing-article-nav-item smashing-nav-all"
+              >
+                Jump to all articles ↬
+              </button>
+            </div>
+          </motion.nav>
         </div>
 
         {/* Sidebar - Author Bio */}

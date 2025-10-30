@@ -186,7 +186,11 @@ function Blog() {
                     className={`category-pill ${
                       selectedCategory === category ? "active" : ""
                     }`}
-                    onClick={() => setSelectedCategory(category)}
+                    onClick={() =>
+                      setSelectedCategory(
+                        selectedCategory === category ? "All" : category
+                      )
+                    }
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -196,23 +200,6 @@ function Blog() {
                       </span>
                     )}
                     <span>{category}</span>
-                  </motion.button>
-                ))}
-              </div>
-
-              {/* Popular Tags */}
-              <div className="tag-pills">
-                {popularTags.slice(0, 6).map((tag) => (
-                  <motion.button
-                    key={tag}
-                    className={`tag-pill ${
-                      selectedTags.includes(tag) ? "active" : ""
-                    }`}
-                    onClick={() => toggleTag(tag)}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {tag}
                   </motion.button>
                 ))}
               </div>
