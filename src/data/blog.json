@@ -1,0 +1,389 @@
+{
+  "blogPosts": [
+    {
+      "id": "react-tips",
+      "title": "5 Essential React Tips for Better Code",
+      "routeName": "5-essential-react-tips",
+      "date": "2025-10-28",
+      "author": "Mohan Ram",
+      "category": "Tutorial",
+      "tags": ["React", "JavaScript", "Frontend", "Best Practices"],
+      "accentColor": "#ff4444",
+      "gradientColors": ["#ff4444", "#cc0000", "#990000"],
+      "description": "Quick tips to improve your React development workflow and code quality with practical examples.",
+      "summary": "Master these five essential React patterns to write cleaner, more maintainable code. From custom hooks to component composition, learn how to leverage React's powerful features effectively.",
+      "readTime": 5,
+      "coverImage": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&h=600&fit=crop",
+      "authorBio": {
+        "name": "Mohan Ram",
+        "title": "Full Stack Developer & ML Specialist",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
+        "bio": "With 7+ years of experience in software development, I specialize in building scalable web applications and ML solutions. Passionate about clean code and developer experience."
+      },
+      "usefulResources": [
+        {
+          "title": "React Hooks Documentation",
+          "url": "https://react.dev/reference/react"
+        },
+        {
+          "title": "Custom Hooks Best Practices",
+          "url": "https://react.dev/learn/reusing-logic-with-custom-hooks"
+        },
+        {
+          "title": "Component Composition Patterns",
+          "url": "https://react.dev/learn/passing-data-deeply-with-context"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "React has revolutionized how we build user interfaces, but with great power comes the need for great practices. After years of working with React, I've compiled five essential tips that will elevate your code quality and development experience."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "1. Use Custom Hooks for Reusable Logic"
+        },
+        {
+          "type": "paragraph",
+          "text": "Custom hooks are one of React's most powerful features. They allow you to extract component logic into reusable functions, making your code **cleaner** and more **maintainable**."
+        },
+        {
+          "type": "code",
+          "language": "javascript",
+          "text": "function useLocalStorage(key, initialValue) {\n  const [value, setValue] = useState(() => {\n    const item = window.localStorage.getItem(key);\n    return item ? JSON.parse(item) : initialValue;\n  });\n\n  useEffect(() => {\n    window.localStorage.setItem(key, JSON.stringify(value));\n  }, [key, value]);\n\n  return [value, setValue];\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "This custom hook handles all localStorage logic in one place. You can now use it across your entire application with a simple function call."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "2. Optimize with useMemo and useCallback"
+        },
+        {
+          "type": "paragraph",
+          "text": "Performance optimization is crucial for smooth user experiences. Use `useMemo` for expensive calculations and `useCallback` for function references that are passed to child components."
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop",
+          "alt": "React Performance Optimization",
+          "caption": "Optimize your React app with memoization techniques"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**useMemo**: Memoize computed values to avoid recalculation",
+            "**useCallback**: Prevent unnecessary re-renders of child components",
+            "**React.memo**: Wrap components that receive the same props frequently"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "3. Component Composition Over Props Drilling"
+        },
+        {
+          "type": "paragraph",
+          "text": "Instead of passing props through multiple levels, use *composition patterns* and the Context API. This makes your component tree more flexible and easier to maintain."
+        },
+        {
+          "type": "code",
+          "language": "javascript",
+          "text": "// Instead of props drilling\nfunction App() {\n  const user = { name: 'John', role: 'admin' };\n  return <Dashboard user={user} />;\n}\n\n// Use Context API\nconst UserContext = createContext();\n\nfunction App() {\n  const user = { name: 'John', role: 'admin' };\n  return (\n    <UserContext.Provider value={user}>\n      <Dashboard />\n    </UserContext.Provider>\n  );\n}"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "4. Error Boundaries Are Essential"
+        },
+        {
+          "type": "paragraph",
+          "text": "Don't let a single component crash your entire app. Implement error boundaries to catch JavaScript errors anywhere in the component tree and display fallback UI."
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop",
+          "alt": "Error Handling in React",
+          "caption": "Graceful error handling improves user experience"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "5. Keep Your Components Small and Focused"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Single Responsibility Principle applies to React components too. If a component does too much, break it down. __Smaller components__ are easier to test, debug, and reuse."
+        },
+        {
+          "type": "quote",
+          "text": "A component should do one thing and do it well. If it's doing more, it's time to refactor.",
+          "author": "Clean Code Principles"
+        },
+        {
+          "type": "paragraph",
+          "text": "These five tips have dramatically improved my React development workflow. Start implementing them today and watch your code quality soar! 🚀"
+        }
+      ]
+    },
+    {
+      "id": "dsa-mastery",
+      "title": "Mastering Data Structures: A Practical Guide",
+      "routeName": "mastering-data-structures",
+      "date": "2025-10-25",
+      "author": "Mohan Ram",
+      "category": "Technical",
+      "tags": ["DSA", "Algorithms", "Python", "Interview Prep"],
+      "accentColor": "#4caf50",
+      "gradientColors": ["#4caf50", "#45a049", "#2e7d32"],
+      "description": "A comprehensive guide to understanding and implementing fundamental data structures for coding interviews.",
+      "summary": "Data structures are the building blocks of efficient algorithms. This comprehensive guide walks you through essential data structures with practical implementations and real-world applications.",
+      "readTime": 8,
+      "coverImage": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=1200&h=600&fit=crop",
+      "authorBio": {
+        "name": "Mohan Ram",
+        "title": "Full Stack Developer & ML Specialist",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
+        "bio": "With 7+ years of experience in software development, I specialize in building scalable web applications and ML solutions. Passionate about clean code and developer experience."
+      },
+      "usefulResources": [
+        {
+          "title": "LeetCode - DSA Practice",
+          "url": "https://leetcode.com"
+        },
+        {
+          "title": "Big-O Cheat Sheet",
+          "url": "https://www.bigocheatsheet.com"
+        },
+        {
+          "title": "VisuAlgo - Data Structure Visualizations",
+          "url": "https://visualgo.net"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Data structures are the backbone of efficient algorithms and a crucial skill for any software engineer. Whether you're preparing for technical interviews or building scalable applications, understanding data structures is **essential**."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Why Data Structures Matter"
+        },
+        {
+          "type": "paragraph",
+          "text": "The right data structure can mean the difference between an O(n²) and O(log n) solution. In real-world applications, this translates to the difference between a sluggish app and a lightning-fast user experience."
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+          "alt": "Big O Complexity",
+          "caption": "Understanding time complexity helps you choose the right data structure"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Essential Data Structures"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Arrays & Dynamic Arrays**: Foundation for most other structures",
+            "**Linked Lists**: Efficient insertions and deletions",
+            "**Stacks & Queues**: LIFO and FIFO operations",
+            "**Hash Tables**: O(1) average lookups",
+            "**Trees & Binary Search Trees**: Hierarchical data",
+            "**Heaps**: Priority queue implementation",
+            "**Graphs**: Network and relationship modeling"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Implementing a Hash Table"
+        },
+        {
+          "type": "paragraph",
+          "text": "Here's a simple hash table implementation in Python that demonstrates the core concepts:"
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "text": "class HashTable:\n    def __init__(self, size=10):\n        self.size = size\n        self.table = [[] for _ in range(size)]\n    \n    def _hash(self, key):\n        return hash(key) % self.size\n    \n    def insert(self, key, value):\n        hash_key = self._hash(key)\n        # Handle collisions with chaining\n        for item in self.table[hash_key]:\n            if item[0] == key:\n                item[1] = value\n                return\n        self.table[hash_key].append([key, value])\n    \n    def get(self, key):\n        hash_key = self._hash(key)\n        for item in self.table[hash_key]:\n            if item[0] == key:\n                return item[1]\n        return None"
+        },
+        {
+          "type": "paragraph",
+          "text": "This implementation uses *chaining* to handle collisions, ensuring that even when multiple keys hash to the same index, we can store and retrieve all values correctly."
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?w=800&h=400&fit=crop",
+          "alt": "Data Structures Visualization",
+          "caption": "Visual representation helps understand complex data structures"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Binary Search Trees"
+        },
+        {
+          "type": "paragraph",
+          "text": "BSTs provide O(log n) search, insert, and delete operations when balanced. Here's a basic implementation:"
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "text": "class TreeNode:\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\n\nclass BST:\n    def __init__(self):\n        self.root = None\n    \n    def insert(self, value):\n        if not self.root:\n            self.root = TreeNode(value)\n        else:\n            self._insert_recursive(self.root, value)\n    \n    def _insert_recursive(self, node, value):\n        if value < node.value:\n            if node.left:\n                self._insert_recursive(node.left, value)\n            else:\n                node.left = TreeNode(value)\n        else:\n            if node.right:\n                self._insert_recursive(node.right, value)\n            else:\n                node.right = TreeNode(value)"
+        },
+        {
+          "type": "quote",
+          "text": "The key to mastering data structures is not memorization, but understanding the trade-offs between time and space complexity.",
+          "author": "Interview Preparation Wisdom"
+        },
+        {
+          "type": "paragraph",
+          "text": "Start with the basics, practice regularly, and soon you'll be choosing data structures intuitively. Your future self (and your users) will thank you! 💪"
+        }
+      ]
+    },
+    {
+      "id": "aws-deployment",
+      "title": "Deploying to AWS: A Complete Guide",
+      "routeName": "deploying-to-aws",
+      "date": "2025-10-15",
+      "author": "Mohan Ram",
+      "category": "Tutorial",
+      "tags": ["AWS", "DevOps", "Cloud", "Deployment", "CI/CD"],
+      "accentColor": "#ff9900",
+      "gradientColors": ["#ff9900", "#ec7211", "#c35200"],
+      "description": "Step-by-step guide to deploying your web application on AWS infrastructure with best practices.",
+      "summary": "Learn how to deploy production-ready applications on AWS with EC2, S3, CloudFront, and automated CI/CD pipelines. This comprehensive guide covers everything from setup to monitoring.",
+      "readTime": 10,
+      "coverImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop",
+      "authorBio": {
+        "name": "Mohan Ram",
+        "title": "Full Stack Developer & ML Specialist",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
+        "bio": "With 7+ years of experience in software development, I specialize in building scalable web applications and ML solutions. Passionate about clean code and developer experience."
+      },
+      "usefulResources": [
+        {
+          "title": "AWS Documentation",
+          "url": "https://docs.aws.amazon.com"
+        },
+        {
+          "title": "AWS Free Tier",
+          "url": "https://aws.amazon.com/free"
+        },
+        {
+          "title": "GitHub Actions for AWS",
+          "url": "https://github.com/aws-actions"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Amazon Web Services (AWS) has become the de facto standard for cloud deployment. This comprehensive guide will walk you through deploying a production-ready web application on AWS."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Prerequisites"
+        },
+        {
+          "type": "list",
+          "items": [
+            "AWS account with appropriate permissions",
+            "Basic understanding of **Linux** commands",
+            "Your application ready for deployment",
+            "Domain name (optional but recommended)"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Step 1: Set Up EC2 Instance"
+        },
+        {
+          "type": "paragraph",
+          "text": "EC2 (Elastic Compute Cloud) provides scalable computing capacity. Choose an instance type based on your application's needs—*t2.micro* is perfect for small applications and falls under the free tier."
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop",
+          "alt": "AWS Cloud Infrastructure",
+          "caption": "AWS provides scalable cloud infrastructure for any application size"
+        },
+        {
+          "type": "code",
+          "language": "bash",
+          "text": "# Connect to your EC2 instance\nssh -i \"your-key.pem\" ec2-user@your-instance-ip\n\n# Update system packages\nsudo yum update -y\n\n# Install Node.js (for Node apps)\ncurl -sL https://rpm.nodesource.com/setup_18.x | sudo bash -\nsudo yum install -y nodejs\n\n# Install nginx\nsudo yum install -y nginx\nsudo systemctl start nginx\nsudo systemctl enable nginx"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Step 2: Configure Security Groups"
+        },
+        {
+          "type": "paragraph",
+          "text": "Security is __critical__. Set up security groups to control inbound and outbound traffic. At minimum, allow HTTP (80), HTTPS (443), and SSH (22) access."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**SSH (22)**: For remote server access",
+            "**HTTP (80)**: For web traffic",
+            "**HTTPS (443)**: For secure web traffic",
+            "**Custom ports**: For your application (e.g., 3000, 8080)"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Step 3: Deploy with S3 and CloudFront"
+        },
+        {
+          "type": "paragraph",
+          "text": "For static sites, combine S3 for storage and CloudFront for content delivery. This setup is highly scalable, cost-effective, and provides excellent performance worldwide."
+        },
+        {
+          "type": "code",
+          "language": "bash",
+          "text": "# Install AWS CLI\ncurl \"https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip\" -o \"awscliv2.zip\"\nunzip awscliv2.zip\nsudo ./aws/install\n\n# Configure AWS credentials\naws configure\n\n# Create S3 bucket\naws s3 mb s3://your-bucket-name\n\n# Upload to S3\naws s3 sync ./build s3://your-bucket-name\n\n# Invalidate CloudFront cache\naws cloudfront create-invalidation \\\n  --distribution-id YOUR_DIST_ID \\\n  --paths \"/*\""
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=400&fit=crop",
+          "alt": "CloudFront CDN",
+          "caption": "CloudFront delivers your content from edge locations worldwide"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Setting Up CI/CD with GitHub Actions"
+        },
+        {
+          "type": "paragraph",
+          "text": "Automate your deployment process with GitHub Actions. Here's a complete workflow file:"
+        },
+        {
+          "type": "code",
+          "language": "yaml",
+          "text": "name: Deploy to AWS\n\non:\n  push:\n    branches: [ main ]\n\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    \n    steps:\n    - uses: actions/checkout@v2\n    \n    - name: Configure AWS credentials\n      uses: aws-actions/configure-aws-credentials@v1\n      with:\n        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}\n        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}\n        aws-region: us-east-1\n    \n    - name: Build application\n      run: |\n        npm install\n        npm run build\n    \n    - name: Deploy to S3\n      run: aws s3 sync ./build s3://your-bucket-name\n    \n    - name: Invalidate CloudFront\n      run: |\n        aws cloudfront create-invalidation \\\n          --distribution-id ${{ secrets.CLOUDFRONT_ID }} \\\n          --paths \"/*\""
+        },
+        {
+          "type": "quote",
+          "text": "The cloud is about how you do computing, not where you do computing.",
+          "author": "Paul Maritz, VMware CEO"
+        },
+        {
+          "type": "paragraph",
+          "text": "With this setup, you're ready to serve millions of users with confidence. Remember to monitor your costs and optimize as you scale! ☁️"
+        }
+      ]
+    }
+  ]
+}

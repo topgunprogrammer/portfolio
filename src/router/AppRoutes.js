@@ -19,12 +19,16 @@ import MLTechStackPage from "../pages/MLTechStackPage";
 import MLTechStackQuestionPage from "../pages/MLTechStackQuestionPage";
 import InterviewPage from "../pages/InterviewPage";
 import routes from "./routes";
+// Blog components (to be created)
+import Blog from "../components/Blog/Blog";
+import BlogView from "../components/Blog/BlogView";
 
 // Navigation items for header
 export const navigationItems = [
   { path: routes.home, label: "Home" },
   { path: routes.about, label: "About" },
   { path: routes.projects, label: "Projects" },
+  { path: routes.blog, label: "Blog" },
   { path: routes.experience, label: "Experience" },
   { path: routes.interview, label: "Interview" },
   { path: routes.contact, label: "Contact" },
@@ -60,6 +64,8 @@ function AppRoutes() {
         path="/mltechstack/:routeName"
         element={<MLTechStackQuestionPage />}
       />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/:blogRouteName" element={<BlogView />} />
       <Route path="/interview" element={<InterviewPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/resume" element={<ResumeOnlyPage />} />

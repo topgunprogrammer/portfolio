@@ -9,6 +9,7 @@ const routes = {
   behavioural: "/behavioural",
   techstack: "/techstack",
   mltechstack: "/mltechstack",
+  blog: "/blog",
   contact: "/contact",
   resume: "/resume",
   interview: "/interview",
