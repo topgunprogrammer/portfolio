@@ -180,30 +180,25 @@ function Blog() {
             <div className="compact-filter-bar">
               {/* Category Pills */}
               <div className="category-pills">
-                {["All", "Tutorial", "Technical", "Personal"].map(
-                  (category) => (
-                    <motion.button
-                      key={category}
-                      className={`category-pill ${
-                        selectedCategory === category ? "active" : ""
-                      }`}
-                      onClick={() => setSelectedCategory(category)}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {category !== "All" && (
-                        <span className="pill-icon">
-                          {getCategoryIcon(category)}
-                        </span>
-                      )}
-                      <span>{category}</span>
-                    </motion.button>
-                  )
-                )}
+                {["All", "Tutorial", "Technical"].map((category) => (
+                  <motion.button
+                    key={category}
+                    className={`category-pill ${
+                      selectedCategory === category ? "active" : ""
+                    }`}
+                    onClick={() => setSelectedCategory(category)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {category !== "All" && (
+                      <span className="pill-icon">
+                        {getCategoryIcon(category)}
+                      </span>
+                    )}
+                    <span>{category}</span>
+                  </motion.button>
+                ))}
               </div>
-
-              {/* Divider */}
-              <div className="filter-divider" />
 
               {/* Popular Tags */}
               <div className="tag-pills">
@@ -253,7 +248,13 @@ function Blog() {
                     custom={index}
                     whileHover={{ y: -5 }}
                   >
-                    <Link to={`/blog/${post.routeName}`} className="blog-card">
+                    <Link
+                      to={`/blog/${post.routeName}`}
+                      className="blog-card"
+                      style={{
+                        "--card-accent": post.accentColor,
+                      }}
+                    >
                       <div className="blog-card-content">
                         {/* Category Badge */}
                         <div
@@ -268,12 +269,16 @@ function Blog() {
                           <span>{post.category}</span>
                         </div>
 
-                        <h3 className="blog-card-title">{post.title}</h3>
+                        <h3
+                          className="blog-card-title"
+                          style={{ color: post.accentColor }}
+                        >
+                          {post.title}
+                        </h3>
+                        <p className="blog-card-summary">{post.summary}</p>
                         <p className="blog-card-meta">
-                          {post.date} &middot; {post.author}
-                        </p>
-                        <p className="blog-card-description">
-                          {post.description}
+                          {post.date} &middot; {post.author} &middot;{" "}
+                          {post.readTime} min read
                         </p>
                         <div className="blog-card-tags">
                           {post.tags.slice(0, 4).map((tag) => (

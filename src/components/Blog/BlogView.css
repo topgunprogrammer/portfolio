@@ -12,14 +12,105 @@
   --gradient-3: var(--gradient-3);
 }
 
-/* Page - Dark Background like site theme */
+/* Page - Dark Background with Blog-Themed Pattern */
 .smashing-blog-page {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  background: #0a0a0a;
   padding-top: 15px;
   padding-bottom: 60px;
   position: relative;
+  overflow: hidden;
+}
+
+/* Animated Background Pattern - Blog Theme */
+.smashing-blog-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    /* Floating article orbs - using theme colors */ radial-gradient(
+      circle at 20% 30%,
+      var(--gradient-1) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 60%,
+      var(--article-accent) 0%,
+      transparent 45%
+    ),
+    radial-gradient(circle at 40% 80%, var(--gradient-2) 0%, transparent 40%),
+    radial-gradient(circle at 65% 20%, var(--gradient-3) 0%, transparent 35%),
+    /* Subtle grid pattern like lined paper */
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 49px,
+        rgba(255, 255, 255, 0.02) 49px,
+        rgba(255, 255, 255, 0.02) 50px
+      );
+  opacity: 0.06;
+  z-index: 0;
+  pointer-events: none;
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.06;
+  }
+  50% {
+    opacity: 0.09;
+  }
+}
+
+/* Floating orbs animation - larger and more visible */
+.smashing-blog-page::after {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(
+      circle at 30% 40%,
+      var(--article-accent) 0%,
+      transparent 20%
+    ),
+    radial-gradient(circle at 70% 70%, var(--gradient-1) 0%, transparent 22%),
+    radial-gradient(circle at 50% 20%, var(--gradient-2) 0%, transparent 18%),
+    radial-gradient(circle at 85% 45%, var(--gradient-3) 0%, transparent 20%);
+  opacity: 0.08;
+  animation: floatOrbs 30s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes floatOrbs {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.08;
+  }
+  33% {
+    transform: translate(5%, 5%) rotate(120deg);
+    opacity: 0.11;
+  }
+  66% {
+    transform: translate(-5%, 3%) rotate(240deg);
+    opacity: 0.09;
+  }
+}
+
+/* Ensure content is above background */
+.smashing-article-nav,
+.smashing-container {
+  position: relative;
+  z-index: 1;
 }
 
 /* Article Navigation Bar - Desktop Only */
