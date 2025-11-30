@@ -54,20 +54,6 @@ function About({ about }) {
         { name: "GitLab", proficiency: 88 },
       ],
     },
-    "Data Science & ML Engineering": {
-      experience: "3+ Years XP",
-      color: "#ff6b6b",
-      skills: [
-        { name: "Python", proficiency: 90 },
-        { name: "TensorFlow", proficiency: 85 },
-        { name: "PyTorch", proficiency: 80 },
-        { name: "Pandas", proficiency: 90 },
-        { name: "NumPy", proficiency: 88 },
-        { name: "Tableau", proficiency: 75 },
-        { name: "ChatGPT", proficiency: 85 },
-        { name: "ML", proficiency: 82 },
-      ],
-    },
   };
 
   const skillsDataArray = Object.entries(skillsData);

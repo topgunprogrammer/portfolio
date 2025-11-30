@@ -312,7 +312,7 @@ function Hero({ personalInfo }) {
               sequence={[
                 "Full Stack Developer",
                 2000, // Wait 2s
-                "Full Stack Developer | ML & AI Specialist",
+                "Full Stack Developer | Java Developer",
                 3000, // Wait 3s
                 "Full Stack Developer | React Expert",
                 2000, // Wait 2s

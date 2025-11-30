@@ -60,7 +60,7 @@ All routes (e.g., /dsa, /about, etc.) are available at this custom domain.
 
 ## 🚀 Quick Start
 
-This portfolio website serves as a comprehensive showcase of **Mohan Ram Shanmugam's** professional journey as a **Full Stack Developer** and **ML & AI Specialist**. With over 5 years of experience in software development, this platform highlights:
+This portfolio website serves as a comprehensive showcase of **Mohan Ram Shanmugam's** professional journey as a **Full Stack Developer** . With over 5 years of experience in software development, this platform highlights:
 
 - **Professional Experience**: Detailed work history and accomplishments
 - **Technical Projects**: Portfolio of real-world applications and solutions
